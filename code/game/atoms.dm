@@ -40,6 +40,8 @@
 	var/datum/proximity_monitor/proximity_monitor
 	var/fingerprintslast
 
+	var/list/filter_data //For handling persistent filters
+
 	var/custom_price
 	var/custom_premium_price
 
@@ -88,6 +90,26 @@
 	/// A luminescence-shifted value of the last color calculated for chatmessage overlays
 	var/chat_color_darkened
 
+	///Used for changing icon states for different base sprites.
+	var/base_icon_state
+
+	///Icon-smoothing behavior.
+	var/smoothing_flags = NONE
+	///What directions this is currently smoothing with. IMPORTANT: This uses the smoothing direction flags as defined in icon_smoothing.dm, instead of the BYOND flags.
+	var/smoothing_junction = NONE
+	///Smoothing variable
+	var/top_left_corner
+	///Smoothing variable
+	var/top_right_corner
+	///Smoothing variable
+	var/bottom_left_corner
+	///Smoothing variable
+	var/bottom_right_corner
+	///What smoothing groups does this atom belongs to, to match canSmoothWith. If null, nobody can smooth with it.
+	var/list/smoothing_groups = null
+	///List of smoothing groups this atom can smooth with. If this is null and atom is smooth, it smooths only with itself.
+	var/list/canSmoothWith = null
+
 	///Mobs that are currently do_after'ing this atom, to be cleared from on Destroy()
 	var/list/targeted_by
 	/// If false makes [CanPass][/atom/proc/CanPass] call [CanPassThrough][/atom/movable/proc/CanPassThrough] on this type instead of using default behaviour
@@ -95,6 +117,10 @@
 
 	/// What does this creature taste like?
 	var/list/tastes
+	/// When something is turned in for a quest, it'll give it a tag so it can only be turned in once per player
+	var/list/quest_tag
+	/// Override the deletion of this atom for quests
+	var/important
 
 /atom/New(loc, ...)
 	//atom creation method that preloads variables at creation
@@ -138,13 +164,20 @@
 	if (light_system == STATIC_LIGHT && light_power && light_range)
 		update_light()
 
-	if (canSmoothWith)
-		canSmoothWith = typelist("canSmoothWith", canSmoothWith)
+	if (length(smoothing_groups))
+		sortTim(smoothing_groups) //In case it's not properly ordered, let's avoid duplicate entries with the same values.
+		SET_BITFLAG_LIST(smoothing_groups)
+	if (length(canSmoothWith))
+		sortTim(canSmoothWith)
+		if(canSmoothWith[length(canSmoothWith)] > MAX_S_TURF) //If the last element is higher than the maximum turf-only value, then it must scan turf contents for smoothing targets.
+			smoothing_flags |= SMOOTH_OBJ
+		SET_BITFLAG_LIST(canSmoothWith)
 
 	// apply materials properly from the default custom_materials value
 	set_custom_materials(custom_materials)
 
 	ComponentInitialize()
+	SSatoms.everything[type]++
 
 	InitTastes()
 
@@ -167,6 +200,7 @@
 		// QDEL_NULL(tastes)
 
 /atom/Destroy()
+	SSatoms.everything[type]--
 	if(alternate_appearances)
 		for(var/K in alternate_appearances)
 			var/datum/atom_hud/alternate_appearance/AA = alternate_appearances[K]
@@ -184,6 +218,11 @@
 
 	QDEL_NULL(light)
 
+	if(smoothing_flags & SMOOTH_QUEUED)
+		SSicon_smooth.remove_from_queues(src)
+
+	if(LAZYLEN(quest_tag))
+		QDEL_LIST(quest_tag)
 	return ..()
 
 /**
@@ -363,7 +402,7 @@
 /atom/proc/HasProximity(atom/movable/AM as mob|obj)
 	return
 
-/atom/proc/emp_act(severity)
+/atom/proc/emp_act(severity, only_target)
 	var/protection = SEND_SIGNAL(src, COMSIG_ATOM_EMP_ACT, severity)
 	if(!(protection & EMP_PROTECT_WIRES) && istype(wires))
 		wires.emp_pulse(severity)
@@ -448,6 +487,10 @@
 				. += span_notice("It has [reagents.total_volume] unit\s left.")
 			else
 				. += span_danger("It's empty.")
+	var/list/itworth = techweb_item_point_check(src)
+	for(var/tweb in itworth)
+		if(isnum(itworth[tweb]) && itworth[tweb] > 0)
+			. += span_green("You figure this thing is worth around [round(itworth[tweb], 250)] science points.")
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
 
@@ -1007,6 +1050,8 @@
 // You can override it to catch all tool interactions, for use in complex deconstruction procs.
 // Just don't forget to return ..() in the end.
 /atom/proc/tool_act(mob/living/user, obj/item/I, tool_type)
+	if(SEND_SIGNAL(src, COMSIG_ATOM_TOOL_ACT, user, I, tool_type) & STOP_ATTACK_PROC_CHAIN)
+		return STOP_ATTACK_PROC_CHAIN
 	switch(tool_type)
 		if(TOOL_CROWBAR)
 			return crowbar_act(user, I)
@@ -1194,6 +1239,38 @@
 		message += " | BWB: [dealt_bare_wound_bonus]"
 
 	victim.log_message(message, LOG_ATTACK, color="blue")
+
+/atom/proc/add_filter(name,priority,list/params)
+	LAZYINITLIST(filter_data)
+	var/list/p = params.Copy()
+	p["priority"] = priority
+	filter_data[name] = p
+	update_filters()
+
+/atom/proc/update_filters()
+	filters = null
+	filter_data = sortTim(filter_data, GLOBAL_PROC_REF(cmp_filter_data_priority), TRUE)
+	for(var/f in filter_data)
+		var/list/data = filter_data[f]
+		var/list/arguments = data.Copy()
+		arguments -= "priority"
+		filters += filter(arglist(arguments))
+	UNSETEMPTY(filter_data)
+
+/atom/proc/get_filter(name)
+	if(filter_data && filter_data[name])
+		return filters[filter_data.Find(name)]
+
+/atom/proc/remove_filter(name_or_names)
+	if(!filter_data)
+		return
+
+	var/list/names = islist(name_or_names) ? name_or_names : list(name_or_names)
+
+	for(var/name in names)
+		if(filter_data[name])
+			filter_data -= name
+	update_filters()
 
 /atom/proc/intercept_zImpact(atom/movable/AM, levels = 1)
 	. |= SEND_SIGNAL(src, COMSIG_ATOM_INTERCEPT_Z_FALL, AM, levels)

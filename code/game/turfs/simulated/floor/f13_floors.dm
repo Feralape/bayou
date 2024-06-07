@@ -11,7 +11,6 @@
 	baseturfs = /turf/open/floor/plating/f13
 	attachment_holes = FALSE
 	planetary_atmos = TRUE
-	
 
 /* so we can't break this */
 /turf/open/floor/plating/f13/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
@@ -44,10 +43,12 @@
 	icon = 'icons/turf/f13road.dmi'
 	footstep = FOOTSTEP_ROAD
 	icon_state = "outermiddle"
+	broken_states = list("horizontaloutermain2","verticaloutermain2")
 
 /turf/open/floor/plating/f13/outside/road/harsh
 	icon = 'icons/fallout/turfs/f13roadharsh.dmi'
 	icon_state = "outerpavement"
+	broken_states = list("hole")
 
 /// Rooftops
 
@@ -56,10 +57,6 @@
 	desc = "It's a roof. What more do you want?"
 	icon = 'icons/turf/rooftop.dmi'
 	icon_state = "brick_1"
-	footstep = FOOTSTEP_FLOOR //clonk
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plating/f13/outside/roof/red
 	icon_state = "brick_r"
@@ -70,10 +67,6 @@
 /turf/open/floor/plating/f13/outside/roof/metal
 	name = "\proper metal roof"
 	icon_state = "rust_1"
-	footstep = FOOTSTEP_RUST //clonk
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plating/f13/outside/roof/metal/verdigris
 	icon_state = "rust_c"
@@ -90,10 +83,6 @@
 /turf/open/floor/plating/f13/outside/roof/wood
 	name = "\proper wooden roof"
 	icon_state = "wood_1"
-	footstep = FOOTSTEP_WOOD //clonk
-	barefootstep = FOOTSTEP_WOOD_BAREFOOT
-	clawfootstep = FOOTSTEP_WOOD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plating/f13/outside/roof/wood/old
 	icon_state = "wood_2"
@@ -104,10 +93,6 @@
 	desc = "Small pebbles, lots of them."
 	icon = 'icons/fallout/turfs/ground.dmi'
 	icon_state = "gravel"
-	footstep = FOOTSTEP_GRAVEL //clonk
-	barefootstep = FOOTSTEP_GRAVEL
-	clawfootstep = FOOTSTEP_GRAVEL
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plating/f13/inside/gravel/edge
 	icon_state = "graveledge"
@@ -123,10 +108,6 @@
 	icon = 'icons/fallout/turfs/ground.dmi'
 	icon_state = "gravel"
 	sunlight_state = SUNLIGHT_SOURCE
-	footstep = FOOTSTEP_GRAVEL //clonk
-	barefootstep = FOOTSTEP_GRAVEL
-	clawfootstep = FOOTSTEP_GRAVEL
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plating/f13/inside/gravel/edge
 	icon_state = "graveledge"
@@ -144,10 +125,6 @@
 	desc = "Damp cave flooring."
 	icon = 'icons/turf/f13floors2.dmi'
 	icon_state = "mountain0"
-	footstep = FOOTSTEP_SAND //clonk
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plating/f13/inside/mountain/Initialize()
 	. = ..()
@@ -168,10 +145,7 @@
 	icon = 'icons/turf/f13floors2.dmi'
 	icon_state = "vault_floor"
 	planetary_atmos = FALSE // They're _inside_ a vault.
-	footstep = FOOTSTEP_FLOOR //clonk
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	smoothing_flags = null
 
 /turf/open/floor/plasteel/f13/vault_floor/plating
 	icon_state = "plating"
@@ -478,10 +452,6 @@
 /turf/open/floor/plasteel/f13/concrete
 	icon_state = "concrete_big"
 	desc = "Concrete slabs."
-	footstep = FOOTSTEP_FLOOR //clonk
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plasteel/f13/concrete/small
 	icon_state = "concrete_small"
@@ -700,10 +670,6 @@
 	icon_normal = "gcircuit2"
 	light_color = LIGHT_COLOR_GREEN
 	floor_tile = /obj/item/stack/tile/circuit/green
-	footstep = FOOTSTEP_PLATING //clonk
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/circuit/f13_green/off
 	icon_state = "gcircuitoff2"
