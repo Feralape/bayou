@@ -1196,33 +1196,26 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	name = "thatch"
 	icon = 'icons/fallout/turfs/civfloor.dmi'
 	icon_state = "thatch2"
-	footstep = FOOTSTEP_GRASS
-	barefootstep = FOOTSTEP_GRASS
-	clawfootstep = FOOTSTEP_GRASS
+
+
+//bamboo
+/turf/open/floor/bamboo
+	name = "bamboo floor mat"
+	desc = "A bamboo mat with a decorative trim."
+	icon = 'icons/turf/floors/bamboo_mat.dmi'
+	icon_state = "mat-0"
+	base_icon_state = "mat"
+	floor_tile = /obj/item/stack/tile/bamboo
+	smoothing_flags = SMOOTH_BITMASK
+	smoothing_groups = SMOOTH_GROUP_TURF_OPEN + SMOOTH_GROUP_BAMBOO_FLOOR
+	canSmoothWith = SMOOTH_GROUP_BAMBOO_FLOOR
+	flags_1 = NONE
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_WOOD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-/// BEACH SHORE
-
-
-
-/obj/effect/overlay/shore
-	name = "sandy shore"
-	icon = 'icons/fallout/turfs/smoothing.dmi'
-	icon_state = "sand_water_side"
-	density = FALSE
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-	plane = FLOOR_PLANE
-	layer = ABOVE_OPEN_TURF_LAYER
-	anchored = TRUE
-	resistance_flags = INDESTRUCTIBLE
-
-/obj/effect/overlay/shore_corner
-	name = "sandy shore"
-	icon = 'icons/fallout/turfs/smoothing.dmi'
-	icon_state = "sand_water_corner"
-	density = FALSE
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-	plane = FLOOR_PLANE
-	layer = ABOVE_OPEN_TURF_LAYER
-	anchored = TRUE
-	resistance_flags = INDESTRUCTIBLE
+/turf/open/indestructible/ground/bamboo
+	icon = 'icons/turf/floors/bamboo_mat.dmi'
+	icon_state = "mat-0"
+	base_icon_state = "mat"

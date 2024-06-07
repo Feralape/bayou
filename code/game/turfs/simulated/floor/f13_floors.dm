@@ -168,10 +168,7 @@
 	icon = 'icons/turf/f13floors2.dmi'
 	icon_state = "vault_floor"
 	planetary_atmos = FALSE // They're _inside_ a vault.
-	footstep = FOOTSTEP_FLOOR //clonk
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	smoothing_flags = null
 
 /turf/open/floor/plasteel/f13/vault_floor/plating
 	icon_state = "plating"
