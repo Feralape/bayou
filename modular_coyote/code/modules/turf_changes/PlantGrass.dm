@@ -24,6 +24,76 @@
 		new randPlant(src)
 		return TRUE
 
+/turf/open/proc/plantGrass_new(Plantforce = FALSE)
+	if(!prob(RAND_PLANT_CHANCE))
+		return FALSE
+	if(locate(/obj/structure/flora) in src)
+		return FALSE
+	if((locate(/obj/structure) in src))
+		return FALSE
+	if((locate(/obj/machinery) in src))
+		return FALSE
+	var/obj/structure/flora/randPlant
+	var/floratype = pickweight(GLOB.plant_type_weighted)
+	switch(climate)
+		if("temperate")
+			switch(floratype)
+				if("medicinal")
+					randPlant = pickweight(GLOB.medicinal_plant_list)
+				if("tree")
+					randPlant = pickweight(GLOB.temperatetree_plant_list)
+				if("grass")
+					randPlant = pickweight(GLOB.temperategrass_plant_list)
+		if("tundra")
+			floratype = pickweight(GLOB.plant_type_weighted_sparse)
+			switch(floratype)
+				if("medicinal")
+					randPlant = pickweight(GLOB.medicinal_plant_list)
+				if("tree")
+					randPlant = pickweight(GLOB.wintertree_plant_list)
+				if("grass")
+					randPlant = pickweight(GLOB.wintergrass_plant_list)
+				if("null")
+					randPlant = null
+		if("savannah")
+			floratype = pickweight(GLOB.plant_type_weighted_sparse)
+			switch(floratype)
+				if("medicinal")
+					randPlant = pickweight(GLOB.medicinal_plant_list)
+				if("tree")
+					randPlant = pickweight(GLOB.savtree_plant_list)
+				if("grass")
+					randPlant = pickweight(GLOB.grass_plant_list)
+				if("null")
+					randPlant = null
+		if("desert")
+			floratype = pickweight(GLOB.plant_type_weighted_sparse)
+			switch(floratype)
+				if("medicinal")
+					randPlant = pickweight(GLOB.medicinal_plant_list)
+				if("tree")
+					randPlant = pickweight(GLOB.deserttree_plant_list)
+				if("grass")
+					randPlant = pickweight(GLOB.desertgrass_plant_list)	
+				if("null")
+					randPlant = null
+		if("beach")
+			floratype = pickweight(GLOB.plant_type_weighted_beach)
+			switch(floratype)
+				if("medicinal")
+					randPlant = pickweight(GLOB.medicinal_plant_list)
+				if("tree")
+					randPlant = pickweight(GLOB.beachtree_plant_list)
+				if("grass")
+					randPlant = pickweight(GLOB.beachgrass_plant_list)	
+				if("null")
+					randPlant = null
+
+	if(randPlant)
+		new randPlant(src)
+		return TRUE
+
+
 	/*
 	var/Weight = 0
 	//spontaneously spawn grass
@@ -59,12 +129,14 @@
 	*/
 
 /turf/open/
+	var/climate
 	var/spawnPlants = FALSE
+	var/spawnPlants_north = FALSE
 	// var/obj/structure/flora/turfPlant // jon, this dels harder than my dick in ur ass
 
 /turf/open/Initialize(mapload)
-	if(mapload && spawnPlants && !is_reserved_level(z))
-		plantGrass()
+	if(mapload && climate && !is_reserved_level(z))
+		plantGrass_new()
 	. = ..()
 
 /turf/open/ChangeTurf(path, new_baseturf, flags)
@@ -76,19 +148,25 @@
 	spawnPlants = TRUE
 
 /turf/open/indestructible/ground/outside/savannah
-	spawnPlants = TRUE
+	climate = "savannah"
 
 /turf/open/indestructible/ground/outside/dirt_s
-	spawnPlants = TRUE
+	climate = "temperate"
 
 /turf/open/indestructible/ground/outside/grass_s
-	spawnPlants = TRUE
+	climate = "temperate"
 
 /turf/open/indestructible/ground/outside/civ/grass
-	spawnPlants = TRUE
+	climate = "temperate"
 	
 /turf/open/indestructible/ground/outside/desert
-	spawnPlants = TRUE
+	climate = "desert"
 
 /turf/open/floor/plating/f13/outside/desert
-	spawnPlants = TRUE
+	climate = "desert"
+
+/turf/open/indestructible/ground/outside/snow
+	climate = "tundra"
+
+/turf/open/floor/plating/beach
+	climate = "beach"
