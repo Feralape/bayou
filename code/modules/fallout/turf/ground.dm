@@ -118,41 +118,12 @@ GLOBAL_LIST_INIT(medicinal_plant_list, list(
 	))
 
 GLOBAL_LIST_INIT(grass_plant_list, list(
-	/obj/structure/flora/grass/wasteland = 150,
+	/obj/structure/flora/tallgrass = 150,
 	/obj/structure/flora/branch = 1,
 	/obj/structure/flora/branch_broken = 1,
 	/obj/structure/flora/brushwood = 1,
 	/obj/structure/flora/brushwoodalt = 1,
-	/obj/structure/flora/grass/coyote/one = 1,
-	/obj/structure/flora/grass/coyote/two = 1,
-	/obj/structure/flora/grass/coyote/three = 1,
-	/obj/structure/flora/grass/coyote/four = 1,
-	/obj/structure/flora/grass/coyote/five = 1,
-	/obj/structure/flora/grass/coyote/six = 1,
-	/obj/structure/flora/grass/coyote/seven = 1,
-	/obj/structure/flora/grass/coyote/eight = 1,
-	/obj/structure/flora/grass/coyote/nine = 1,
-	/obj/structure/flora/grass/coyote/ten = 1,
-	/obj/structure/flora/grass/coyote/eleven = 1,
-	/obj/structure/flora/grass/coyote/twelve = 1,
-	/obj/structure/flora/grass/coyote/thirteen = 1,
-	/obj/structure/flora/grass/coyote/fourteen = 1,
-	/obj/structure/flora/grass/coyote/fiveteen = 1,
-	/obj/structure/flora/grass/coyote/sixteen = 1,
-	/obj/structure/flora/grass/coyote/seventeen = 1,
-	/obj/structure/flora/grass/coyote/eighteen = 1,
-	/obj/structure/flora/grass/coyote/nineteen = 1,
-	/obj/structure/flora/grass/coyote/twenty = 1,
-	/obj/structure/flora/grass/coyote/twentyone = 1,
-	/obj/structure/flora/grass/coyote/twentytwo = 1,
-	/obj/structure/flora/grass/coyote/twentythree = 1,
-	/obj/structure/flora/grass/coyote/twentyfour = 1,
-	/obj/structure/flora/grass/coyote/twentyfive = 1,
-	/obj/structure/flora/grass/coyote/twentysix = 1,
-	/obj/structure/flora/grass/coyote/twentyseven = 1,
-	/obj/structure/flora/grass/coyote/twentyeight = 1,
-	/obj/structure/flora/grass/coyote/twentynine = 1,
-	/obj/structure/flora/grass/coyote/thirty = 1,
+	/obj/structure/flora/grass/coyote = 1,
 	/obj/structure/flora/wild_plant/thistle = 2,
 	/obj/structure/flora/wild_plant/petunia = 2,
 	/obj/structure/flora/wild_plant/petunia/purple = 2,
@@ -168,11 +139,69 @@ GLOBAL_LIST_INIT(grass_plant_list, list(
 	/obj/structure/flora/ausbushes/pointybush = 2,
 	/obj/structure/flora/ausbushes/leafybush = 2,
 	/obj/structure/flora/ausbushes/fernybush = 2,
-	/obj/structure/flora/burnedtree1 = 2,
-	/obj/structure/flora/burnedtree2 = 2,
-	/obj/structure/flora/burnedtree5 = 2,
+	/obj/structure/flora/burnedtree = 2,
 	))
 
+GLOBAL_LIST_INIT(temperategrass_plant_list, list(
+	/obj/structure/flora/ausbushes/fullgrass = 150,
+	/obj/structure/flora/branch = 1,
+	/obj/structure/flora/branch_broken = 1,
+	/obj/structure/flora/brushwood = 1,
+	/obj/structure/flora/brushwoodalt = 1,
+	/obj/structure/flora/ausbushes/sparsegrass = 6,
+	/obj/structure/flora/ausbushes/ppflowers = 2,
+	/obj/structure/flora/ausbushes/brflowers = 2,
+	/obj/structure/flora/ausbushes/ywflowers = 2,
+	/obj/structure/flora/ausbushes/lavendergrass = 2,
+	/obj/structure/flora/ausbushes/pointybush = 2,
+	/obj/structure/flora/ausbushes/genericbush = 2,
+	/obj/structure/flora/ausbushes/sunnybush = 2,
+	/obj/structure/flora/ausbushes/fernybush = 2,
+	/obj/structure/flora/ausbushes/grassybush = 2,
+	/obj/structure/flora/ausbushes/stalkybush = 2,
+	/obj/structure/flora/ausbushes/palebush = 2,
+	/obj/structure/flora/ausbushes/leafybush = 2,
+	/obj/structure/flora/ausbushes/reedbush = 2,
+	/obj/structure/flora/ausbushes = 3,
+	/obj/structure/flora/wild_plant/thistle = 2,
+	/obj/structure/flora/wild_plant/petunia = 2,
+	/obj/structure/flora/wild_plant/petunia/purple = 2,
+	/obj/structure/flora/wild_plant/petunia/purplewhite = 2,
+	/obj/structure/flora/wild_plant/petunia/redwhite =  2,
+	/obj/structure/flora/wild_plant/petunia/bluewhite = 2,
+	/obj/structure/flora/burnedtree = 2,
+	))
+
+GLOBAL_LIST_INIT(wintergrass_plant_list, list(
+	/obj/structure/flora/grass/both = 150,
+	/obj/structure/flora/grass/brown = 100,
+	/obj/structure/flora/grass/green = 100,
+	/obj/structure/flora/branch = 1,
+	/obj/structure/flora/branch_broken = 1,
+	/obj/structure/flora/bush = 6,
+	))
+
+GLOBAL_LIST_INIT(desertgrass_plant_list, list(
+	/obj/structure/flora/tallgrass = 150,
+	/obj/structure/flora/ausbushes/barrelcacti_smol = 50,
+	/obj/structure/flora/grass/thicket = 100,
+	/obj/structure/flora/ausbushes/shrub = 100,
+	/obj/structure/flora/ausbushes/bushes = 50,
+	/obj/structure/flora/branch = 1,
+	/obj/structure/flora/branch_broken = 1,
+	/obj/structure/flora/brushwood = 1,
+	/obj/structure/flora/brushwoodalt = 1,
+	))
+
+GLOBAL_LIST_INIT(beachgrass_plant_list, list(
+	/obj/item/toy/seashell = 15,
+	/obj/structure/flora/branch = 1,
+	/obj/structure/flora/branch_broken = 1,
+	))
+
+
+
+//TREES
 GLOBAL_LIST_INIT(tree_plant_list, list(
 	/obj/structure/flora/tree/jungle = 15,
 	/obj/structure/flora/tree/jungle/small = 15,
@@ -181,20 +210,77 @@ GLOBAL_LIST_INIT(tree_plant_list, list(
 	/obj/structure/flora/tree_stump = 5,
 	/obj/structure/flora/tree/african_acacia_dead = 5,
 	/obj/structure/flora/tree/tall = 5,
-	/obj/structure/flora/tree/oak_one = 5,
-	/obj/structure/flora/tree/oak_two = 5,
-	/obj/structure/flora/tree/oak_three = 5,
-	/obj/structure/flora/tree/oak_four = 5,
-	/obj/structure/flora/tree/oak_five = 5,
+	/obj/structure/flora/tree/oak = 5,
 	/obj/structure/flora/tree/med_pine = 7,
 	/obj/structure/flora/tree/med_pine_dead = 7,
 	))
+
+GLOBAL_LIST_INIT(temperatetree_plant_list, list(
+	/obj/structure/flora/tree/pine = 7,
+	/obj/structure/flora/tree_stump = 5,
+	/obj/structure/flora/tree/oak = 5,
+	/obj/structure/flora/tree/tall = 5,
+	/obj/structure/flora/tree/wasteland = 5,
+	))
+
+GLOBAL_LIST_INIT(wintertree_plant_list, list(
+	/obj/structure/flora/tree/pine_snow = 7,
+	/obj/structure/flora/tree_stump = 5,
+	/obj/structure/flora/tree/tall = 5,
+	/obj/structure/flora/tree/dead = 5,
+	))
+
+GLOBAL_LIST_INIT(savtree_plant_list, list(
+	/obj/structure/flora/tree/med_pine = 15,
+	/obj/structure/flora/tree/med_pine_dead = 7,
+	/obj/structure/flora/tree_stump = 5,
+	/obj/structure/flora/tree/african_acacia_dead = 5,
+	/obj/structure/flora/tree/tall = 5,
+	/obj/structure/flora/tree/oak = 2,
+	))
+
+GLOBAL_LIST_INIT(deserttree_plant_list, list(
+	/obj/structure/flora/tree/palmy = 10,
+	/obj/structure/flora/tree/shrubber = 5,
+	/obj/structure/flora/tree/barrelcacti = 5,
+	/obj/structure/flora/tree/african_acacia_dead = 3,
+	/obj/structure/flora/tree/tall = 2,
+	))
+
+
+GLOBAL_LIST_INIT(beachtree_plant_list, list(
+	/obj/structure/flora/tree/palm = 15,
+	/obj/structure/flora/tree/palmy = 8,
+	))
+
+
+
+
+
+
 
 GLOBAL_LIST_INIT(plant_type_weighted, list(
 	"grass" = 50,
 	"medicinal" = 10,
 	"tree" = 10,
 ))
+
+GLOBAL_LIST_INIT(plant_type_weighted_sparse, list(
+	"grass" = 30,
+	"medicinal" = 10,
+	"tree" = 10,
+	"null" = 60,
+))
+
+GLOBAL_LIST_INIT(plant_type_weighted_beach, list(
+	"grass" = 30,
+	"medicinal" = 1,
+	"tree" = 15,
+	"null" = 30,
+))
+
+
+
 
 /turf/open/indestructible/ground/outside/dirthole
 	name = "Dirt hole"
@@ -234,6 +320,7 @@ GLOBAL_LIST_INIT(plant_type_weighted, list(
 	/turf/open/indestructible/ground/outside/sidewalk,
 	/turf/open/indestructible/ground/inside/mountain,
 	/turf/open/indestructible/ground/outside/desert,
+	/turf/open/floor/plating/beach,
 	/turf/open/indestructible/ground/inside/mountain)
 
 /obj/effect/overlay/savannah/edge
@@ -284,8 +371,9 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 // DESERT
 
 /turf/open/indestructible/ground/outside/desert
-	name = "desert"
-	icon_state = "wasteland"
+	name = "sand"
+	icon = 'icons/fallout/turfs/sand.dmi'
+	icon_state = "sand1"
 //	step_sounds = list("human" = "dirtfootsteps")
 //	allowed_plants = list(/obj/item/seeds/poppy/broc, /obj/item/seeds/xander, /obj/item/seeds/mutfruit,
 //	/obj/item/seeds/feracactus, /obj/item/seeds/corn,/obj/item/seeds/shroom, /obj/item/seeds/agave)
@@ -297,7 +385,8 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	turf_types_to_check = list(/turf/open/liquid/water,
 	/turf/open/indestructible/ground/outside/road,
 	/turf/open/indestructible/ground/outside/sidewalk,
-	/turf/open/indestructible/ground/inside/mountain)
+	/turf/open/indestructible/ground/inside/mountain,
+	/turf/open/floor/plating/beach)
 	var/dug = FALSE				//FALSE = has not yet been dug, TRUE = has already been dug
 	var/pit_sand = 1
 	// TODO: REWRITE PITS ENTIRELY
@@ -309,6 +398,7 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	var/obj/dugpit/mypit
 	var/unburylevel = 0
 	edge_icon = /obj/effect/overlay/desert_side
+
 
 //For sculpting with more precision, the random picking does not work very well. Slowdown 0.5 instead of 1. No random armor or gunpowder or titanium. Use directions for control. - Pebbles
 /turf/open/indestructible/ground/outside/desert/sonora
@@ -341,11 +431,9 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	if(prob(2))
 		var/obj/derp = pickweight(GLOB.dirt_loots)
 		salvage = new derp()
-	if(icon_state != "wasteland")
-		icon_state = "wasteland[rand(1,31)]"
+	if(prob(25))
+		icon_state = "sand[rand(2,4)]"
 	
-
-
 
 /turf/open/indestructible/ground/outside/desert/harsh/Initialize()
 	. = ..()
@@ -356,9 +444,9 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 		icon_state = "wasteland[rand(1,31)]"
 
 /obj/effect/overlay/desert_side
-	name = "desert"
-	icon = 'icons/fallout/turfs/smoothing.dmi'
-	icon_state = "wasteland_side"
+	name = "sand"
+	icon = 'icons/fallout/turfs/sand.dmi'
+	icon_state = "sandedge"
 	density = FALSE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	plane = FLOOR_PLANE
@@ -643,17 +731,23 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	edge_icon = /obj/effect/overlay/snow_edge
 	turf_types_to_check = list(/turf/open/liquid/water,
 	/turf/open/indestructible/ground/outside/desert,
+	/turf/open/floor/plating/beach,
 	/turf/open/indestructible/ground/outside/road,
 	/turf/open/indestructible/ground/outside/sidewalk,
 	/turf/open/indestructible/ground/inside/mountain,
 	/turf/open/indestructible/ground/outside/dirt,
+	/turf/open/floor/plating/dirt,
+	/turf/open/floor/plating/asteroid/snow/ice,
 	/turf/open/indestructible/ground/outside/gravel,
 	/turf/open/indestructible/ground/outside/savannah,
 	/turf/open/indestructible/ground/outside/civ/grass,
 	/turf/open/indestructible/ground/outside/civ/drygrass,
 	/turf/open/floor/plating/ice)
 
-	
+/turf/open/indestructible/ground/outside/snow/Initialize()
+	. = ..()
+	if(prob(25))
+		icon_state = "snow[rand(1,12)]"
 
 /obj/effect/overlay/snow_edge
 	name = "snow"
@@ -694,7 +788,8 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	turf_types_to_check = list(/turf/open/liquid/water, 
 	/turf/open/indestructible/ground/outside/desert,
 	/turf/open/indestructible/ground/outside/road,
-	/turf/open/indestructible/ground/outside/sidewalk)
+	/turf/open/indestructible/ground/outside/sidewalk,
+	/turf/open/floor/plating/beach)
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
@@ -820,7 +915,8 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	/turf/open/indestructible/ground/outside/sidewalk,
 	/turf/open/liquid/water,
 	/turf/open/indestructible/ground/inside/mountain,
-	/turf/open/indestructible/ground/outside/desert
+	/turf/open/indestructible/ground/outside/desert,
+	/turf/open/floor/plating/beach
 	)
 
 /turf/open/indestructible/ground/outside/gravel/alt
@@ -956,7 +1052,8 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	/turf/open/indestructible/ground/outside/gravel, 
 	/turf/open/liquid/water,
 	/turf/open/floor/plating/ice,
-	/turf/open/indestructible/ground/inside/mountain)
+	/turf/open/indestructible/ground/inside/mountain,
+	/turf/open/floor/plating/beach)
 	footstep = FOOTSTEP_GRASS
 	barefootstep = FOOTSTEP_GRASS
 	clawfootstep = FOOTSTEP_GRASS
@@ -1034,7 +1131,8 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	/turf/open/indestructible/ground/outside/gravel, 
 	/turf/open/liquid/water,
 	/turf/open/floor/plating/ice,
-	/turf/open/indestructible/ground/inside/mountain)
+	/turf/open/indestructible/ground/inside/mountain,
+	/turf/open/floor/plating/beach)
 	footstep = FOOTSTEP_GRASS
 	barefootstep = FOOTSTEP_GRASS
 	clawfootstep = FOOTSTEP_GRASS
@@ -1103,587 +1201,3 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	clawfootstep = FOOTSTEP_GRASS
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
-//bamboo
-
-/turf/open/indestructible/ground/bamboo
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-255"
-	footstep = FOOTSTEP_WOOD
-
-/turf/open/indestructible/ground/bamboo/one
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-0"
-	footstep = FOOTSTEP_WOOD
-
-/turf/open/indestructible/ground/bamboo/two
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-1"
-	footstep = FOOTSTEP_WOOD
-
-/turf/open/indestructible/ground/bamboo/three
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-2"
-
-/turf/open/indestructible/ground/bamboo/four
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-3"
-	footstep = FOOTSTEP_WOOD
-
-/turf/open/indestructible/ground/bamboo/five
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-4"
-	footstep = FOOTSTEP_WOOD
-
-/turf/open/indestructible/ground/bamboo/six
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-5"
-	footstep = FOOTSTEP_WOOD
-
-/turf/open/indestructible/ground/bamboo/seven
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-6"
-	footstep = FOOTSTEP_WOOD
-
-/turf/open/indestructible/ground/bamboo/eight
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-7"
-	footstep = FOOTSTEP_WOOD
-
-/turf/open/indestructible/ground/bamboo/nine
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-8"
-	footstep = FOOTSTEP_WOOD
-
-/turf/open/indestructible/ground/bamboo/ten
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-9"
-	footstep = FOOTSTEP_WOOD
-
-/turf/open/indestructible/ground/bamboo/eleven
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-10"
-	footstep = FOOTSTEP_WOOD
-
-/turf/open/indestructible/ground/bamboo/twelve
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-11"
-	footstep = FOOTSTEP_WOOD
-
-/turf/open/indestructible/ground/bamboo/thirteen
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-12"
-	footstep = FOOTSTEP_WOOD
-
-/turf/open/indestructible/ground/bamboo/fourteen
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-13"
-	footstep = FOOTSTEP_WOOD
-
-/turf/open/indestructible/ground/bamboo/fifteen
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-14"
-	footstep = FOOTSTEP_WOOD
-
-/turf/open/indestructible/ground/bamboo/sixteen
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-15"
-	footstep = FOOTSTEP_WOOD
-
-/turf/open/indestructible/ground/bamboo/seventeen
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-21"
-	footstep = FOOTSTEP_WOOD
-
-/turf/open/indestructible/ground/bamboo/eighteen
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-23"
-	footstep = FOOTSTEP_WOOD
-
-/turf/open/indestructible/ground/bamboo/nineteen
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-29"
-
-/turf/open/indestructible/ground/bamboo/twenty
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-31"
-
-/turf/open/indestructible/ground/bamboo/twentyone
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-38"
-
-/turf/open/indestructible/ground/bamboo/twentytwo
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-39"
-
-/turf/open/indestructible/ground/bamboo/twentythree
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-38"
-
-/turf/open/indestructible/ground/bamboo/twentyfour
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-39"
-
-/turf/open/indestructible/ground/bamboo/twentyfive
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-46"
-
-/turf/open/indestructible/ground/bamboo/twentysix
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-47"
-
-/turf/open/indestructible/ground/bamboo/twentyseven
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-55"
-
-/turf/open/indestructible/ground/bamboo/twentyeight
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-63"
-
-/turf/open/indestructible/ground/bamboo/twentynine
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-74"
-
-/turf/open/indestructible/ground/bamboo/thirty
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-38"
-
-/turf/open/indestructible/ground/bamboo/thirtyone
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-39"
-
-/turf/open/indestructible/ground/bamboo/thirtytwo
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-46"
-
-/turf/open/indestructible/ground/bamboo/thirtythree
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-47"
-
-/turf/open/indestructible/ground/bamboo/thirtyfour
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-55"
-
-/turf/open/indestructible/ground/bamboo/thirtyfive
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-63"
-
-/turf/open/indestructible/ground/bamboo/thirtysix
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-74"
-
-/turf/open/indestructible/ground/bamboo/thirtyseven
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-74"
-
-/turf/open/indestructible/ground/bamboo/thirtyeight
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-75"
-
-/turf/open/indestructible/ground/bamboo/thirtynine
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-78"
-
-/turf/open/indestructible/ground/bamboo/fourty
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-79"
-
-/turf/open/indestructible/ground/bamboo/fourtyone
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-95"
-
-/turf/open/indestructible/ground/bamboo/fourtytwo
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-95"
-
-/turf/open/indestructible/ground/bamboo/fourtythree
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-110"
-
-/turf/open/indestructible/ground/bamboo/fourtyfour
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-111"
-
-/turf/open/indestructible/ground/bamboo/fourtyfive
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-127"
-
-/turf/open/indestructible/ground/bamboo/fourtysix
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-137"
-
-/turf/open/indestructible/ground/bamboo/fourtyseven
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-139"
-
-/turf/open/indestructible/ground/bamboo/fourtyeight
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-141"
-
-/turf/open/indestructible/ground/bamboo/fourtynine
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-143"
-
-/turf/open/indestructible/ground/bamboo/fifty
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-157"
-
-/turf/open/indestructible/ground/bamboo/fiftyone
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-159"
-
-/turf/open/indestructible/ground/bamboo/fiftytwo
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-159"
-
-/turf/open/indestructible/ground/bamboo/fiftythree
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-159"
-
-/turf/open/indestructible/ground/bamboo/fiftyfour
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-159"
-
-/turf/open/indestructible/ground/bamboo/fiftyfive
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-175"
-
-/turf/open/indestructible/ground/bamboo/fiftysix
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-191"
-
-/turf/open/indestructible/ground/bamboo/fiftyseven
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-191"
-
-/turf/open/indestructible/ground/bamboo/fiftyeight
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-203"
-
-/turf/open/indestructible/ground/bamboo/fiftynine
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-207"
-
-/turf/open/indestructible/ground/bamboo/sixty
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-223"
-
-/turf/open/indestructible/ground/bamboo/sixtyone
-	name = "bamboo"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "mat-239"
-
-/turf/open/indestructible/ground/bamboo/tatamipurple
-	name = "tatami"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "tatami_purple"
-
-/turf/open/indestructible/ground/bamboo/tatamigreen
-	name = "tatami"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "tatami_green"
-
-/turf/open/indestructible/ground/bamboo/tatamiblack
-	name = "tatami"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "tatami_black"
-
-/turf/open/indestructible/ground/stellercarpet
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "steller_carpet-0"
-
-/turf/open/indestructible/ground/stellercarpet/one
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-1"
-
-/turf/open/indestructible/ground/stellercarpet/two
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-2"
-
-/turf/open/indestructible/ground/stellercarpet/three
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-3"
-
-/turf/open/indestructible/ground/stellercarpet/four
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-4"
-
-/turf/open/indestructible/ground/stellercarpet/five
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-5"
-
-/turf/open/indestructible/ground/stellercarpet/six
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-6"
-
-/turf/open/indestructible/ground/stellercarpet/seven
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-7"
-
-/turf/open/indestructible/ground/stellercarpet/eight
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-8"
-
-/turf/open/indestructible/ground/stellercarpet/nine
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-9"
-
-/turf/open/indestructible/ground/stellercarpet/ten
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-10"
-
-/turf/open/indestructible/ground/stellercarpet/eleven
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-11"
-
-/turf/open/indestructible/ground/stellercarpet/twelve
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-12"
-
-/turf/open/indestructible/ground/stellercarpet/thirteen
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-13"
-
-/turf/open/indestructible/ground/stellercarpet/fourteen
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-14"
-
-/turf/open/indestructible/ground/stellercarpet/fiveteen
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-15"
-
-/turf/open/indestructible/ground/stellercarpet/sixteen
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-21"
-
-/turf/open/indestructible/ground/stellercarpet/seventeen
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-23"
-
-/turf/open/indestructible/ground/stellercarpet/eightteen
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-29"
-
-/turf/open/indestructible/ground/stellercarpet/nineteen
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-31"
-
-/turf/open/indestructible/ground/stellercarpet/twenty
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-38"
-
-/turf/open/indestructible/ground/stellercarpet/twentyone
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-39"
-
-/turf/open/indestructible/ground/stellercarpet/twentythree
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-46"
-
-/turf/open/indestructible/ground/stellercarpet/twentyfour
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-47"
-
-/turf/open/indestructible/ground/stellercarpet/twentyfive
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-55"
-
-/turf/open/indestructible/ground/stellercarpet/twentysix
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-63"
-
-/turf/open/indestructible/ground/stellercarpet/twentyseven
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-74"
-
-/turf/open/indestructible/ground/stellercarpet/twentyeight
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-75"
-
-/turf/open/indestructible/ground/stellercarpet/twentynine
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-78"
-
-/turf/open/indestructible/ground/stellercarpet/thirty
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-79"
-
-/turf/open/indestructible/ground/stellercarpet/thirtyone
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-95"
-
-/turf/open/indestructible/ground/stellercarpet/thirtytwo
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-110"
-
-/turf/open/indestructible/ground/stellercarpet/thirtythree
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-111"
-
-/turf/open/indestructible/ground/stellercarpet/thirtyfour
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-127"
-
-/turf/open/indestructible/ground/stellercarpet/thirtyfive
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-127"
-
-/turf/open/indestructible/ground/stellercarpet/thirtysix
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-137"
-
-/turf/open/indestructible/ground/stellercarpet/thirtyseven
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-139"
-
-/turf/open/indestructible/ground/stellercarpet/thirtyeight
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-141"
-
-/turf/open/indestructible/ground/stellercarpet/thirtynine
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-143"
-
-/turf/open/indestructible/ground/stellercarpet/fourty
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-157"
-
-/turf/open/indestructible/ground/stellercarpet/fourtyone
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-159"
-
-/turf/open/indestructible/ground/stellercarpet/fourtytwo
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-175"
-
-/turf/open/indestructible/ground/stellercarpet/fourtythree
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-191"
-
-/turf/open/indestructible/ground/stellercarpet/fourtyfour
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-203"
-
-/turf/open/indestructible/ground/stellercarpet/fourtyfive
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-207"
-
-/turf/open/indestructible/ground/stellercarpet/fourtysix
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-223"
-
-/turf/open/indestructible/ground/stellercarpet/fourtyseven
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-239"
-
-/turf/open/indestructible/ground/stellercarpet/fourtyeight
-	name = "steller carpet"
-	icon = 'icons/turf/floors/carpet.dmi'
-	icon_state = "stellar_carpet-255"

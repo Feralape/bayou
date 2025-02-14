@@ -102,6 +102,29 @@
 		SOUND_LOOP_ENTRY('sound/f13effects/sunsetsounds/coyoteawoo5.ogg', 10 SECONDS, 1)
 	)
 
+/datum/looping_sound/ambient/critters_north
+	chance = 25
+	vary = FALSE
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(30, 65)
+	direct = TRUE
+	loop_delay = 3 MINUTES
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/bear_1.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bear_2.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/dog_distant_1.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/squirrel_1.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/battle_1.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/battle_2.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/battle_3.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_1.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_2.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_3.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_4.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/crow_1.ogg', 17 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/crow_2.ogg', 25 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13effects/sunsetsounds/wolfhowl.ogg', 10 SECONDS, 1),)
+
 //ANIMALS//
 ///////////////////
 //Small Critters//
@@ -597,4 +620,31 @@
 		SOUND_LOOP_ENTRY('sound/ambience/ambitech.ogg', 11 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/ambience/ambitech2.ogg', 56 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/ambience/ambitech3.ogg', 8 SECONDS, 1),
+	)
+
+
+/datum/looping_sound/ambient/ashstorm_outside
+	chance = 100
+	vary = FALSE
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 1 SECONDS
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/ambience/ashstorm/outside/weak_mid1.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/ambience/ashstorm/outside/weak_mid2.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/ambience/ashstorm/outside/weak_mid3.ogg', 10 SECONDS, 1),
+	)
+
+/datum/looping_sound/ambient/ashstorm_inside
+	chance = 100
+	vary = FALSE
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 1 SECONDS
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/ambience/ashstorm/inside/weak_mid1.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/ambience/ashstorm/inside/weak_mid2.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/ambience/ashstorm/inside/weak_mid3.ogg', 10 SECONDS, 1),
 	)

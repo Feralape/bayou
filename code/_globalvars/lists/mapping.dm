@@ -38,6 +38,7 @@ GLOBAL_LIST_EMPTY(emergencyresponseteamspawn)
 GLOBAL_LIST_EMPTY(servant_spawns) //Servants of Ratvar spawn here
 GLOBAL_LIST_EMPTY(city_of_cogs_spawns) //Anyone entering the City of Cogs spawns here
 GLOBAL_LIST_EMPTY(ruin_landmarks)
+GLOBAL_LIST_EMPTY(traveltiles)
 
 //away missions
 GLOBAL_LIST_EMPTY(vr_spawnpoints)
@@ -64,5 +65,6 @@ GLOBAL_LIST_INIT(outdoor_areas, list(/area/frontier/outdoor,
 /area/frontier/outdoor/colony, 
 /area/frontier/outdoor/colony/depot_dock,
 /area/frontier/outdoor/colony/roof,
-/area/frontier/outdoor/eastwater_town
+/area/frontier/outdoor/eastwater_town,
+/area/frontier/outdoor/wilderness_north
 )) //I lick the fel viciously ~TK
