@@ -288,6 +288,15 @@ SUBSYSTEM_DEF(mapping)
 
 	setup_station_z_index()
 
+	var/list/otherZ = list()
+
+	#ifndef FASTLOAD
+	otherZ += load_map_config("_maps/norfland.json")
+	#endif
+	if(otherZ.len)
+		for(var/datum/map_config/OtherZ in otherZ)
+			LoadGroup(FailedZs, OtherZ.map_name, OtherZ.map_path, OtherZ.map_file, OtherZ.traits, ZTRAITS_STATION)
+
 	if(SSdbcore.Connect())
 		var/datum/db_query/query_round_map_name = SSdbcore.NewQuery({"
 			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id

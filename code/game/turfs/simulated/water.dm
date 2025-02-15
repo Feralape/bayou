@@ -325,3 +325,57 @@ GLOBAL_LIST_EMPTY(submerge_filter_timer_list)
 	var/new_alpha_mod = istype(new_loc) ? new_loc.get_submerge_height(TRUE) : 0
 
 	alpha -= (new_alpha_mod - old_alpha_mod) * ITEM_LIQUID_TURF_ALPHA_MULT
+
+//SEA
+
+/turf/open/liquid/water/sea
+	name = "water"
+	desc = "Shallow sea water."
+	icon = 'icons/misc/beach.dmi'
+	icon_state = "water"
+	footstep = FOOTSTEP_WATER
+	barefootstep = FOOTSTEP_WATER
+	clawfootstep = FOOTSTEP_WATER
+	heavyfootstep = FOOTSTEP_WATER
+	depth = 1
+	slowdown = 1.5
+	mob_liquid_height = 8
+	mob_liquid_depth = -3
+
+/turf/open/liquid/water/sea_wave
+	name = "water"
+	desc = "Shallow sea water."
+	icon = 'icons/misc/beach.dmi'
+	icon_state = "sandwater_b"
+	footstep = FOOTSTEP_WATER
+	barefootstep = FOOTSTEP_WATER
+	clawfootstep = FOOTSTEP_WATER
+	heavyfootstep = FOOTSTEP_WATER
+	depth = 1
+	slowdown = 1.5
+	mob_liquid_height = 12
+	mob_liquid_depth = -6
+
+/turf/open/liquid/water/sea_wave/deep
+	name = "water"
+	desc = "Shallow sea water."
+	icon = 'icons/misc/beach.dmi'
+	icon_state = "sandwater_b"
+	footstep = FOOTSTEP_WATER
+	barefootstep = FOOTSTEP_WATER
+	clawfootstep = FOOTSTEP_WATER
+	heavyfootstep = FOOTSTEP_WATER
+	depth = 1
+	slowdown = 1.5
+	mob_liquid_height = 18
+	mob_liquid_depth = -9
+
+/turf/open/liquid/water/sea/deep
+	name = "deep water"
+	desc = "Deep sea water."
+	icon = 'icons/misc/beach.dmi'
+	icon_state = "water"
+	slowdown = 2.5
+	mob_liquid_height = 18
+	mob_liquid_depth = -9
+
