@@ -48,7 +48,7 @@
 // three different channels (lighting/equipment/environ) - may each be set to on, off, or auto
 
 /obj/machinery/power/apc
-	name = "area power controller"
+	name = "APC"
 	desc = "A control terminal for the area's electrical systems."
 	plane = ABOVE_WALL_PLANE
 	icon_state = "apc0"
@@ -111,6 +111,7 @@
 	var/mob/living/carbon/hijacker
 	var/hijackerlast = TRUE
 	var/being_hijacked = FALSE
+	var/cell_removable = TRUE
 
 /obj/machinery/power/apc/unlocked
 	locked = FALSE
@@ -175,7 +176,7 @@
 		else if(isarea(A) && !areastring)
 			area = A
 		if(auto_name)
-			name = "\improper [A.name] APC"
+			name = "\improper [A.name] [name]"
 		update_icon()
 
 		make_terminal()
@@ -185,7 +186,7 @@
 		area = A
 		opened = APC_COVER_OPENED
 		operating = FALSE
-		name = "\improper [A.name] APC"
+		name = "\improper [A.name] [name]"
 		stat |= MAINT
 		update_icon()
 	addtimer(CALLBACK(src,PROC_REF(update)), 5)
@@ -477,7 +478,6 @@
 			return*/
 		else if (opened!=APC_COVER_REMOVED)
 			opened = APC_COVER_CLOSED
-			coverlocked = TRUE //closing cover relocks it
 			update_icon()
 			return
 	else if (!(stat & BROKEN))
@@ -497,7 +497,7 @@
 		return TRUE
 	. = TRUE
 	if(opened)
-		if(cell)
+		if(cell && cell_removable)
 			user.visible_message("[user] removes \the [cell] from [src]!",span_notice("You remove \the [cell]."))
 			var/turf/T = get_turf(user)
 			cell.forceMove(T)
@@ -780,6 +780,7 @@
 	else
 		if((allowed(usr) || area.hasSiliconAccessInArea(usr)) && !wires.is_cut(WIRE_IDSCAN) && !malfhack)
 			locked = !locked
+			coverlocked = locked //same as lock state
 			to_chat(user, span_notice("You [ locked ? "lock" : "unlock"] the APC interface."))
 			update_icon()
 			updateUsrDialog()
@@ -881,7 +882,7 @@
 					to_chat(H, span_warning("You can't transfer power to the APC!"))
 			return
 	if(opened && (!issilicon(user)))
-		if(cell)
+		if(cell && cell_removable)
 			user.visible_message("[user] removes \the [cell] from [src]!",span_notice("You remove \the [cell]."))
 			user.put_in_hands(cell)
 			cell.update_icon()
@@ -1610,3 +1611,14 @@
 	icon_state = "power_mod"
 	custom_price = PRICE_CHEAP
 	desc = "Heavy-duty switching circuits for power control."
+
+//no battery on/off variant of apc with funny icon, no access needed.
+/obj/machinery/power/apc/breakerbox
+	name = "breaker box"
+	desc = "A box to toggle power within an area, and prevent short circuits etc."
+	icon = 'modular/icons/obj/power.dmi'
+	icon_state = "apc0"
+	req_access = list()
+	auto_name = TRUE
+	cell_removable = FALSE
+	cell_type = /obj/item/stock_parts/cell/breaker

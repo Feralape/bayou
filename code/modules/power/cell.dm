@@ -236,6 +236,13 @@
 /obj/item/stock_parts/cell/empty
 	start_charged = FALSE
 
+//nearly nonexistent cell for breaker box apcs
+/obj/item/stock_parts/cell/breaker
+	name = "breaker box component"
+	desc = "You feel like you should not have this."
+	maxcharge = 10
+	custom_materials = list(/datum/material/glass=20)
+
 /obj/item/stock_parts/cell/crap
 	name = "\improper US Government brand rechargeable AA battery"
 	desc = "You can't top the plasma top." //TOTALLY TRADEMARK INFRINGEMENT
