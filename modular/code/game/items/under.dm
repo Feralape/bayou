@@ -73,6 +73,14 @@
 	item_color = "pmc"
 	can_adjust = FALSE
 
+/obj/item/clothing/under/rimwatch_uniform_marshall
+	name = "Rimwatch marshall uniform"
+	desc = "A dark military uniform worn by Rimwatch Marshalls."
+	icon_state = "bosformsilver_m"
+	item_state = "bosformsilver_m"
+	item_color = "bosformsilver_m"
+	can_adjust = FALSE
+
 /obj/item/clothing/under/merchant
 	name = "merchant outfit"
 	desc = "A smart yet gritty outfit befitting a trader."

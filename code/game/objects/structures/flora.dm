@@ -7,9 +7,9 @@
 /obj/structure/flora/tree
 	name = "tree"
 	desc = "A large tree."
-	density = TRUE
+	density = FALSE
 	max_integrity = 150
-	pixel_x = -16
+//	pixel_x = -16
 	layer = FLY_LAYER
 	plane = OBJITEM_PLANE
 	var/log_amount = 10

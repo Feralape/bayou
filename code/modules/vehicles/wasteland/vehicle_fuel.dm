@@ -4,6 +4,8 @@
 	name = "vehicle"
 	desc = "Something went wrong! Badmins spawned shit!"
 	icon_state = ""
+	mechanical = TRUE
+	on = FALSE
 
 	var/fuel = 600
 	var/max_fuel = 600
@@ -14,6 +16,7 @@
 /obj/vehicle/ridden/fuel/New()
 	..()
 	fuel_holder = new(max_fuel, fuel)
+
 
 /obj/vehicle/ridden/fuel/attackby(obj/item/weapon/W, mob/user, params) //Refueling
 	if(istype(W, /obj/item/reagent_containers))
@@ -51,11 +54,13 @@
 		playsound(src, engine_fail, 50)
 		to_chat(usr, "<span class='warning'>\The [src] has run out of fuel!</span>")
 		return
+	on = TRUE
 	..()
 	START_PROCESSING(SSobj, src)
 
 /obj/vehicle/ridden/fuel/stop_engine()
 	..()
+	on = FALSE
 	STOP_PROCESSING(SSobj, src)
 
 /obj/vehicle/ridden/fuel/verb/ToogleFuelTank()

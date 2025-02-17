@@ -542,8 +542,8 @@
 	},
 /area/frontier/indoor/eastwater_town)
 "ate" = (
-/obj/machinery/door/airlock/glass_large{
-	name = "Followers Clinic"
+/obj/machinery/door/airlock/medical/glass{
+	name = "Medlab"
 	},
 /turf/open/floor/f13{
 	icon_state = "white"
@@ -614,7 +614,9 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/frontier/indoor/eastwater_town)
 "avH" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	name = "Corridor Access"
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -1600,7 +1602,7 @@
 "bhU" = (
 /obj/machinery/door/airlock/security/glass{
 	id_tag = "outerbrig";
-	name = "Brig";
+	name = "Rimwatch Keep";
 	req_access_txt = "63"
 	},
 /obj/structure/cable{
@@ -1931,12 +1933,12 @@
 	},
 /area/frontier/outdoor/wilderness)
 "btD" = (
-/obj/machinery/door/airlock/mining/glass{
-	name = "Cargo Office";
-	req_one_access_txt = "50;48"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/mining/glass{
+	name = "Trade Office";
+	req_one_access_txt = "50;48"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -1984,6 +1986,15 @@
 	icon_state = "verticalrightborderright1"
 	},
 /area/frontier/outdoor/eastwater_town/bay)
+"bvw" = (
+/obj/machinery/door/poddoor/gate/secure/preopen{
+	id = "exterior_gate";
+	name = "Outpost Exterior Gate"
+	},
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999"
+	},
+/area/frontier/indoor/gatehouse)
 "bvV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -2011,10 +2022,12 @@
 /area/frontier/indoor/colony_building)
 "bwy" = (
 /obj/machinery/light{
-	dir = 4
+	light_color = "#706891"
 	},
-/turf/closed/wall/r_wall,
-/area/frontier/indoor/colony_building)
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/frontier/indoor/colony)
 "bwH" = (
 /obj/effect/overlay/junk/toilet{
 	dir = 4;
@@ -2137,6 +2150,17 @@
 /obj/effect/landmark/poster_spawner/prewar,
 /turf/closed/wall/f13/store,
 /area/frontier/indoor/eastwater_town)
+"bBD" = (
+/obj/machinery/button/door{
+	name = "warehouse";
+	pixel_y = 27;
+	pixel_x = -4;
+	id = "outpost warehouse"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/frontier/indoor/supply_depot)
 "bBG" = (
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood{
@@ -2590,7 +2614,7 @@
 /area/frontier/outdoor/eastwater_town)
 "bRd" = (
 /obj/machinery/door/unpowered/securedoor{
-	name = "Clinic";
+	name = "Governor's House";
 	req_access_txt = null
 	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
@@ -3055,13 +3079,7 @@
 	},
 /area/frontier/outdoor/eastwater_town/bay)
 "cfm" = (
-/obj/structure/railing,
-/obj/structure/railing{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/frontier/indoor/colony)
 "cfP" = (
 /obj/machinery/light{
@@ -3335,7 +3353,9 @@
 	},
 /area/frontier/indoor/eastwater_town)
 "cqB" = (
-/obj/machinery/door/airlock/medical/glass,
+/obj/machinery/door/airlock/medical/glass{
+	name = "Sickbay"
+	},
 /turf/open/floor/f13{
 	icon_state = "white"
 	},
@@ -3839,7 +3859,9 @@
 	},
 /area/frontier/indoor/eastwater_town)
 "cIk" = (
-/obj/machinery/door/airlock/research,
+/obj/machinery/door/airlock/research{
+	name = "Xenobotany"
+	},
 /turf/open/floor/plasteel/white,
 /area/frontier/indoor/research)
 "cIB" = (
@@ -3976,7 +3998,10 @@
 /turf/open/floor/plating/f13,
 /area/frontier/indoor/colony)
 "cLN" = (
-/obj/machinery/door/poddoor/gate/secure/preopen,
+/obj/machinery/door/poddoor/gate/secure/preopen{
+	id = "interior_gate";
+	name = "Outpost Interior Gate"
+	},
 /turf/open/indestructible/ground/outside/road{
 	color = "#999999"
 	},
@@ -4443,7 +4468,8 @@
 /area/frontier/indoor/eastwater_town)
 "dbo" = (
 /obj/machinery/door/poddoor/shutters/window{
-	id = "armory3"
+	id = "rimwatch armory";
+	name = "rimwatch armory"
 	},
 /turf/open/floor/f13{
 	icon_state = "darkredfull"
@@ -5057,14 +5083,13 @@
 /turf/open/floor/f13/wood,
 /area/frontier/indoor/eastwater_town)
 "dvd" = (
-/obj/machinery/mineral/wasteland_vendor/traderspecial,
-/obj/structure/window/reinforced{
-	dir = 4
+/obj/machinery/door/airlock/public/glass{
+	name = "Garrage"
 	},
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "floorrustysolid"
 	},
-/area/frontier/indoor/supply_depot)
+/area/frontier/indoor/colony)
 "dvh" = (
 /obj/structure/simple_door/glass,
 /obj/structure/spacevine,
@@ -5120,12 +5145,19 @@
 	},
 /area/frontier/outdoor/wilderness)
 "dxW" = (
-/obj/item/paper_bin{
-	pixel_x = -2;
-	pixel_y = 4
-	},
-/obj/item/pen,
 /obj/structure/table/reinforced,
+/obj/machinery/button{
+	pixel_y = 5;
+	pixel_x = -6;
+	id = "interior_gate";
+	name = "interior gate"
+	},
+/obj/machinery/button{
+	pixel_y = 5;
+	pixel_x = 5;
+	id = "exterior_gate";
+	name = "exterior gate"
+	},
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -5333,7 +5365,7 @@
 /area/frontier/indoor/eastwater_town)
 "dFT" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "qm_warehouse";
+	id = "outpost warehouse";
 	name = "warehouse shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -6006,8 +6038,8 @@
 	},
 /area/frontier/indoor/eastwater_town)
 "eaH" = (
-/obj/structure/simple_door/civ/saloon{
-	dir = 1
+/obj/machinery/door/airlock/public{
+	name = "Outpost's Bar"
 	},
 /turf/open/floor/plating/wooden2,
 /area/frontier/indoor/cantina)
@@ -7017,7 +7049,7 @@
 	color = "#999999";
 	icon_state = "horizontalinnermain0"
 	},
-/area/frontier/indoor/colony_building)
+/area/frontier/indoor/colony)
 "eJO" = (
 /obj/structure/railing{
 	dir = 4
@@ -7086,7 +7118,15 @@
 /area/frontier/indoor/guardkeep)
 "eLy" = (
 /obj/structure/table/reinforced,
-/obj/machinery/recharger,
+/obj/machinery/recharger{
+	pixel_x = -6
+	},
+/obj/machinery/button{
+	pixel_y = 5;
+	pixel_x = 5;
+	id = "garrage";
+	name = "Outpost Garrage"
+	},
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -7151,6 +7191,15 @@
 	icon_state = "whitedirtysolid"
 	},
 /area/frontier/indoor/eastwater_town)
+"eOK" = (
+/obj/machinery/status_display/supply{
+	pixel_x = 30;
+	pixel_y = -1
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
+/area/frontier/outdoor/colony/depot_dock)
 "ePa" = (
 /obj/machinery/shower{
 	pixel_y = 21
@@ -7438,7 +7487,8 @@
 /area/frontier/indoor/eastwater_town)
 "faD" = (
 /obj/machinery/door/poddoor/shutters/window{
-	id = "armory3"
+	id = "armory3";
+	name = "robotics garage"
 	},
 /turf/open/floor/plasteel/white,
 /area/frontier/indoor/research)
@@ -7645,6 +7695,14 @@
 	icon_state = "floorrusty"
 	},
 /area/frontier/indoor/eastwater_town)
+"fik" = (
+/obj/machinery/door/airlock/research{
+	name = "Research Lab"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/frontier/indoor/research)
 "fis" = (
 /obj/structure/wreck/trash/brokenvendor,
 /turf/open/floor/plasteel/f13{
@@ -8258,8 +8316,13 @@
 /turf/open/floor/plating,
 /area/frontier/indoor/eastwater_town)
 "fHd" = (
-/turf/closed/wall/f13/tunnel,
-/area/frontier/outdoor/colony/roof)
+/obj/structure/simple_door/wood{
+	name = "Residence"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/frontier/indoor/colony_building)
 "fHr" = (
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/f13/tcoms)
@@ -8617,6 +8680,17 @@
 	icon_state = "housewood4-broken"
 	},
 /area/frontier/indoor/eastwater_town)
+"fTW" = (
+/obj/machinery/button/door{
+	pixel_y = 2;
+	pixel_x = 28;
+	id = "rimwatch armory";
+	name = "rimwatch armory"
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "oakfloor1"
+	},
+/area/frontier/indoor/guardkeep)
 "fUP" = (
 /obj/structure/chair{
 	dir = 4
@@ -9561,8 +9635,9 @@
 /obj/effect/decal/marking{
 	pixel_x = -14
 	},
+/obj/vehicle/ridden/fuel/motorcycle/flamy,
 /turf/open/indestructible/ground/outside/sidewalk,
-/area/frontier/indoor/colony_building)
+/area/frontier/indoor/colony)
 "gAF" = (
 /obj/structure/table/wood,
 /obj/machinery/light{
@@ -9806,7 +9881,9 @@
 	icon_state = "0-2"
 	},
 /obj/structure/cable,
-/obj/machinery/door/airlock/research,
+/obj/machinery/door/airlock/research{
+	name = "Research Lab"
+	},
 /turf/open/floor/plasteel/white,
 /area/frontier/indoor/research)
 "gHl" = (
@@ -10816,7 +10893,9 @@
 	},
 /area/frontier/outdoor/wilderness)
 "hjd" = (
-/obj/machinery/door/airlock/research,
+/obj/machinery/door/airlock/research{
+	name = "Research Lab"
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -11199,10 +11278,23 @@
 	},
 /area/frontier/indoor/eastwater_town)
 "hvq" = (
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
+/obj/structure/railing{
+	dir = 1;
+	pixel_y = 2
 	},
-/area/frontier/outdoor/colony/roof)
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/frontier/indoor/colony)
+"hvw" = (
+/obj/machinery/light{
+	light_color = "#706891"
+	},
+/turf/open/indestructible/ground/outside/road{
+	color = "#999999";
+	icon_state = "horizontalinnermain0"
+	},
+/area/frontier/indoor/colony)
 "hvN" = (
 /obj/structure/window/fulltile/wood,
 /obj/effect/decal/cleanable/dirt{
@@ -12131,8 +12223,11 @@
 	},
 /area/frontier/indoor/eastwater_town)
 "hVN" = (
-/turf/closed/wall/f13/store,
-/area/frontier/outdoor/colony/roof)
+/obj/effect/decal/marking{
+	pixel_x = 14
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/frontier/indoor/colony)
 "hWd" = (
 /obj/machinery/light{
 	dir = 4
@@ -12576,8 +12671,8 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/machinery/mineral/wasteland_vendor/advcomponents,
 /obj/structure/window/reinforced,
+/obj/machinery/mineral/wasteland_vendor/traderspecial,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -13195,7 +13290,9 @@
 /turf/open/floor/f13/wood,
 /area/frontier/indoor/eastwater_town)
 "iIM" = (
-/obj/machinery/door/airlock/medical/glass,
+/obj/machinery/door/airlock/public{
+	name = "Medlab"
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -13315,6 +13412,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road,
 /area/frontier/indoor/eastwater_town)
+"iOk" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "Power Substation"
+	},
+/turf/open/floor/f13{
+	color = "#818181";
+	icon_state = "floorrustysolid"
+	},
+/area/frontier/indoor/generator_room)
 "iOt" = (
 /turf/closed/wall/f13/vault,
 /area/frontier/indoor/eastwater_town)
@@ -13530,6 +13639,13 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/frontier/outdoor/colony)
+"iVK" = (
+/obj/effect/decal/marking{
+	pixel_x = 14
+	},
+/obj/vehicle/ridden/fuel/motorcycle/green,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/frontier/indoor/colony)
 "iVY" = (
 /turf/open/floor/f13{
 	icon_state = "darkrustysolid"
@@ -13910,6 +14026,19 @@
 /obj/machinery/telecomms/bus/preset_one,
 /turf/open/floor/plasteel/dark/telecomms/mainframe,
 /area/f13/tcoms)
+"jmc" = (
+/obj/structure/railing{
+	dir = 8;
+	plane = -1
+	},
+/obj/structure/railing{
+	dir = 1;
+	pixel_y = 2
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/frontier/indoor/colony)
 "jmD" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -14238,7 +14367,7 @@
 /area/frontier/indoor/colony_building)
 "jxX" = (
 /obj/machinery/door/unpowered/securedoor{
-	name = "Clinic";
+	name = "Governor's House";
 	req_access_txt = null
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
@@ -14272,12 +14401,12 @@
 	},
 /area/frontier/outdoor/wilderness)
 "jyn" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "qm_warehouse";
-	name = "warehouse shutters"
-	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "outpost warehouse2";
+	name = "warehouse shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/frontier/indoor/supply_depot)
@@ -14795,10 +14924,11 @@
 /obj/effect/decal/marking{
 	pixel_x = -14
 	},
+/obj/item/key/motorcycle,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
 	},
-/area/frontier/indoor/colony_building)
+/area/frontier/indoor/colony)
 "jTH" = (
 /obj/structure/fireplace{
 	dir = 4;
@@ -15034,6 +15164,15 @@
 	icon_state = "darkdirty"
 	},
 /area/frontier/outdoor/colony/roof)
+"jZM" = (
+/obj/machinery/button/door{
+	name = "warehouse";
+	pixel_y = -22;
+	pixel_x = -4;
+	id = "outpost warehouse"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/frontier/indoor/supply_depot)
 "jZZ" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -15112,7 +15251,9 @@
 	},
 /area/frontier/indoor/eastwater_town)
 "kdC" = (
-/obj/machinery/door/airlock/research,
+/obj/machinery/door/airlock/research{
+	name = "Xenobotany"
+	},
 /obj/structure/sign/warning/biohazard{
 	pixel_x = -31
 	},
@@ -15279,7 +15420,9 @@
 	},
 /area/frontier/indoor/building)
 "kjS" = (
-/obj/machinery/door/airlock/research,
+/obj/machinery/door/airlock/research{
+	name = "Robotics"
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -15829,7 +15972,9 @@
 	},
 /area/frontier/indoor/eastwater_town)
 "kCb" = (
-/obj/machinery/door/airlock/medical/glass,
+/obj/machinery/door/airlock/medical/glass{
+	name = "Medlab"
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -16219,7 +16364,9 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/airlock/hatch{
+	name = "Generator Room"
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -16354,7 +16501,9 @@
 /turf/open/liquid/water/sea/shallow,
 /area/frontier/outdoor/shoreline)
 "kVu" = (
-/obj/structure/simple_door/house,
+/obj/structure/simple_door/house{
+	name = "restroom"
+	},
 /turf/open/floor/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -16644,7 +16793,9 @@
 	},
 /area/frontier/indoor/eastwater_town)
 "lkA" = (
-/obj/machinery/door/unpowered/securedoor,
+/obj/machinery/door/unpowered/securedoor{
+	name = "kitchen"
+	},
 /turf/open/floor/plasteel/cafeteria,
 /area/frontier/indoor/cantina)
 "lkE" = (
@@ -18418,7 +18569,7 @@
 /area/frontier/indoor/eastwater_town)
 "msW" = (
 /obj/machinery/door/airlock/mining/glass{
-	name = "Cargo Office";
+	name = "Trade Office";
 	req_one_access_txt = "50;48"
 	},
 /turf/open/floor/f13{
@@ -18716,10 +18867,11 @@
 /obj/effect/decal/marking{
 	pixel_x = 14
 	},
+/obj/item/key/motorcycle,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
 	},
-/area/frontier/indoor/colony_building)
+/area/frontier/indoor/colony)
 "mAS" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -19534,7 +19686,9 @@
 /turf/open/floor/f13/wood,
 /area/frontier/indoor/eastwater_town)
 "nbp" = (
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	name = "Generator Room"
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -20234,7 +20388,9 @@
 	},
 /area/frontier/indoor/eastwater_town)
 "nvy" = (
-/obj/machinery/door/unpowered/securedoor,
+/obj/machinery/door/unpowered/securedoor{
+	name = "Marshall's Quarter"
+	},
 /turf/open/floor/carpet,
 /area/frontier/indoor/guardkeep)
 "nvA" = (
@@ -21802,6 +21958,15 @@
 	icon_state = "oakfloor1"
 	},
 /area/frontier/indoor/eastwater_town)
+"oxV" = (
+/obj/machinery/button{
+	pixel_y = -2;
+	pixel_x = -27;
+	id = "garrage";
+	name = "Outpost Garrage"
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/frontier/indoor/colony)
 "oya" = (
 /obj/machinery/hydroponics/soil{
 	name = "riverbed soil";
@@ -23001,7 +23166,7 @@
 	pixel_x = -14
 	},
 /turf/closed/wall/f13/tunnel,
-/area/frontier/indoor/colony_building)
+/area/frontier/indoor/colony)
 "prG" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/decal/cleanable/dirt,
@@ -23923,6 +24088,13 @@
 	icon_state = "housewood4-broken"
 	},
 /area/frontier/indoor/eastwater_town)
+"pXS" = (
+/obj/machinery/door/poddoor/shutters/window{
+	id = "robotics garage";
+	name = "robotics garage"
+	},
+/turf/open/floor/plasteel/white,
+/area/frontier/indoor/research)
 "pXW" = (
 /obj/machinery/vending/coffee,
 /turf/open/floor/plasteel/f13{
@@ -24602,7 +24774,9 @@
 /turf/open/floor/plating/f13,
 /area/frontier/outdoor/colony/roof)
 "quC" = (
-/obj/machinery/door/unpowered/securedoor,
+/obj/machinery/door/unpowered/securedoor{
+	name = "kitchen"
+	},
 /turf/open/indestructible/ground/outside/civ/grass,
 /area/frontier/indoor/cantina)
 "quP" = (
@@ -24734,9 +24908,11 @@
 /area/frontier/indoor/eastwater_town)
 "qxI" = (
 /obj/structure/table/reinforced,
-/obj/machinery/cell_charger{
+/obj/item/paper_bin{
+	pixel_x = -2;
 	pixel_y = 4
 	},
+/obj/item/pen,
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -25021,6 +25197,17 @@
 	color = "#999999"
 	},
 /area/frontier/outdoor/wilderness)
+"qHY" = (
+/obj/machinery/button/door{
+	name = "warehouse";
+	pixel_y = -4;
+	pixel_x = 22;
+	id = "outpost warehouse2s"
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft0"
+	},
+/area/frontier/outdoor/colony/depot_dock)
 "qIp" = (
 /obj/structure/table,
 /obj/machinery/microwave,
@@ -25237,7 +25424,7 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
-/area/frontier/indoor/colony_building)
+/area/frontier/indoor/colony)
 "qQs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -25952,7 +26139,7 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
-/area/frontier/indoor/colony_building)
+/area/frontier/indoor/colony)
 "rmB" = (
 /obj/structure/railing{
 	dir = 8
@@ -26197,7 +26384,7 @@
 "ruZ" = (
 /obj/machinery/door/airlock/security/glass{
 	id_tag = "outerbrig";
-	name = "Brig";
+	name = "Marshall's Office";
 	req_access_txt = "63"
 	},
 /turf/open/floor/f13/wood{
@@ -26924,7 +27111,9 @@
 /turf/open/floor/wood/parquet,
 /area/frontier/indoor/eastwater_town)
 "rQz" = (
-/obj/machinery/door/airlock/public/glass,
+/obj/machinery/door/airlock/public/glass{
+	name = "cryogenic sleepers"
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -27830,9 +28019,12 @@
 /turf/open/floor/plating/wooden2,
 /area/frontier/indoor/cantina)
 "stL" = (
-/obj/structure/simple_door/civ/saloon,
-/turf/open/floor/plating/wooden2,
-/area/frontier/indoor/cantina)
+/obj/effect/decal/marking{
+	pixel_x = -14
+	},
+/obj/vehicle/ridden/fuel/motorcycle,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/frontier/indoor/colony)
 "stT" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -27990,14 +28182,13 @@
 /turf/open/floor/carpet,
 /area/frontier/indoor/eastwater_town)
 "szy" = (
-/obj/machinery/status_display/supply{
-	pixel_y = -1;
-	pixel_x = 32
+/obj/machinery/door/airlock/medical/glass{
+	name = "Chem Lab"
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
+/turf/open/floor/f13{
+	icon_state = "white"
 	},
-/area/frontier/outdoor/colony/depot_dock)
+/area/frontier/indoor/clinic)
 "szY" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain0"
@@ -28680,7 +28871,8 @@
 /area/frontier/outdoor/colony/depot_dock)
 "sXz" = (
 /obj/machinery/door/poddoor/shutters/window{
-	id = "armory3"
+	id = "garrage";
+	name = "Outpost Garrage"
 	},
 /turf/open/indestructible/ground/outside/road{
 	color = "#999999";
@@ -29865,7 +30057,7 @@
 "tNV" = (
 /obj/machinery/door/airlock/security/glass{
 	id_tag = "outerbrig";
-	name = "Brig";
+	name = "Prisoner's Lockers";
 	req_access_txt = "63"
 	},
 /turf/open/floor/f13{
@@ -31193,6 +31385,15 @@
 	},
 /turf/open/floor/wood/large,
 /area/frontier/indoor/eastwater_town)
+"uLf" = (
+/obj/machinery/button/door{
+	pixel_y = 2;
+	pixel_x = 28;
+	id = "robotics garage";
+	name = "robotics garage"
+	},
+/turf/open/floor/plasteel/white,
+/area/frontier/indoor/research)
 "uLG" = (
 /obj/effect/turf_decal/caution{
 	dir = 8
@@ -31920,7 +32121,9 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/engineering,
+/obj/machinery/door/airlock/engineering{
+	name = "Outpost Solar Array"
+	},
 /turf/open/floor/plating/f13,
 /area/frontier/indoor/colony)
 "viL" = (
@@ -32093,6 +32296,15 @@
 	icon_state = "darkrusty"
 	},
 /area/frontier/indoor/cave)
+"voi" = (
+/obj/machinery/button/door{
+	name = "warehouse";
+	pixel_y = -4;
+	pixel_x = -25;
+	id = "outpost warehouse2"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/frontier/indoor/supply_depot)
 "vol" = (
 /obj/structure/closet/secure_closet/chemical,
 /turf/open/floor/f13{
@@ -32887,7 +33099,7 @@
 /turf/closed/wall/f13/wood/house,
 /area/frontier/indoor/eastwater_town)
 "vPK" = (
-/obj/structure/rack/shelf_metal,
+/obj/machinery/mineral/wasteland_vendor/advcomponents,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -32977,7 +33189,7 @@
 "vRA" = (
 /obj/machinery/door/airlock/security/glass{
 	id_tag = "outerbrig";
-	name = "Brig";
+	name = "Gatehouse";
 	req_access_txt = "63"
 	},
 /obj/structure/cable{
@@ -33547,8 +33759,9 @@
 /obj/effect/decal/marking{
 	pixel_x = 14
 	},
+/obj/vehicle/ridden/fuel/motorcycle,
 /turf/open/indestructible/ground/outside/sidewalk,
-/area/frontier/indoor/colony_building)
+/area/frontier/indoor/colony)
 "whU" = (
 /obj/machinery/light{
 	light_color = "#e8eaff"
@@ -36028,7 +36241,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/mining/glass{
-	name = "Cargo Office";
+	name = "Trading Dock";
 	req_one_access_txt = "50;48"
 	},
 /turf/open/floor/f13{
@@ -36119,7 +36332,9 @@
 	},
 /area/frontier/indoor/eastwater_town)
 "xTI" = (
-/obj/structure/simple_door/wood,
+/obj/structure/simple_door/wood{
+	name = "Residence"
+	},
 /turf/open/floor/plating/wooden2,
 /area/frontier/indoor/colony_building)
 "xTY" = (
@@ -130911,7 +131126,7 @@ vGt
 vGt
 vGt
 rAs
-vGt
+uLf
 vGt
 vGt
 vGt
@@ -131234,7 +131449,7 @@ kjS
 kjS
 vSg
 vSg
-faD
+pXS
 faD
 faD
 faD
@@ -132196,8 +132411,8 @@ eEL
 gGZ
 gGZ
 xAD
-kjS
-kjS
+fik
+fik
 vSg
 vSg
 qJY
@@ -135104,12 +135319,12 @@ qJY
 qJY
 xoR
 jVs
-jVs
-jVs
-xop
-xop
-xop
-xop
+viM
+viM
+viM
+viM
+viM
+viM
 viM
 viM
 viM
@@ -135425,13 +135640,13 @@ qJY
 qJY
 qJY
 xoR
-qJY
-qJY
-qJY
-qJY
-qJY
-qJY
-oHk
+jVs
+viM
+viM
+viM
+viM
+viM
+viM
 viM
 viM
 viM
@@ -135747,13 +135962,13 @@ qJY
 qJY
 qJY
 xoR
-qJY
-qJY
-qJY
-qJY
-qJY
-qJY
-oHk
+jVs
+viM
+viM
+viM
+viM
+viM
+viM
 viM
 viM
 viM
@@ -136069,13 +136284,13 @@ qJY
 qJY
 qJY
 xoR
-lgY
-qJY
-qJY
-qJY
-qJY
-qJY
-oHk
+jVs
+viM
+viM
+viM
+viM
+viM
+viM
 viM
 viM
 viM
@@ -136391,13 +136606,13 @@ lgY
 qJY
 qJY
 xoR
-qJY
-qJY
-qJY
-qJY
-qJY
-qJY
-oHk
+jVs
+viM
+viM
+viM
+viM
+viM
+viM
 viM
 viM
 viM
@@ -136713,13 +136928,13 @@ qJY
 qJY
 qJY
 xoR
-qJY
-qJY
-qJY
-qJY
-qJY
-qJY
-oHk
+jVs
+viM
+viM
+viM
+viM
+viM
+viM
 viM
 viM
 viM
@@ -137035,13 +137250,13 @@ qJY
 qJY
 qJY
 xoR
-qJY
-qJY
-hAx
-hAx
-hAx
-hAx
-cfm
+jVs
+viM
+viM
+viM
+viM
+viM
+viM
 viM
 viM
 viM
@@ -137348,7 +137563,7 @@ pLg
 pLg
 pLg
 pLg
-sHP
+iOk
 pLg
 pLg
 pLg
@@ -137357,8 +137572,8 @@ qJY
 qJY
 qJY
 xoR
-qJY
-oHk
+jVs
+viM
 viM
 viM
 viM
@@ -137679,8 +137894,8 @@ qJY
 qJY
 qJY
 xoR
-qJY
-oHk
+jVs
+viM
 viM
 viM
 viM
@@ -138001,8 +138216,8 @@ qJY
 qJY
 qJY
 xoR
-qJY
-oHk
+jVs
+viM
 viM
 viM
 viM
@@ -138323,8 +138538,8 @@ xoR
 qJY
 qJY
 xoR
-qJY
-oHk
+jVs
+viM
 viM
 viM
 viM
@@ -138645,8 +138860,8 @@ xoR
 qJY
 qJY
 xoR
-lgY
-oHk
+jVs
+viM
 viM
 viM
 viM
@@ -138967,8 +139182,8 @@ xoR
 qJY
 qJY
 xoR
-lgY
-oHk
+jVs
+viM
 viM
 viM
 viM
@@ -139289,8 +139504,8 @@ xoR
 lgY
 qJY
 xoR
-qJY
-oHk
+jVs
+viM
 viM
 viM
 viM
@@ -139611,8 +139826,8 @@ xoR
 qJY
 qJY
 xoR
-qJY
-oHk
+jVs
+viM
 viM
 viM
 viM
@@ -139933,8 +140148,8 @@ qJY
 qJY
 qJY
 xoR
-qJY
-oHk
+jVs
+viM
 viM
 viM
 viM
@@ -140255,8 +140470,8 @@ hAx
 hAx
 qJY
 xoR
-qJY
-oHk
+jVs
+viM
 viM
 viM
 viM
@@ -140577,8 +140792,8 @@ viM
 viM
 neg
 xoR
-qJY
-oHk
+jVs
+viM
 viM
 viM
 viM
@@ -140899,8 +141114,8 @@ viM
 viM
 neg
 xoR
-qJY
-oHk
+jVs
+viM
 viM
 viM
 viM
@@ -141221,8 +141436,8 @@ viM
 viM
 vrX
 qJY
-qJY
-qJY
+nbz
+nbz
 nbz
 mrX
 nbz
@@ -142196,7 +142411,7 @@ xoR
 xoR
 jVs
 viM
-gtO
+hvq
 kKb
 tYf
 oGn
@@ -142518,7 +142733,7 @@ jVs
 jVs
 jVs
 viM
-gtO
+hvq
 kKb
 tYf
 oGn
@@ -142840,7 +143055,7 @@ viM
 viM
 viM
 viM
-gtO
+hvq
 kKb
 tYf
 oGn
@@ -143162,7 +143377,7 @@ viM
 viM
 viM
 viM
-gtO
+hvq
 kKb
 tYf
 oGn
@@ -143484,7 +143699,7 @@ viM
 viM
 viM
 viM
-gtO
+hvq
 sFd
 tYf
 wIZ
@@ -143806,7 +144021,7 @@ viM
 viM
 viM
 viM
-gtO
+hvq
 kKb
 kKb
 iVs
@@ -144128,7 +144343,7 @@ viM
 viM
 viM
 viM
-gtO
+hvq
 kKb
 kKb
 iVs
@@ -144450,7 +144665,7 @@ viM
 viM
 viM
 viM
-gtO
+hvq
 kKb
 kKb
 iVs
@@ -144768,11 +144983,11 @@ viM
 viM
 viM
 viM
-viM
-viM
-viM
-viM
-gtO
+jmc
+pGD
+pGD
+pGD
+nxB
 kKb
 kKb
 iVs
@@ -145090,11 +145305,11 @@ viM
 viM
 viM
 viM
-viM
-viM
-viM
-viM
-gtO
+hvq
+nxB
+nxB
+nxB
+nxB
 kKb
 kKb
 iVs
@@ -145412,11 +145627,11 @@ viM
 viM
 viM
 viM
-viM
-viM
+hvq
+nxB
 xop
 xop
-kKb
+xop
 kKb
 kKb
 iVs
@@ -145734,8 +145949,8 @@ viM
 viM
 viM
 viM
-viM
-jVs
+hvq
+nxB
 xop
 jVs
 wiu
@@ -145750,7 +145965,7 @@ uhI
 uhI
 uhI
 uhI
-cLN
+bvw
 qcX
 qcX
 qcX
@@ -146033,7 +146248,7 @@ viM
 viM
 rwJ
 qJY
-qJY
+bwy
 rwJ
 viM
 viM
@@ -146056,8 +146271,8 @@ viM
 viM
 viM
 viM
-viM
-jVs
+hvq
+nxB
 xop
 jVs
 wiu
@@ -146372,14 +146587,14 @@ viM
 jVs
 xoR
 qJY
-oHk
-viM
-viM
-viM
-viM
-viM
-viM
-jVs
+qJY
+nbz
+nbz
+nbz
+nbz
+nbz
+nxB
+nxB
 xop
 jVs
 wZC
@@ -146675,10 +146890,10 @@ viM
 viM
 viM
 viM
-hVN
-hvq
-hvq
-hVN
+xoR
+qJY
+qJY
+xoR
 viM
 viM
 viM
@@ -146694,19 +146909,19 @@ viM
 jVs
 xoR
 qJY
-oHk
-viM
-viM
-viM
-viM
-viM
-viM
-jVs
+qJY
+qJY
+qJY
+qJY
+qJY
+qJY
+nxB
+nxB
 jVs
 xop
 qrN
 qrN
-bwy
+qrN
 sXz
 sXz
 sXz
@@ -147022,17 +147237,17 @@ kCC
 pyz
 kCC
 kCC
-viM
-viM
-fHd
+nxB
+nxB
+nxB
+dvd
+cfm
+cfm
+oxV
+eJs
+eJs
+eJs
 jVs
-jVs
-dXm
-dXm
-eJs
-eJs
-eJs
-dXm
 dXm
 gdq
 gdq
@@ -147322,7 +147537,7 @@ lRm
 xTI
 rmO
 rmO
-kCC
+fHd
 lRm
 lRm
 lRm
@@ -147344,17 +147559,17 @@ jxU
 lRm
 lRm
 kCC
-viM
-viM
-fHd
-xoR
+nxB
+nxB
+nxB
+dvd
 eBh
-gAg
+stL
 jTz
 eJs
 eJs
 eJs
-dXm
+jVs
 kCC
 kli
 kli
@@ -147670,13 +147885,13 @@ kCC
 kCC
 kCC
 kCC
-whM
+hVN
 whM
 mzZ
 eJs
 eJs
 eJs
-dXm
+jVs
 kCC
 kli
 kli
@@ -147998,7 +148213,7 @@ jTz
 eJs
 eJs
 eJs
-dXm
+jVs
 kCC
 kli
 kli
@@ -148314,13 +148529,13 @@ wir
 tGW
 kCC
 kCC
-whM
-whM
+hVN
+iVK
 mzZ
 eJs
 eJs
-eJs
-dXm
+hvw
+jVs
 kCC
 kli
 kli
@@ -148636,13 +148851,13 @@ kCC
 kCC
 kCC
 kCC
-gAg
-gAg
+eBh
+stL
 jTz
 eJs
 eJs
 eJs
-dXm
+jVs
 kCC
 kli
 kli
@@ -148929,7 +149144,7 @@ sVA
 lRm
 lRm
 lRm
-xTI
+lRm
 rmO
 rmO
 rmO
@@ -148958,13 +149173,13 @@ erP
 bRC
 kCC
 kCC
-whM
+hVN
 whM
 mzZ
 eJs
 eJs
 eJs
-dXm
+jVs
 kCC
 kli
 kli
@@ -149280,13 +149495,13 @@ wir
 srp
 kCC
 kCC
-gAg
+eBh
 gAg
 jTz
 eJs
 eJs
 eJs
-dXm
+jVs
 kCC
 kli
 kli
@@ -149602,13 +149817,13 @@ kCC
 kCC
 kCC
 kCC
-whM
-whM
+hVN
+iVK
 mzZ
 eJs
 eJs
 eJs
-dXm
+jVs
 kCC
 kli
 kli
@@ -149898,7 +150113,7 @@ gGM
 kCC
 rmO
 rmO
-kCC
+fHd
 lRm
 lRm
 lRm
@@ -149924,13 +150139,13 @@ fLV
 fLV
 fLV
 kCC
-gAg
-gAg
+eBh
+stL
 jTz
 eJs
 eJs
 eJs
-dXm
+jVs
 kCC
 kli
 kli
@@ -150246,13 +150461,13 @@ kCC
 kCC
 kCC
 kCC
-whM
+hVN
 whM
 mzZ
 eJs
 eJs
 eJs
-dXm
+jVs
 kCC
 kli
 kli
@@ -150574,7 +150789,7 @@ jTz
 eJs
 eJs
 eJs
-dXm
+jVs
 kCC
 kli
 kli
@@ -150890,13 +151105,13 @@ wir
 srp
 kCC
 kCC
-whM
-whM
+hVN
+iVK
 mzZ
 eJs
 eJs
 eJs
-dXm
+jVs
 kCC
 kli
 kli
@@ -151212,13 +151427,13 @@ kCC
 kCC
 kCC
 kCC
-gAg
-gAg
+eBh
+stL
 jTz
 eJs
 eJs
 eJs
-dXm
+jVs
 kCC
 kli
 kli
@@ -151533,14 +151748,14 @@ kCC
 xnl
 xnl
 kCC
-dXm
-whM
+jVs
+hVN
 whM
 mzZ
 eJs
 eJs
 eJs
-dXm
+jVs
 kCC
 kli
 kli
@@ -151855,14 +152070,14 @@ kCC
 xnl
 oGn
 kCC
-dXm
-gAg
+jVs
+eBh
 gAg
 jTz
 eJs
 eJs
-eJs
-dXm
+hvw
+jVs
 kCC
 kli
 kli
@@ -152177,14 +152392,14 @@ oGn
 oGn
 oGn
 kCC
-dXm
+jVs
 rmz
-whM
+iVK
 mzZ
 eJs
 eJs
 eJs
-dXm
+jVs
 kCC
 kli
 kli
@@ -152499,14 +152714,14 @@ oGn
 oGn
 oGn
 kCC
-dXm
+jVs
 pry
 pry
 pry
-dXm
-dXm
-dXm
-dXm
+jVs
+jVs
+jVs
+jVs
 kCC
 kli
 kli
@@ -217202,7 +217417,7 @@ sey
 aKk
 vol
 ycv
-cqB
+szy
 ycv
 nMR
 lzi
@@ -218822,7 +219037,7 @@ ycv
 nMR
 ycv
 nMR
-ycv
+kCb
 mpn
 ycv
 xmz
@@ -219137,7 +219352,7 @@ lhK
 xmz
 xKo
 iIM
-kCb
+iIM
 hDh
 xmz
 xmz
@@ -222664,12 +222879,12 @@ lhK
 lqd
 dCE
 dCE
+qHY
 dCE
 dCE
+eOK
 dCE
 dCE
-dCE
-szy
 dCE
 dCE
 dCE
@@ -223308,7 +223523,7 @@ nWm
 eXI
 mKm
 eXI
-eXI
+voi
 qcq
 qcq
 dFT
@@ -223954,9 +224169,9 @@ qcq
 qcq
 qcq
 qcq
-qcq
+jZM
 nnz
-wuU
+bBD
 amA
 amA
 amA
@@ -224278,7 +224493,7 @@ eXI
 qcq
 qcq
 nnz
-xka
+wuU
 amA
 amA
 vQE
@@ -224600,7 +224815,7 @@ wIW
 qcq
 mlE
 nnz
-nJS
+xka
 amA
 amA
 qKX
@@ -224922,7 +225137,7 @@ qcq
 qcq
 mlE
 nnz
-dvd
+nJS
 amA
 amA
 amA
@@ -225267,8 +225482,8 @@ slu
 mIP
 mIP
 slu
-stL
-stL
+eaH
+eaH
 slu
 slu
 slu
@@ -315406,7 +315621,7 @@ nhu
 bwQ
 pEY
 nvy
-tew
+fTW
 tew
 tew
 tew

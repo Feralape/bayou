@@ -8,7 +8,7 @@
 	density = TRUE
 	anchored = FALSE
 	light_range = 3
-	var/list/mob/occupants				//mob = bitflags of their control level.
+	var/list/mob/living/carbon/human/occupants				//mob = bitflags of their control level.
 	var/max_occupants = 1
 	var/max_drivers = 1
 	var/movedelay = 2
@@ -30,7 +30,7 @@
 	var/horn_sound
 	var/engine_start 
 	var/engine_fail = 'sound/vehicles/motorbikewontstart.ogg'
-	var/drive_sound
+	var/list/drive_sound 
 
 /obj/vehicle/Initialize(mapload)
 	. = ..()
@@ -175,7 +175,7 @@
 /obj/vehicle/Move(newloc, dir)
 	. = ..()
 	if((on)&&(occupants[1]))
-		playsound(src, drive_sound, 100, 1)
+		playsound(src, pick(drive_sound), 30, 5)
 	if(trailer && .)
 		var/dir_to_move = get_dir(trailer.loc, newloc)
 		step(trailer, dir_to_move)

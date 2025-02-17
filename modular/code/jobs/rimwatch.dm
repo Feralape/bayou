@@ -75,6 +75,7 @@
 /datum/outfit/job/frontier/rimwatch_ranger
 	name = "Rimwatch Ranger"
 	suit = /obj/item/clothing/suit/armor/rimwatch_jacket
+	uniform	= /obj/item/clothing/under/rimwatch_uniform
 	belt = /obj/item/storage/belt/military/rimwatchbandolier
 	id = /obj/item/card/id/dogtag/rimwatch
 	head = /obj/item/clothing/head/beret/rimwatch
@@ -116,6 +117,7 @@
 /datum/outfit/job/frontier/rimwatch_marshall
 	name = "Rimwatch Marshall"
 	suit = /obj/item/clothing/suit/armor/rimwatch_marshall
+	uniform = /obj/item/clothing/under/rimwatch_uniform_marshall
 	id = /obj/item/card/id/dogtag/rimwatch
 	belt = /obj/item/storage/belt/tactical
 	head = /obj/item/clothing/head/marshall

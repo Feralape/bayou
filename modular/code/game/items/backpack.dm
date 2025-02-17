@@ -15,3 +15,21 @@
 	desc = "A large duffel bag for holding extra supplies and ammunition."
 	icon_state = "duffel-sec"
 	item_state = "duffel-sec"
+
+/obj/item/storage/backpack/rucksack
+	name = "rucksack"
+	desc = "A durable, weather-resistant bag with multiple compartments. Perfect for carrying essentials on long journeys."
+	icon_state = "rucksack"
+	item_state = "rucksack"
+
+/obj/item/storage/backpack/rucksack/blue
+	icon_state = "rucksack_blue"
+	item_state = "rucksack_blue"
+
+/obj/item/storage/backpack/rucksack/green
+	icon_state = "rucksack_green"
+	item_state = "rucksack_green"
+
+/obj/item/storage/backpack/rucksack/tan
+	icon_state = "rucksack_tan"
+	item_state = "rucksack_tan"

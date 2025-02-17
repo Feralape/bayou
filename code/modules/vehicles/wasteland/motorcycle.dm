@@ -13,22 +13,32 @@
 	armor = list(melee = 50, bullet = 40, laser = 30, energy = 30, bomb = 0, bio = 0, rad = 0, fire = 30, acid = 40)
 	var/image/cover = null
 	key_type = /obj/item/key/motorcycle
-	var/static/mutable_appearance/motorcycle
+	var/mutable_appearance/bike_cover
 	engine_start  = 'sound/f13machines/bike_start.ogg'
 	engine_fail = 'sound/f13machines/engine_fail.ogg'
-	drive_sound = 'sound/vehicles/carrev.ogg'
+	drive_sound = list('sound/f13machines/bike_loop2.ogg')
 
 /obj/vehicle/ridden/fuel/motorcycle/Initialize()
 	. = ..()
-	update_icon()
-
+	bike_cover = GetCover()
+	bike_cover.layer = ABOVE_MOB_LAYER
+	bike_cover.plane = MOB_PLANE
 	var/datum/component/riding/D = LoadComponent(/datum/component/riding)
 	D.vehicle_move_delay = 1
-	D.set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(0, 8), TEXT_SOUTH = list(-2, 5), TEXT_EAST = list(0, 12), TEXT_WEST = list( 2, 5)))
+	D.set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(0, 1), TEXT_SOUTH = list(0, 1), TEXT_EAST = list(0, 4), TEXT_WEST = list( 0, 4)))
 	D.set_vehicle_dir_offsets(NORTH, -16, -16)
 	D.set_vehicle_dir_offsets(SOUTH, -16, -16)
 	D.set_vehicle_dir_offsets(EAST, -18, 0)
 	D.set_vehicle_dir_offsets(WEST, -18, 0)
+	D.set_vehicle_dir_layer(SOUTH,  OBJ_LAYER)
+	D.set_vehicle_dir_layer(NORTH, OBJ_LAYER)
+	D.set_vehicle_dir_layer(EAST, OBJ_LAYER)
+	D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
+	update_icon()
+
+/obj/vehicle/ridden/fuel/motorcycle/proc/GetCover()
+	return mutable_appearance('icons/fallout/vehicles/medium_vehicles.dmi', "[icon_state]_cover")
+
 
 /obj/vehicle/ridden/fuel/motorcycle/relaymove(mob/user)
 	if(ishuman(user))
@@ -39,13 +49,18 @@
 	..()
 
 /obj/vehicle/ridden/fuel/motorcycle/post_buckle_mob(mob/living/M)
-	add_overlay(motorcycle)
-	return ..()
+	. = ..()
+	update_cover()
+
+/obj/vehicle/ridden/fuel/motorcycle/proc/update_cover()
+	if(occupants)
+		add_overlay(bike_cover)
+	else
+		cut_overlay(bike_cover)
 
 /obj/vehicle/ridden/fuel/motorcycle/post_unbuckle_mob(mob/living/buckled_mob,force = FALSE)
-	if(!has_buckled_mobs())
-		cut_overlay(motorcycle)
-	return ..()
+	. = ..()
+	update_cover()
 
 /obj/vehicle/ridden/fuel/motorcycle/relaymove(mob/user)
 	if(ishuman(user))
