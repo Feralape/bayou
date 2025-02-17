@@ -279,3 +279,17 @@
 
 /turf/open/floor/plating/rust/rust_heretic_act()
 	return
+
+/turf/open/floor/wood
+	name = "wood floor"
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "wood"
+
+/turf/open/floor/wood/parquet
+	icon_state = "wood_parquet"
+
+/turf/open/floor/wood/large
+	icon_state = "wood_large"
+
+/turf/open/floor/wood/tile
+	icon_state = "wood_tile"

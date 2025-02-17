@@ -11,6 +11,7 @@
 	var/normalspeed = 2
 	var/last_tick = 0
 	var/my_bar
+	mechanical = TRUE
 
 /obj/vehicle/ridden/secway/Initialize()
 	. = ..()

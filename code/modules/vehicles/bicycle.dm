@@ -2,6 +2,7 @@
 	name = "bicycle"
 	desc = "Keep away from electricity."
 	icon_state = "bicycle"
+	mechanical = FALSE
 	var/easter_egg_chance = 1
 
 	var/static/list/bike_music = list('sound/misc/bike1.mid',

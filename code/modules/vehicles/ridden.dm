@@ -6,11 +6,18 @@
 	default_driver_move = FALSE
 	var/legs_required = 1
 	var/arms_required = 0	//why not?
+	on = FALSE
+
 
 /obj/vehicle/ridden/Initialize()
 	. = ..()
 	LoadComponent(/datum/component/riding)
 
+/obj/vehicle/ridden/generate_actions()
+	if(mechanical)
+		initialize_passenger_action_type(/datum/action/vehicle/ridden/start_engine)
+		initialize_passenger_action_type(/datum/action/vehicle/ridden/stop_engine)
+	
 /obj/vehicle/ridden/examine(mob/user)
 	. = ..()
 	if(key_type)
@@ -18,6 +25,13 @@
 			. += span_notice("Put a key inside it by clicking it with the key.")
 		else
 			. += span_notice("Alt-click [src] to remove the key.")
+
+
+/obj/vehicle/ridden/Move(newloc, dir)
+	. = ..()
+
+
+
 
 /obj/vehicle/ridden/generate_action_type(actiontype)
 	var/datum/action/vehicle/ridden/A = ..()
@@ -50,19 +64,14 @@
 
 /obj/vehicle/ridden/AltClick(mob/user)
 	. = ..()
-	if(inserted_key && user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
-		if(!is_occupant(user))
-			to_chat(user, span_notice("You must be riding the [src] to remove [src]'s key!"))
-			return
-		to_chat(user, span_notice("You remove \the [inserted_key] from \the [src]."))
-		inserted_key.forceMove(drop_location())
-		user.put_in_hands(inserted_key)
-		inserted_key = null
-		return TRUE
+	remove_key(user)
 
 /obj/vehicle/ridden/driver_move(mob/user, direction)
 	if(key_type && !is_key(inserted_key))
 		to_chat(user, span_warning("[src] has no key inserted!"))
+		return FALSE
+	if((!on)&&(mechanical))
+		to_chat(user, span_warning("[src] is not started yet!"))
 		return FALSE
 	var/datum/component/riding/R = GetComponent(/datum/component/riding)
 	R.handle_ride(user, direction)
@@ -81,3 +90,16 @@
 /obj/vehicle/ridden/zap_act(zap_str, zap_flags, shocked_targets)
 	zap_buckle_check(zap_str)
 	. = ..()
+
+/obj/vehicle/ridden/proc/remove_key(mob/user)
+	if(inserted_key && user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		if(!is_occupant(user))
+			to_chat(user, span_notice("You must be riding the [src] to remove [src]'s key!"))
+			return
+		if(on)
+			stop_engine()
+		to_chat(user, span_notice("You remove \the [inserted_key] from \the [src]."))
+		inserted_key.forceMove(drop_location())
+		user.put_in_hands(inserted_key)
+		inserted_key = null
+		return TRUE

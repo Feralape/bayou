@@ -2,6 +2,7 @@
 	enclosed = TRUE // you're in a sealed vehicle dont get dinked idiot
 	var/enter_delay = 20
 	flags_1 = BLOCK_FACE_ATOM_1
+	mechanical = TRUE
 
 /obj/vehicle/sealed/generate_actions()
 	. = ..()

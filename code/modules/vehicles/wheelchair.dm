@@ -12,6 +12,7 @@
 	arms_required = 1
 	var/override_movespeed = FALSE
 	var/mutable_appearance/wheels
+	mechanical = FALSE
 
 /obj/vehicle/ridden/wheelchair/Initialize()
 	. = ..()

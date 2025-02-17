@@ -1201,3 +1201,28 @@ GLOBAL_LIST_INIT(dirt_loots, list(
 	clawfootstep = FOOTSTEP_GRASS
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
+/// BEACH SHORE
+
+
+
+/obj/effect/overlay/shore
+	name = "sandy shore"
+	icon = 'icons/fallout/turfs/smoothing.dmi'
+	icon_state = "sand_water_side"
+	density = FALSE
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	plane = FLOOR_PLANE
+	layer = ABOVE_OPEN_TURF_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE
+
+/obj/effect/overlay/shore_corner
+	name = "sandy shore"
+	icon = 'icons/fallout/turfs/smoothing.dmi'
+	icon_state = "sand_water_corner"
+	density = FALSE
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	plane = FLOOR_PLANE
+	layer = ABOVE_OPEN_TURF_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE
