@@ -14,6 +14,10 @@
 	layer = LYING_MOB_LAYER
 	var/overlay_state = "cover_blue"
 	var/mutable_appearance/overlay
+	horn_sound = 'sound/vehicles/car_horn.ogg'
+	engine_start = 'sound/vehicles/motorbikeignition.ogg'
+	engine_fail = 'sound/vehicles/wontstart.ogg'
+	drive_sound = 'sound/vehicles/carrev.ogg'
 
 /obj/vehicle/ridden/space/speedbike/Initialize()
 	. = ..()

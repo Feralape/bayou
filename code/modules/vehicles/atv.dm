@@ -5,6 +5,11 @@
 	icon_state = "atv"
 	key_type = /obj/item/key
 	var/static/mutable_appearance/atvcover
+	horn_sound = 'sound/vehicles/car_horn.ogg'
+	engine_start = 'sound/vehicles/ignition.ogg'
+	engine_fail = 'sound/vehicles/motorbikewontstart.ogg'
+	drive_sound = 'sound/vehicles/carrev.ogg'
+	mechanical = TRUE
 
 /obj/vehicle/ridden/atv/Initialize()
 	. = ..()

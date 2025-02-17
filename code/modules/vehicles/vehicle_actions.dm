@@ -119,3 +119,93 @@
 
 /datum/action/vehicle/sealed/remove_key/Trigger()
 	vehicle_entered_target.remove_key(owner)
+	if (vehicle_entered_target.on)
+		vehicle_entered_target.on = FALSE
+
+/datum/action/vehicle/sealed/start_engine
+	name = "Start Engine"
+	desc = "Start the vehicle's engine"
+	button_icon_state = "car_removekey"
+
+/datum/action/vehicle/sealed/start_engine/Trigger()
+	if(vehicle_entered_target.mechanical)
+		if(vehicle_entered_target.inserted_key)
+			if(!vehicle_entered_target.on)
+				vehicle_entered_target.start_engine()	
+			else
+				to_chat(owner, span_warning("The engine is already on!"))			
+		else
+			to_chat(owner, span_warning("[vehicle_entered_target.name] has no key inserted!"))	
+			return
+
+/datum/action/vehicle/sealed/start_engine
+	name = "Start Engine"
+	desc = "Start the vehicle's engine"
+	button_icon_state = "car_removekey"
+
+/datum/action/vehicle/sealed/start_engine/Trigger()
+	if(vehicle_entered_target.mechanical)
+		if(vehicle_entered_target.inserted_key)
+			if(!vehicle_entered_target.on)
+				vehicle_entered_target.start_engine()	
+			else
+				to_chat(owner, span_warning("The engine is already on!"))			
+		else
+			to_chat(owner, span_warning("[vehicle_entered_target.name] has no key inserted!"))	
+			return
+
+
+/datum/action/vehicle/sealed/stop_engine
+	name = "Stop Engine"
+	desc = "Stop the vehicle's engine"
+	button_icon_state = "car_removekey"
+
+/datum/action/vehicle/sealed/stop_engine/Trigger()
+	if(vehicle_entered_target.mechanical)
+		if(vehicle_entered_target.inserted_key)
+			if(!vehicle_entered_target.on)
+				to_chat(owner, span_warning("The engine is already off!"))		
+			else
+				vehicle_entered_target.stop_engine()						
+
+/datum/action/vehicle/ridden/remove_key/Trigger()
+	vehicle_ridden_target.remove_key(owner)
+	if (vehicle_ridden_target.on)
+		vehicle_ridden_target.on = FALSE
+
+/datum/action/vehicle/ridden/start_engine
+	name = "Start Engine"
+	desc = "Take your key out of the vehicle's ignition"
+	button_icon_state = "car_removekey"
+
+/datum/action/vehicle/ridden/start_engine/Trigger()
+	if(vehicle_ridden_target.mechanical)
+		if(vehicle_ridden_target.inserted_key)
+			if(!vehicle_ridden_target.on)
+				vehicle_ridden_target.start_engine()	
+			else
+				to_chat(owner, span_warning("The engine is already on!"))			
+		else
+			to_chat(owner, span_warning("[vehicle_ridden_target.name] has no key inserted!"))	
+			return
+
+/datum/action/vehicle/ridden/stop_engine
+	name = "Stop Engine"
+	desc = "Stop the vehicle's engine"
+	button_icon_state = "car_removekey"
+
+/datum/action/vehicle/ridden/stop_engine/Trigger()
+	if(vehicle_ridden_target.mechanical)
+		if(vehicle_ridden_target.inserted_key)
+			if(!vehicle_ridden_target.on)
+				to_chat(owner, span_warning("The engine is already off!"))		
+			else
+				vehicle_ridden_target.stop_engine()	
+
+/obj/vehicle/proc/start_engine()
+	playsound(src, engine_start, 100, 1)
+	on = TRUE
+
+/obj/vehicle/proc/stop_engine()
+	playsound(src, engine_fail, 100, 1)
+	on = FALSE

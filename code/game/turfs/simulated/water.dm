@@ -330,9 +330,9 @@ GLOBAL_LIST_EMPTY(submerge_filter_timer_list)
 
 /turf/open/liquid/water/sea
 	name = "water"
-	desc = "Shallow sea water."
-	icon = 'icons/misc/beach.dmi'
-	icon_state = "water"
+	desc = "Sea water."
+	icon = 'icons/fallout/turfs/smoothing.dmi'
+	icon_state = "water_shallow"
 	footstep = FOOTSTEP_WATER
 	barefootstep = FOOTSTEP_WATER
 	clawfootstep = FOOTSTEP_WATER
@@ -342,40 +342,23 @@ GLOBAL_LIST_EMPTY(submerge_filter_timer_list)
 	mob_liquid_height = 8
 	mob_liquid_depth = -3
 
-/turf/open/liquid/water/sea_wave
-	name = "water"
-	desc = "Shallow sea water."
-	icon = 'icons/misc/beach.dmi'
-	icon_state = "sandwater_b"
-	footstep = FOOTSTEP_WATER
-	barefootstep = FOOTSTEP_WATER
-	clawfootstep = FOOTSTEP_WATER
-	heavyfootstep = FOOTSTEP_WATER
-	depth = 1
-	slowdown = 1.5
-	mob_liquid_height = 12
-	mob_liquid_depth = -6
-
-/turf/open/liquid/water/sea_wave/deep
-	name = "water"
-	desc = "Shallow sea water."
-	icon = 'icons/misc/beach.dmi'
-	icon_state = "sandwater_b"
-	footstep = FOOTSTEP_WATER
-	barefootstep = FOOTSTEP_WATER
-	clawfootstep = FOOTSTEP_WATER
-	heavyfootstep = FOOTSTEP_WATER
-	depth = 1
-	slowdown = 1.5
-	mob_liquid_height = 18
-	mob_liquid_depth = -9
-
 /turf/open/liquid/water/sea/deep
 	name = "deep water"
-	desc = "Deep sea water."
-	icon = 'icons/misc/beach.dmi'
-	icon_state = "water"
-	slowdown = 2.5
+	desc = "deep sea water."
+	slowdown = 5
 	mob_liquid_height = 18
 	mob_liquid_depth = -9
 
+/turf/open/liquid/water/sea/shallow
+	name = "water"
+	desc = "Shallow sea water."
+	icon = 'icons/fallout/turfs/smoothing.dmi'
+	icon_state = "water_shallow"
+	footstep = FOOTSTEP_WATER
+	barefootstep = FOOTSTEP_WATER
+	clawfootstep = FOOTSTEP_WATER
+	heavyfootstep = FOOTSTEP_WATER
+	depth = 1
+	slowdown = 1.5
+	mob_liquid_height = 2
+	mob_liquid_depth = -1

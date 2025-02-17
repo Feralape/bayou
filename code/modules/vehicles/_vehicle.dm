@@ -7,7 +7,8 @@
 	armor = ARMOR_VALUE_MEDIUM
 	density = TRUE
 	anchored = FALSE
-	var/list/mob/occupants				//mob = bitflags of their control level.
+	light_range = 3
+	var/list/mob/living/carbon/human/occupants				//mob = bitflags of their control level.
 	var/max_occupants = 1
 	var/max_drivers = 1
 	var/movedelay = 2
@@ -23,6 +24,13 @@
 	var/list/autogrant_actions_controller	//assoc list "[bitflag]" = list(typepaths)
 	var/list/mob/occupant_actions			//assoc list mob = list(type = action datum assigned to mob)
 	var/obj/vehicle/trailer
+
+	var/mechanical = FALSE // If false, doesn't care for things like cells, engines, EMP, keys, etc.
+	var/on = FALSE
+	var/horn_sound
+	var/engine_start 
+	var/engine_fail = 'sound/vehicles/motorbikewontstart.ogg'
+	var/list/drive_sound 
 
 /obj/vehicle/Initialize(mapload)
 	. = ..()
@@ -44,6 +52,7 @@
 			. += "It appears heavily damaged."
 		if(0 to 25)
 			. += span_warning("It's falling apart!")
+	
 
 /obj/vehicle/proc/is_key(obj/item/I)
 	return I? (key_type_exact? (I.type == key_type) : istype(I, key_type)) : FALSE
@@ -120,6 +129,7 @@
 		return
 	vehicle_move(direction)
 
+
 /obj/vehicle/proc/vehicle_move(direction)
 	if(lastmove + movedelay > world.time)
 		return FALSE
@@ -164,9 +174,12 @@
 
 /obj/vehicle/Move(newloc, dir)
 	. = ..()
+	if((on)&&(occupants[1]))
+		playsound(src, pick(drive_sound), 30, 5)
 	if(trailer && .)
 		var/dir_to_move = get_dir(trailer.loc, newloc)
 		step(trailer, dir_to_move)
+
 
 /obj/vehicle/bullet_act(obj/item/projectile/Proj) //wrapper
 	if (!enclosed && length(occupants) && !Proj.force_hit && (Proj.def_zone == BODY_ZONE_HEAD || Proj.def_zone == BODY_ZONE_CHEST)) //allows bullets to hit drivers
