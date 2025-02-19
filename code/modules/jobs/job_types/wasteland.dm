@@ -1,3 +1,4 @@
+
 /datum/job/wasteland
 	department_flag = WASTELAND
 
@@ -2705,3 +2706,5 @@ GLOBAL_LIST_EMPTY(radio_operators)
 		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/cool_book/teacherguidebook = 1
 		)
+
+

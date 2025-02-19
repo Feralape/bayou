@@ -39,3 +39,11 @@
 /obj/effect/landmark/start/frontier/rimwatch_marshall
 	name = "Rimwatch Marshall"
 	icon_state = "marshall"
+
+/obj/effect/landmark/start/frontier/drifters
+	name = "Drifter"
+	icon_state = "technician"
+
+/obj/effect/landmark/start/frontier/radioop
+	name = "Radio Operator"
+	icon_state = "technician"

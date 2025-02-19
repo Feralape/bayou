@@ -88,3 +88,32 @@
 	item_state = "merchant"
 	item_color = "merchant"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/vagabond
+	name = "vagabond fatigues"
+	desc = "It's a rugged white t-shirt with brown trousers."
+	icon_state = "doctor_m"
+	item_state = "doctor_m"
+	item_color = "doctor_m"
+
+/obj/item/clothing/under/vagabond/Initialize()
+	. = ..()
+	icon_state = pick("doctor_m", "doctor_f")
+	item_state = icon_state
+	item_color = icon_state
+
+/obj/item/clothing/under/foxflannel
+	name = "black flannel outfit"
+	desc = "A black flannel ontop of a pair of slim-fitting pre-war jeans that were kept in excellent condition. The back leather panel is worn out."
+	mutantrace_variation = STYLE_DIGITIGRADE
+	icon_state = "foxflannel"
+	item_state = "foxflannel"
+	item_color = "foxflannel"
+
+
+/obj/item/clothing/under/redflannel
+	name = "red flannel outfit"
+	desc = "Simple rustic clothes consisting of a red flannel on top of a pair of slim-fitting pre-war jeans."
+	icon_state = "vetranger"
+	item_state = "vetranger"
+	item_color = "vetranger"

@@ -42,8 +42,8 @@ GLOBAL_LIST_INIT(civilian_positions, list(
 
 
 GLOBAL_LIST_INIT(nonhuman_positions, list(
-	"AI",
-	"Cyborg",
+	//"AI",
+	//"Cyborg",
 	ROLE_PAI,
 	))
 
@@ -346,15 +346,24 @@ GLOBAL_LIST_INIT(heavensnight_positions, list(
 
 //Outpost
 GLOBAL_LIST_INIT(outpost_positions, list(
+	"Chief Medical Officer",
 	"Medical Doctor",
 	"Roboticist",
 	"Researcher",
 	"Technician",
 	"Trader",
 	"Dock Worker",
+	"Bartender",
 	"Rimwatch Officer",
 	"Rimwatch Ranger",
 	"Rimwatch Marshall",
+	"Outpost Pilot",
+))
+
+//DRIFTERS
+GLOBAL_LIST_INIT(drifter_positions, list(
+"Radio Operator",
+"Drifter",
 ))
 
 /// TODO: Take all these horrible string-based roflcopters and have them 
@@ -365,20 +374,21 @@ GLOBAL_LIST_INIT(position_categories, list(
 	// EXP_TYPE_FOLLOWERS = list("jobs" = followers_positions, "color" = "#ffeeaa"),
 	// EXP_TYPE_BROTHERHOOD = list("jobs" = brotherhood_positions, "color" = "#95a5a6"),
 	// EXP_TYPE_LEGION = list("jobs" = legion_positions, "color" = "#f81717"),
-	EXP_TYPE_WASTELAND = list("jobs" = wasteland_positions, "color" = "#5a5a5a"),
+	//EXP_TYPE_WASTELAND = list("jobs" = wasteland_positions, "color" = "#5a5a5a"),
 	// EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#323232"),
 	// EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
-	"Outpost" = list("jobs" = outpost_positions, "color" = "#1223b9"),
-	"New Boston" = list("jobs" = oasis_positions, "color" = "#d7b088"),
-	"Den" = list("jobs" = den_positions, "color" = "#d7b088"),
-	"Guild" = list("jobs" = guild_positions, "color" = "#d45b3d"),
+	"Outpost" = list("jobs" = outpost_positions, "color" = "#3a65b4"),
+	"Drifter" = list("jobs" = drifter_positions, "color" = "#9eb6e2"),
+	//"New Boston" = list("jobs" = oasis_positions, "color" = "#d7b088"),
+	//"Den" = list("jobs" = den_positions, "color" = "#d7b088"),
+	//"Guild" = list("jobs" = guild_positions, "color" = "#d45b3d"),
 	//"Garland" = list("jobs" = gar_positions, "color" = "#d7b088"),
-	EXP_TYPE_SILICON = list("jobs" = silicon_positions, "color" = "#4a4a4a"),
-	EXP_TYPE_TRIBAL = list("jobs" = tribal_positions, "color" = "#006666"),
+	//EXP_TYPE_SILICON = list("jobs" = silicon_positions, "color" = "#4a4a4a"),
+	//EXP_TYPE_TRIBAL = list("jobs" = tribal_positions, "color" = "#006666"),
 	//EXP_TYPE_BIKER = list("jobs" = biker_positions, "color" = "#eb872f"),
-	EXP_TYPE_CLUB = list("jobs" = heavensnight_positions, "color" = "#c94b8a"),
+	//EXP_TYPE_CLUB = list("jobs" = heavensnight_positions, "color" = "#c94b8a"),
 	//"debug" = list("jobs" = debug_positions, "color" = "#ff00ee"),
-	"Tunnel Rats" = list("jobs" = tunnelrats_positions, "color" = "#f81717"),
+	//"Tunnel Rats" = list("jobs" = tunnelrats_positions, "color" = "#f81717"),
 ))
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(

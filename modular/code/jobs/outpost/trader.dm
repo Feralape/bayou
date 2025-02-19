@@ -1,15 +1,15 @@
 // DEPOT 	
 /datum/job/frontier/trader
 	title = "Trader"
-	flag = QUARTERMASTER
-	department_flag = CIVILIAN
+	flag = OUTPOST_TRADER
+	display_order = JOB_DISPLAY_ORDER_TRADER
 	faction = FACTION_OUTPOST
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "the CTN and the Governor."
 	description = "You hold the charter to trade here so long you abide by CTN laws and the Governor. Check your guidebook for more info."
 	enforces = "Check your guidebook"
-	selection_color = "#dcba97"
+	selection_color = "#3169bd"
 	exp_requirements = 0
 
 	outfit = /datum/outfit/job/trader
@@ -74,14 +74,14 @@
 
 /datum/job/frontier/dock_worker
 	title = "Dock Worker"
-	flag = CARGOTECH
-	department_flag = CIVILIAN
+	flag = DOCK_WORKER
+	display_order = JOB_DISPLAY_ORDER_DOCKWORKER
 	faction = FACTION_OUTPOST
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the trader."
 	description = "You work for the trader, help them load/unload the ship, sort the depot and man the counter, you are also the trader's personal guards."
-	selection_color = "#dcba97"
+	selection_color = "#3169bd"
 	exp_requirements = 0
 
 	outfit = /datum/outfit/job/frontier/dock_worker
