@@ -723,7 +723,7 @@
 	icon = 'icons/fallout/turfs/walls.dmi'
 	icon_state = "matrix"
 	uses = 3
-
+/*
 /obj/effect/mob_spawn/human/fallout13/ncr
 	name = "NCR Trooper Spawn"
 	desc = "An entry point for troopers of the NCR to join a battle."
@@ -764,10 +764,11 @@
 		/obj/item/clothing/mask/gas/ranger = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
 		)
-
+*/
 /obj/effect/mob_spawn/human/fallout13/ncr/special(mob/living/new_spawn)
 	new_spawn.real_name = random_unique_name(gender)
 
+/*
 /obj/effect/mob_spawn/human/fallout13/legion
 	name = "Prime Legionnaire Spawn"
 	desc = "An entry point for prime legionaries of Caesar's Legion to join a battle."
@@ -784,6 +785,7 @@
 		/obj/item/melee/onehanded/machete = 1,
 		/obj/item/grenade/homemade/firebomb = 1,
 		)
+
 
 /obj/effect/mob_spawn/human/fallout13/legion/veteran
 	name = "Veteran Legionnaire Spawn"
@@ -828,6 +830,7 @@
 		/obj/item/ammo_box/magazine/m45/socom=2,
 		/obj/item/clothing/accessory/bos/paladin=1
 		)
+*/
 
 /obj/effect/mob_spawn/human/fallout13/bos/special(mob/living/new_spawn)
 	new_spawn.real_name = random_unique_name(gender)

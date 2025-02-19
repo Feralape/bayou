@@ -1,14 +1,17 @@
 //RIMWATCH
 
+//OFFICER
+
 /datum/job/frontier/rimwatch_officer // Rimwatch Officer
 	title = "Rimwatch Officer"
-	flag = OFFICER
+	flag = OUTPOST_OFFICER
 	faction = FACTION_OUTPOST
+	display_order = JOB_DISPLAY_ORDER_OFFICER
 	total_positions = 6
 	spawn_positions = 6
 	description = "As a Rimwatch Officer, your main duty is to protect the outpost and its people, and to uphold the Laws of the Rim."
 	supervisors = "Rimwatch Marshall"
-	selection_color = "#551010"
+	selection_color = "#3169bd"
 	outfit = /datum/outfit/job/frontier/rimwatch_officer
 	exp_requirements = 0
 
@@ -50,15 +53,18 @@
 		/obj/item/ammo_box/magazine/m45 = 2,
 		)
 
+//OFFICER
+
 /datum/job/frontier/rimwatch_ranger // Rimwatch Ranger
 	title = "Rimwatch Ranger"
-	flag = OFFICER
+	flag = OUTPOST_RANGER 
+	display_order = JOB_DISPLAY_ORDER_RANGER
 	faction = FACTION_OUTPOST
 	total_positions = 4
 	spawn_positions = 4
 	description = "As a Rimwatch Ranger, your duty is also to protect the outpost as well as to uphold the Laws of the Rim. However, you are also tasked with scouting the surrounding area and dealing with threats outside the outpost."
 	supervisors = "Rimwatch Marshall"
-	selection_color = "#551010"
+	selection_color = "#3169bd"
 	outfit = /datum/outfit/job/frontier/rimwatch_ranger
 	exp_requirements = 0
 
@@ -92,15 +98,19 @@
 		/obj/item/ammo_box/c45rev = 2,
 		)
 
+
+//MARSHALL
+
 /datum/job/frontier/rimwatch_marshall // Rimwatch Marshall
 	title = "Rimwatch Marshall"
-	flag = HOS	
+	flag = OUTPOST_MARSHALL
+	display_order = JOB_DISPLAY_ORDER_MARSHALL
 	faction = FACTION_OUTPOST
 	total_positions = 1
 	spawn_positions = 1
 	description = "As the Rimwatch Marshall, you are the leader of the Rimwatch. You are responsible for the safety of the outpost and its people, as well as the enforcement of the Laws of the Rim."
 	supervisors = "the Governor"
-	selection_color = "#551010"
+	selection_color = "#3169bd"
 	outfit = /datum/outfit/job/frontier/rimwatch_marshall
 	exp_requirements = 0
 
@@ -136,3 +146,5 @@
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3,
 		/obj/item/ammo_box/magazine/m45 = 2
 		)
+
+//PILOT

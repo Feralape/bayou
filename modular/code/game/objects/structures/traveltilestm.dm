@@ -153,10 +153,11 @@
 /proc/mob_move_travel_z_level(mob/living/L, turf/newtarg)
 	var/atom/movable/pulling = L.pulling
 	var/was_pulled_buckled = FALSE
+	L.forceMove(newtarg)
+	to_chat(L, span_warning("AWAY WE GO!"))
 	if(pulling)
 		if(pulling in L.buckled_mobs)
 			was_pulled_buckled = TRUE
-	L.forceMove(newtarg)
 	if(pulling)
 		L.stop_pulling()
 		pulling.forceMove(newtarg)
@@ -165,3 +166,10 @@
 			var/mob/living/pulled_mob = pulling
 			pulled_mob.grippedby(L, TRUE)
 			L.buckle_mob(pulling, TRUE, TRUE, 90, 0, 0)
+/*
+	if(L.buckled && istype(L.buckled, /obj/vehicle))
+		var/atom/movable/vehicle = L.buckled
+		vehicle.forceMove(newtarg)
+		L.forceMove(get_turf(vehicle))
+		vehicle.buckle_mob(L)
+*/
