@@ -57,7 +57,7 @@
 /obj/structure/fluff/traveltile/attack_hand(mob/user)
 	if(!isliving(user))
 		return ..()
-	to_chat(user, span_warning("THERE!!"))
+	to_chat(user, span_warning("FWAAAH!!"))
 //	user_try_travel(user)
 
 /obj/structure/fluff/traveltile/proc/can_go(atom/movable/AM)
@@ -153,8 +153,7 @@
 /proc/mob_move_travel_z_level(mob/living/L, turf/newtarg)
 	var/atom/movable/pulling = L.pulling
 	var/was_pulled_buckled = FALSE
-	L.forceMove(newtarg)
-	to_chat(L, span_warning("AWAY WE GO!"))
+	var/on_vehicle = FALSE
 	if(pulling)
 		if(pulling in L.buckled_mobs)
 			was_pulled_buckled = TRUE
@@ -166,10 +165,15 @@
 			var/mob/living/pulled_mob = pulling
 			pulled_mob.grippedby(L, TRUE)
 			L.buckle_mob(pulling, TRUE, TRUE, 90, 0, 0)
-/*
-	if(L.buckled && istype(L.buckled, /obj/vehicle))
+	if(L.buckled)
+		on_vehicle = TRUE
+	if(on_vehicle)
 		var/atom/movable/vehicle = L.buckled
 		vehicle.forceMove(newtarg)
 		L.forceMove(get_turf(vehicle))
-		vehicle.buckle_mob(L)
-*/
+		vehicle.buckle_mob(L, TRUE, TRUE, 90, 0, 0)
+	else
+		L.forceMove(newtarg)
+
+
+
