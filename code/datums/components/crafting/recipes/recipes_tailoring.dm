@@ -323,7 +323,7 @@
 ///////////////
 //Power Armor//
 ///////////////
-
+/*
 /datum/crafting_recipe/pa_t45b
 	name = "Power Armor Exo-Skeleton"
 	result = /obj/item/storage/box/armor/t45b
@@ -518,7 +518,7 @@
 /obj/item/storage/box/armor/pa_advanced_x02/PopulateContents()
 	new /obj/item/clothing/head/helmet/f13/power_armor/x02helmet(src)
 	new /obj/item/clothing/suit/armor/power_armor/advanced/x02(src)
-
+*/
 ///////////
 //HELMETS//
 ///////////

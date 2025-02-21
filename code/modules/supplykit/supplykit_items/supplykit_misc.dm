@@ -80,6 +80,7 @@
 	item = /obj/item/musicaltuner
 	cost = 10
 
+/*
 /datum/supplykit_item/misc/hornoffense
 	name = "Hunting Horn - Offense"
 	desc = "A horn that bolsters the speed and melee power of those who hear it."
@@ -128,6 +129,70 @@
 	item = /obj/item/geiger_counter
 	cost = 5
 
+*/
+
+
+
+/datum/supplykit_item/misc/trashbag
+	name = "Trash Bag"
+	desc = "A big ol bag for stowing lots of trash or random junk in."
+	item = /obj/item/storage/bag/trash
+	cost = 5
+
+/datum/supplykit_item/misc/cleaner
+	name = "Abraxo Cleaner"
+	desc = "A spray bottle full of chemicals, for making things pristine and clean."
+	item = /obj/item/reagent_containers/spray/cleaner
+	cost = 5
+
+/datum/supplykit_item/misc/abraxo
+	name = "Abraxo"
+	desc = "A box of industrial cleaner, strong enough to scrub up radioactive sludge puddles."
+	item = /obj/item/crafting/abraxo
+	cost = 5
+
+/datum/supplykit_item/misc/galoshes
+	name = "Galoshes"
+	desc = "A robust pair of bright yellow boots, with slip resistant grips."
+	item = /obj/item/clothing/shoes/galoshes
+	cost = 20
+
+/datum/supplykit_item/misc/soap
+	name = "Soap Bar"
+	desc = "A bar of soap, useful for cleaning, tripping, and eating."
+	item = /obj/item/soap
+	cost = 5
+
+/datum/supplykit_item/misc/paintremover
+	name = "Paint Remover"
+	desc = "A bucket of solvent used to scrub paint off floorboards, following colorful hijinx "
+	item = /obj/item/paint/paint_remover
+	cost = 1
+
+/datum/supplykit_item/misc/mop
+	name = "Mop"
+	desc = "A basic mop, for cleaning bulkheads and bonking miscreant heads."
+	item = /obj/item/mop
+	cost = 5
+
+/datum/supplykit_item/misc/broom
+	name = "Broom"
+	desc = "A useful tool for clearing away trash and gathering up useful junk."
+	item = /obj/item/broom
+	cost = 5
+
+/datum/supplykit_item/misc/cellcharger
+	name = "Cell Charger Circuit"
+	desc = "The thinky bits needed to set up your very own cell charger, for enterprising e-gun users."
+	item = /obj/item/circuitboard/machine/cell_charger
+	cost = 20
+
+/datum/supplykit_item/misc/reloader
+	name = "Makeshift Reloader Parts"
+	desc = "The pieces needed to start creating low quality handloads. Just attach it to a table or some wood pieces."
+	item = /obj/item/circuitboard/machine/autolathe/ammo/improvised
+	cost = 5
+	
 /datum/supplykit_item/misc/beartrap
 	name = "Bear Trap"
 	desc = "A large intimidating leg trap."

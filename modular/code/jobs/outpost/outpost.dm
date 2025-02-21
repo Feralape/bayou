@@ -21,14 +21,14 @@
 */
 	outfit = /datum/outfit/job/frontier/pilot
 
-	access = list(ACCESS_BAR, ACCESS_EVA)
-	minimal_access = list(ACCESS_BAR, ACCESS_EVA)
+	access = list(ACCESS_OUTPOST, ACCESS_EVA)
+	minimal_access = list(ACCESS_OUTPOST, ACCESS_EVA)
 
 /datum/outfit/job/frontier/pilot
 	name = "Outpost Pilot"
 	jobtype = /datum/job/frontier/outpost_pilot
 	belt = /obj/item/supplykit
-	id = /obj/item/card/id/dogtag/town
+	id = /obj/item/card/id/dogtag/outpost
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -73,8 +73,8 @@
 	/datum/outfit/loadout/diner
 	)
 */
-	access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
-	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT, ACCESS_CARGO, ACCESS_GUILD)
+	access = list(ACCESS_OUTPOST, ACCESS_BAR)
+	minimal_access = list(ACCESS_OUTPOST, ACCESS_BAR)
 /*	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/oasis
@@ -89,7 +89,7 @@
 	name = "Bartender"
 	jobtype = /datum/job/frontier/bartender
 	uniform = /obj/item/clothing/under/f13/bartenderalt
-	id = /obj/item/card/id/dogtag/town
+	id = /obj/item/card/id/dogtag/outpost
 	ears = /obj/item/radio/headset/headset_town/guild
 	belt = /obj/item/supplykit
 	shoes = /obj/item/clothing/shoes/workboots/mining

@@ -172,3 +172,32 @@
 	item = /obj/item/storage/pill_bottle/happy
 	cost = 10
 
+/datum/supplykit_item/medical/surgerybag
+	name = "Surgery Bag"
+	desc = "A duffle containing all the gear needed for successful surgery."
+	item = /obj/item/storage/backpack/duffelbag/med/surgery
+	cost = 15
+
+/datum/supplykit_item/medical/latexgloves
+	name = "Latex Gloves"
+	desc = "A pair of sterile gloves for clean surgical operations."
+	item = /obj/item/clothing/gloves/color/latex
+	cost = 1
+
+/datum/supplykit_item/medical/teleiv
+	name = "Telescopic IV Drip"
+	desc = "A folding IV drip, for applying gradual doses of blood or other chemicals, or for drawing blood donations."
+	item = /obj/item/tele_iv
+	cost = 10
+
+/datum/supplykit_item/medical/syringe
+	name = "Syringe"
+	desc = "A hypodermic needle, used for efficient application of chemicals."
+	item = /obj/item/reagent_containers/syringe
+	cost = 1
+
+/datum/supplykit_item/medical/healthanalyzer
+	name = "Health Analyzer"
+	desc = "A multipurpose scanner that diagnoses the wellbeing of patients."
+	item = /obj/item/healthanalyzer
+	cost = 5

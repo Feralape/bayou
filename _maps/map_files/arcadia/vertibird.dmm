@@ -1,0 +1,464 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/open/space/basic,
+/area/frontier/outdoor/wilderness)
+"d" = (
+/turf/open/floor/engine,
+/area/frontier/outdoor/wilderness)
+"g" = (
+/obj/effect/landmark/vertibird_enter{
+	id = "verti1star"
+	},
+/turf/open/floor/engine,
+/area/frontier/outdoor/wilderness)
+"i" = (
+/obj/structure/closet/locker/medcabinet{
+	pixel_x = 25;
+	pixel_y = -5
+	},
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
+	dir = 1;
+	name = "prewar lounge chair"
+	},
+/turf/open/floor/engine,
+/area/frontier/outdoor/wilderness)
+"k" = (
+/turf/closed/indestructible/oldshuttle/corner{
+	color = "#808080";
+	dir = 4
+	},
+/area/frontier/outdoor/wilderness)
+"l" = (
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = 29
+	},
+/obj/structure/bed/pod,
+/turf/open/floor/engine,
+/area/frontier/outdoor/wilderness)
+"m" = (
+/obj/machinery/light/floor,
+/turf/open/floor/engine,
+/area/frontier/outdoor/wilderness)
+"p" = (
+/obj/machinery/door/airlock/security{
+	name = "Brig";
+	req_access_txt = "18"
+	},
+/turf/open/floor/engine,
+/area/frontier/outdoor/wilderness)
+"q" = (
+/turf/closed/indestructible/oldshuttle/corner{
+	color = "#808080";
+	dir = 1
+	},
+/area/frontier/outdoor/wilderness)
+"s" = (
+/obj/vertibird_exit_door,
+/turf/closed/wall,
+/area/frontier/outdoor/wilderness)
+"u" = (
+/turf/closed/indestructible/vaultdoor{
+	desc = "A wall made out of metal, really fucking tough metal. They definitely didn't want everything to go renovating the damn vertibird";
+	name = "Vertibird wall"
+	},
+/area/frontier/outdoor/wilderness)
+"B" = (
+/turf/closed/indestructible/oldshuttle/corner{
+	color = "#808080";
+	dir = 8
+	},
+/area/frontier/outdoor/wilderness)
+"D" = (
+/obj/structure/closet/locker/medcabinet{
+	pixel_y = 30
+	},
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
+	layer = 2.7;
+	name = "prewar lounge chair"
+	},
+/turf/open/floor/engine,
+/area/frontier/outdoor/wilderness)
+"E" = (
+/turf/closed/indestructible/oldshuttle/corner{
+	color = "#808080"
+	},
+/area/frontier/outdoor/wilderness)
+"G" = (
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
+	dir = 8;
+	name = "prewar lounge chair"
+	},
+/turf/open/floor/engine,
+/area/frontier/outdoor/wilderness)
+"I" = (
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
+	dir = 8;
+	name = "prewar lounge chair"
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 32
+	},
+/turf/open/floor/engine,
+/area/frontier/outdoor/wilderness)
+"J" = (
+/obj/effect/turf_decal/vg_decals/numbers/zero{
+	pixel_x = -6
+	},
+/obj/effect/turf_decal/vg_decals/numbers/one{
+	pixel_x = 5
+	},
+/turf/closed/indestructible/vaultdoor{
+	desc = "A wall made out of metal, really fucking tough metal. They definitely didn't want everything to go renovating the damn vertibird";
+	name = "Vertibird wall"
+	},
+/area/frontier/outdoor/wilderness)
+"K" = (
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
+	dir = 8;
+	name = "Cuckhole Hold Chair"
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/engine,
+/area/frontier/outdoor/wilderness)
+"L" = (
+/turf/closed/indestructible/fakeglass,
+/area/frontier/outdoor/wilderness)
+"M" = (
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
+	layer = 2.7;
+	name = "prewar lounge chair"
+	},
+/turf/open/floor/engine,
+/area/frontier/outdoor/wilderness)
+"O" = (
+/obj/structure/table/reinforced,
+/obj/machinery/computer/terminal{
+	dir = 4;
+	pixel_x = 4;
+	pixel_y = 5;
+	termtag = "Enclave Outpost, Armory"
+	},
+/turf/open/floor/engine,
+/area/frontier/outdoor/wilderness)
+"P" = (
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
+	dir = 1;
+	name = "prewar lounge chair"
+	},
+/turf/open/floor/engine,
+/area/frontier/outdoor/wilderness)
+"R" = (
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
+	layer = 2.7;
+	name = "prewar lounge chair"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/machinery/vending/wallmed{
+	pixel_y = 30
+	},
+/turf/open/floor/engine,
+/area/frontier/outdoor/wilderness)
+"Y" = (
+/obj/machinery/computer/vertibird_console,
+/turf/open/floor/engine,
+/area/frontier/outdoor/wilderness)
+
+(1,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(2,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(3,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(4,1,1) = {"
+a
+a
+a
+a
+a
+B
+L
+L
+L
+k
+a
+a
+a
+a
+a
+"}
+(5,1,1) = {"
+a
+a
+a
+a
+a
+u
+O
+Y
+O
+u
+a
+a
+a
+a
+a
+"}
+(6,1,1) = {"
+a
+a
+a
+a
+a
+u
+I
+m
+G
+u
+a
+a
+a
+a
+a
+"}
+(7,1,1) = {"
+a
+a
+a
+u
+u
+u
+u
+p
+u
+u
+u
+u
+a
+a
+a
+"}
+(8,1,1) = {"
+a
+a
+a
+u
+u
+u
+D
+d
+P
+u
+u
+u
+a
+a
+a
+"}
+(9,1,1) = {"
+a
+a
+a
+a
+a
+u
+M
+d
+g
+s
+a
+a
+a
+a
+a
+"}
+(10,1,1) = {"
+a
+a
+a
+a
+a
+u
+M
+m
+P
+J
+a
+a
+a
+a
+a
+"}
+(11,1,1) = {"
+a
+a
+a
+a
+a
+u
+R
+d
+P
+u
+a
+a
+a
+a
+a
+"}
+(12,1,1) = {"
+a
+a
+a
+a
+a
+u
+l
+d
+i
+u
+a
+a
+a
+a
+a
+"}
+(13,1,1) = {"
+a
+a
+a
+a
+a
+E
+u
+p
+u
+q
+a
+a
+a
+a
+a
+"}
+(14,1,1) = {"
+a
+a
+a
+a
+a
+a
+u
+K
+u
+a
+a
+a
+a
+a
+a
+"}
+(15,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+u
+a
+a
+a
+a
+a
+a
+a
+"}
+(16,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}
+(17,1,1) = {"
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+"}

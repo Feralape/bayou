@@ -1,36 +1,37 @@
 /// DRIFTER
-/datum/job/frontier/drifter
-	title = "Wastelander"
-	flag = FRONTIER_DRIFTER
-	faction = FACTION_WASTELAND
+/datum/job/frontier/outlander
+	title = "Outlander"
+	flag = FRONTIER_OUTLANDER
+	display_order = JOB_DISPLAY_ORDER_OUTLANDER
+	faction = FACTION_DRIFTER
 	total_positions = -1
 	spawn_positions = -1
-	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the settlement of Nash to the Midwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
+	description = "You are a lone wanderer, unaffliated with any of the factions in the region, you are here for purposes known only to you. You do not get the protection and benefits that comes with being part of a faction and have in your possession whatever you get to carry on your back."
 	supervisors = "fate"
 	selection_color = "#d5d4dfb7"
 
-	outfit = /datum/outfit/job/frontier/drifter
+	outfit = /datum/outfit/job/frontier/outlander
 
 	access = list()		//we can expand on this and make alterations as people suggest different loadouts
 	minimal_access = list()
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
-			/datum/job/frontier/drifter,
+			/datum/job/frontier/outlander,
 		),
 		/datum/matchmaking_pref/rival = list(
-			/datum/job/frontier/drifter,
+			/datum/job/frontier/outlander,
 		),
 		/datum/matchmaking_pref/mentor = list(
-			/datum/job/frontier/drifter,
+			/datum/job/frontier/outlander,
 		),
 		/datum/matchmaking_pref/disciple = list(
-			/datum/job/frontier/drifter,
+			/datum/job/frontier/outlander,
 		),
 		/datum/matchmaking_pref/patron = list(
-			/datum/job/frontier/drifter,
+			/datum/job/frontier/outlander,
 		),
 		/datum/matchmaking_pref/protegee = list(
-			/datum/job/frontier/drifter,
+			/datum/job/frontier/outlander,
 		),
 	)
 	
@@ -39,9 +40,9 @@
 //	/datum/outfit/loadout/legioncivilian,
 //	/datum/outfit/loadout/wastelander_desert_ranger)
 
-/datum/outfit/job/frontier/drifter
-	name = "Wastelander"
-	jobtype = /datum/job/frontier/drifter
+/datum/outfit/job/frontier/outlander
+	name = "Outlander"
+	jobtype = /datum/job/frontier/outlander
 
 	id = null
 	ears = null
@@ -60,7 +61,7 @@
 		/obj/item/radio/headset
 		)
 
-/datum/outfit/job/frontier/drifter/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/frontier/outlander/pre_equip(mob/living/carbon/human/H)
 	..()
 	uniform = pick(
 		/obj/item/clothing/under/vagabond, \
@@ -76,7 +77,7 @@
 	faction = FACTION_DRIFTER
 	total_positions = 2
 	spawn_positions = 2
-	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the settlement of Nash to the Midwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
+	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the Outpost to the Southwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
 	supervisors = "fate"
 	selection_color = "#d5d4dfb7"
 
@@ -106,13 +107,13 @@
 
 GLOBAL_LIST_EMPTY(radio_operators)
 
-/datum/outfit/job/frontier/drifters/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/frontier/radioop/pre_equip(mob/living/carbon/human/H)
 	..()
 	uniform = pick(
-		/obj/item/clothing/under/f13/settler, \
-		/obj/item/clothing/under/f13/brahminm, \
-		/obj/item/clothing/under/f13/lumberjack, \
-		/obj/item/clothing/under/f13/roving)
+		/obj/item/clothing/under/vagabond, \
+		/obj/item/clothing/under/f13/worn, \
+		/obj/item/clothing/under/foxflannel, \
+		/obj/item/clothing/under/redflannel)
 
 /datum/outfit/job/frontier/radioop/post_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
 	. = ..()

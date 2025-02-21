@@ -1,13 +1,13 @@
 
 GLOBAL_LIST_INIT(engineering_positions, list(
-	"Chief Engineer",
+//	"Chief Engineer",
 	"Station Engineer",
 	"Atmospheric Technician",
 	))
 
 
 GLOBAL_LIST_INIT(medical_positions, list(
-	"Chief Medical Officer",
+//	"Chief Medical Officer",
 //	"Medical Doctor",
 	"Geneticist",
 	"Virologist",
@@ -30,7 +30,7 @@ GLOBAL_LIST_INIT(supply_positions, list(
 
 GLOBAL_LIST_INIT(civilian_positions, list(
 	"Head of Personnel",
-	"Bartender",
+//	"Bartender",
 	"Botanist",
 	"Cook",
 	"Janitor",
@@ -131,7 +131,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Town Doctor",
 "Town Paramedic",
 
-"Cyborg",
+//"Cyborg",
 "Overseer",
 "Chief of Security",
 "Vault-tec Doctor",
@@ -363,7 +363,7 @@ GLOBAL_LIST_INIT(outpost_positions, list(
 //DRIFTERS
 GLOBAL_LIST_INIT(drifter_positions, list(
 "Radio Operator",
-"Drifter",
+"Outlander",
 ))
 
 /// TODO: Take all these horrible string-based roflcopters and have them 

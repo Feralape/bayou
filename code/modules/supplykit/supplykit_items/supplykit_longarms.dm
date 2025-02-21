@@ -15,7 +15,35 @@
 	restricted_roles = list() //for restricting by job type
 	*/
 
+/datum/supplykit_item/longarms/brick
+	name = "Brick Launcher"
+	desc = "The tube of an old rocket launcher, modified to slingshot bricks at high velocity. bricks are easily sourced, via *brick"
+	item = /obj/item/gun/ballistic/revolver/brick
+	cost = 20
 
+/datum/supplykit_item/longarms/pepperbox
+	name = "Pepperbox"
+	desc = "An unstable cluster of four 10mm barrels that can fire in semi-auto or all at once."
+	item = /obj/item/gun/ballistic/revolver/hobo/pepperbox
+	cost = 20
+
+/datum/supplykit_item/longarms/piperifle
+	name = "Pipe Rifle"
+	desc = "A simple pipe and stock, initially chambered in 5.56 but able to be modified to take nearly any cartridge."
+	item = /obj/item/gun/ballistic/revolver/hobo/piperifle
+	cost = 20
+
+/datum/supplykit_item/longarms/winchester
+	name = "Winchester Rebore"
+	desc = "A double barrel shotgun initially chambered in .308 but able to be modified to take nearly any cartridge."
+	item = /obj/item/gun/ballistic/revolver/winchesterrebored
+	cost = 20
+
+/datum/supplykit_item/longarms/shotbat
+	name = "Shotgun Bat"
+	desc = "A baseball bat with a shotgun barrel. It can also fit .50bmg if you have a deathwish."
+	item = /obj/item/gun/ballistic/revolver/hobo/single_shotgun
+	cost = 20
 
 /datum/supplykit_item/longarms/smg22
 	name = ".22 Uzi"

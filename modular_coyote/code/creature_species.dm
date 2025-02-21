@@ -656,6 +656,7 @@
 /mob/living/carbon/human/species/catslug
 	race = /datum/species/feral/catslug
 
+/*
 /datum/species/feral/chocobo
 	name = "Feral Chocobo"
 	id = "chocobo"
@@ -1183,7 +1184,7 @@
 	
 /mob/living/carbon/human/species/femdigo
 	race = /datum/species/feral/femdigo
-
+*/
 //End Other//
 
 //Start Synthetic Creatures//
@@ -1271,6 +1272,7 @@
 /mob/living/carbon/human/species/robobrain
 	race = /datum/species/adapted/simplebot/robobrain
 
+/*
 /datum/species/adapted/raptorborg
 	name = "REPORT THIS AS A BUG"
 	simple_icon = 'modular_coyote/icons/mob/raptorborg.dmi'
@@ -1349,7 +1351,7 @@
 	roundstart = TRUE
 /mob/living/carbon/human/species/fancyraptor
 	race = /datum/species/adapted/raptorborg/fancyraptor
-
+*/
 //get in the mech, shinji
 /datum/species/adapted/mechs
 	name = "REPORT THIS AS A BUG"

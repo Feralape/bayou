@@ -8,6 +8,10 @@
 	name = "Dock Worker"
 	icon_state = "dock_worker"
 
+/obj/effect/landmark/start/frontier/cmo
+	name = "Chief Medical Officer"
+	icon_state = "doctor"
+
 /obj/effect/landmark/start/frontier/doctor
 	name = "Medical Doctor"
 	icon_state = "doctor"
@@ -28,6 +32,11 @@
 	name = "Trader"
 	icon_state = "trader"
 
+
+/obj/effect/landmark/start/frontier/pilot
+	name = "Outpost Pilot"
+	icon_state = "officer"
+
 /obj/effect/landmark/start/frontier/rimwatch_officer
 	name = "Rimwatch Officer"
 	icon_state = "officer"
@@ -40,8 +49,8 @@
 	name = "Rimwatch Marshall"
 	icon_state = "marshall"
 
-/obj/effect/landmark/start/frontier/drifters
-	name = "Drifter"
+/obj/effect/landmark/start/frontier/outlander
+	name = "Outlander"
 	icon_state = "technician"
 
 /obj/effect/landmark/start/frontier/radioop

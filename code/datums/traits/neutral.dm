@@ -315,7 +315,7 @@
 /datum/quirk/overweight
 	name = "Overweight"
 	desc = "You're particularly fond of food, and join the round being overweight."
-	value = 0
+	value = -10
 	category = "Lifepath Quirks"
 	mechanics = "You spawn in overweight and full, this also limits your movement quirks out of Freerunning, Light Step, and Quick Walking. Good if you plan on bleeding a lot near round start, I guess."
 	mob_trait = TRAIT_FAT
@@ -555,6 +555,7 @@
 	if(!QDELETED(H))
 		H.remove_language(/datum/language/technorussian)
 
+/*
 /datum/quirk/in_heat
 	name = "ERP Receptive"
 	desc = "Your character, for whatever reason, is PASSIVELY seeking out attention from those who match your OOC Prefences. Remember to set your OOC notes!"
@@ -624,6 +625,7 @@
 	conflicts = list()
 	mob_trait = TRAIT_COMBATSWITCH
 	human_only = FALSE
+*/
 
 /datum/quirk/smol
 	name = "Scoopable!"
@@ -778,7 +780,7 @@
 	if(!human_holder.equip_to_slot_if_possible(folder, SLOT_IN_BACKPACK, disable_warning = TRUE, bypass_equip_delay_self = TRUE))
 		if(!human_holder.put_in_hands(folder))
 			folder.forceMove(get_turf(human_holder))
-
+/*
 /datum/quirk/lick_heal
 	name = "Innate healing - Saliva"
 	desc = "You got that dog in you, your licks straight up heal the wounded. Somehow. Don't think about it too hard."
@@ -804,9 +806,9 @@
 	lose_text = span_danger("The tingle in your palm fades.")
 	locked = FALSE
 	human_only = FALSE
-
+*/
 /datum/quirk/tend_heal
-	name = "Innate healing - Triage"
+	name = "Medical Triage"
 	desc = "You keep a tiny kit of medical supplies stashed away for emergencies."
 	value = 0
 	category = "Healer Quirks"
@@ -819,7 +821,7 @@
 	human_only = FALSE
 
 //Fennys insane RP quirks
-
+/*
 /datum/quirk/rpfocused
 	name = "Roleplay Seeking"
 	desc = "You are actively seeking out people who also are seeking roleplay that isn't necessarily erotic in nature. With this you will be able to see the other Roleplay related quirks on others."
@@ -981,6 +983,7 @@
 	conflicts = list()
 	mob_trait = TRAIT_ERPFLIRTY
 	human_only = FALSE
+*/
 
 /datum/quirk/advgunner
 	name = "Adventurer - Class: Gunner"

@@ -21,23 +21,8 @@
 	item = /obj/item/storage/belt/xenoarch/full
 	cost = 20
 
-/datum/supplykit_item/tech/cellcharger
-	name = "Cell Charger Circuit"
-	desc = "The thinky bits needed to set up your very own cell charger, for enterprising e-gun users."
-	item = /obj/item/circuitboard/machine/cell_charger
-	cost = 20
 
-/datum/supplykit_item/tech/reloader
-	name = "Makeshift Reloader Parts"
-	desc = "The pieces needed to start creating low quality handloads. Just attach it to a table or some wood pieces."
-	item = /obj/item/circuitboard/machine/autolathe/ammo/improvised
-	cost = 5
 
-/datum/supplykit_item/tech/healthanalyzer
-	name = "Health Analyzer"
-	desc = "A multipurpose scanner that diagnoses the wellbeing of patients."
-	item = /obj/item/healthanalyzer
-	cost = 5
 
 /datum/supplykit_item/tech/chemmaster
 	name = "Chemmaster Circuit"
@@ -93,27 +78,3 @@
 	item = /obj/item/stack/sheet/mineral/silver/two
 	cost = 5
 	limited_stock = 2
-
-/datum/supplykit_item/tech/surgerybag
-	name = "Surgery Bag"
-	desc = "A duffle containing all the gear needed for successful surgery."
-	item = /obj/item/storage/backpack/duffelbag/med/surgery
-	cost = 15
-
-/datum/supplykit_item/tech/latexgloves
-	name = "Latex Gloves"
-	desc = "A pair of sterile gloves for clean surgical operations."
-	item = /obj/item/clothing/gloves/color/latex
-	cost = 1
-
-/datum/supplykit_item/tech/teleiv
-	name = "Telescopic IV Drip"
-	desc = "A folding IV drip, for applying gradual doses of blood or other chemicals, or for drawing blood donations."
-	item = /obj/item/tele_iv
-	cost = 10
-
-/datum/supplykit_item/tech/syringe
-	name = "Syringe"
-	desc = "A hypodermic needle, used for efficient application of chemicals."
-	item = /obj/item/reagent_containers/syringe
-	cost = 1

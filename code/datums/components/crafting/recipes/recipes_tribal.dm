@@ -462,11 +462,12 @@
 	reqs = list(/obj/item/stack/medical/gauze/improvised = 2)
 
 /*Kelp's magic stuff*/
-
+/*
 /datum/crafting_recipe/magic
 	category = CAT_MAGIC
 
 // Ritual dagger (tribal dagger + needed to make magic stuff)
+
 /datum/crafting_recipe/magic/ritualdagger
 	name = "Ritual Dagger"
 	result = /obj/item/melee/onehanded/knife/ritualdagger
@@ -614,3 +615,4 @@
 				/obj/item/stack/sheet/bluespace_crystal = 5,
 				/obj/item/gun/magic/staff/kelpmagic/healstaff = 1)
 	tools = list(TOOL_WORKBENCH, TOOL_ALCHEMY_TABLE, TOOL_RITUAL)
+*/

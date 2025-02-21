@@ -1159,7 +1159,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 
 /datum/quirk/improved_heal
 	name = "Improved Innate Healing"
-	desc = "You have a deeper reservoir for innate healing, whether it's through magic, medical tending, or licking. Check the neutral traits for these abilities."
+	desc = "You have a deeper reservoir for innate healing. Check the neutral traits for these abilities."
 	value = 32
 	category = "Healer Quirks"
 	mechanics = "Your innate healing functions now have 25 uses instead of only 5. They will still regenerate at the same speed though."
@@ -1881,7 +1881,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 		QDEL_NULL(gather)
 		H.RemoveAbility(moveto)
 		QDEL_NULL(moveto)
-
+/*
 /datum/quirk/wildshape
 	name = "Wild Shape"
 	desc = "You've developed through some means the ability to adopt a lesser form. What you become was decided by yourself or mere circumstance, but you can transform back and forth at will."
@@ -1909,7 +1909,7 @@ GLOBAL_LIST_INIT(weapons_of_texarkana, list(
 	if(H)
 		H.RemoveSpell(wildshape)
 		QDEL_NULL(wildshape)
-
+*/
 /datum/quirk/zoomies
 	name = "Zoomies"
 	desc = "Physical prowess, mutation, or cybernetic enhancement, you can sprint a good deal longer than most folk. Justt don't run into things."

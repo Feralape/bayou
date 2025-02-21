@@ -15,6 +15,8 @@
 	outfit = /datum/outfit/job/frontier/rimwatch_officer
 	exp_requirements = 0
 
+	access = list(ACCESS_OUTPOST, ACCESS_SECURITY)
+	minimal_access = list(ACCESS_OUTPOST, ACCESS_SECURITY)
 
 /datum/outfit/job/frontier/rimwatch_officer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
@@ -68,6 +70,9 @@
 	outfit = /datum/outfit/job/frontier/rimwatch_ranger
 	exp_requirements = 0
 
+	access = list(ACCESS_OUTPOST, ACCESS_SECURITY)
+	minimal_access = list(ACCESS_OUTPOST, ACCESS_SECURITY)
+
 /datum/outfit/job/frontier/rimwatch_ranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
 	if(visualsOnly)
@@ -108,11 +113,15 @@
 	faction = FACTION_OUTPOST
 	total_positions = 1
 	spawn_positions = 1
-	description = "As the Rimwatch Marshall, you are the leader of the Rimwatch. You are responsible for the safety of the outpost and its people, as well as the enforcement of the Laws of the Rim."
+	description = "You are the leader of the outpost's Rimwatch garrison. You are responsible for the safety of the outpost and its people, as well as the enforcement of the Laws of the Rim."
 	supervisors = "the Governor"
 	selection_color = "#3169bd"
 	outfit = /datum/outfit/job/frontier/rimwatch_marshall
 	exp_requirements = 0
+
+	access = list(ACCESS_OUTPOST, ACCESS_SECURITY, ACCESS_HOS)
+	minimal_access = list(ACCESS_OUTPOST, ACCESS_SECURITY, ACCESS_HOS)
+
 
 /datum/outfit/job/frontier/rimwatch_marshall/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()

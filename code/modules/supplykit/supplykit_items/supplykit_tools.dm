@@ -15,61 +15,59 @@
 	restricted_roles = list() //for restricting by job type
 	*/
 
+/datum/supplykit_item/tools/weldgoggles
+	name = "Welding Goggles"
+	desc = "A set of hard to come by welding goggles, used to protect your eyes during construction and salvage."
+	item = /obj/item/clothing/glasses/welding
+	cost = 20
 
+/datum/supplykit_item/tools/industrialwelder
+	name = "Industrial Welding Tool"
+	desc = "A welding tool with a large reservoir, for efficient salvaging."
+	item = /obj/item/weldingtool/largetank
+	cost = 40
 
-/datum/supplykit_item/tools/trashbag
-	name = "Trash Bag"
-	desc = "A big ol bag for stowing lots of trash or random junk in."
-	item = /obj/item/storage/bag/trash
-	cost = 5
+/datum/supplykit_item/tools/salvagebag
+	name = "Salvage Bag"
+	desc = "A rugged sturdy bag for collecting junk."
+	item = /obj/item/storage/bag/salvage
+	cost = 10
 
-/datum/supplykit_item/tools/cleaner
-	name = "Abraxo Cleaner"
-	desc = "A spray bottle full of chemicals, for making things pristine and clean."
-	item = /obj/item/reagent_containers/spray/cleaner
-	cost = 5
+/datum/supplykit_item/tools/drill
+	name = "Mining Drill"
+	desc = "A heavy duty rock breaking drill, operates much faster than a pickaxe. C4 not included."
+	item = /obj/item/pickaxe/drill
+	cost = 40
 
-/datum/supplykit_item/tools/abraxo
-	name = "Abraxo"
-	desc = "A box of industrial cleaner, strong enough to scrub up radioactive sludge puddles."
-	item = /obj/item/crafting/abraxo
-	cost = 5
+/datum/supplykit_item/tools/pickaxe
+	name = "Compact Pickaxe"
+	desc = "A small but effective pickaxe, which can be stashed in a backpack."
+	item = /obj/item/pickaxe/mini
+	cost = 20
 
-/datum/supplykit_item/tools/mop
-	name = "Mop"
-	desc = "A basic mop, for cleaning bulkheads and bonking miscreant heads."
-	item = /obj/item/mop
-	cost = 5
+/datum/supplykit_item/tools/mininscanner
+	name = "Automatic Mining Scanner"
+	desc = "A scanner used to detect precious minerals in nearby rock and stone."
+	item = /obj/item/t_scanner/adv_mining_scanner/lesser
+	cost = 20
 
-/datum/supplykit_item/tools/broom
-	name = "Broom"
-	desc = "A useful tool for clearing away trash and gathering up useful junk."
-	item = /obj/item/broom
-	cost = 5
+/datum/supplykit_item/tools/hardhat
+	name = "Hard Hat"
+	desc = "A sturdy helmet with a mounted lamp, for protecting against falling rocks and debris."
+	item = /obj/item/clothing/head/hardhat
+	cost = 10
+
+/datum/supplykit_item/tools/orebag
+	name = "Ore Bag"
+	desc = "A cloth bag made for holding minerals as you mine."
+	item = /obj/item/storage/bag/ore
+	cost = 10
 
 /datum/supplykit_item/tools/lightreplacer
 	name = "Light Replacer"
 	desc = "A clever device that recycles broken tubes and bulbs and synthesizes new ones."
 	item = /obj/item/lightreplacer
 	cost = 5
-
-/datum/supplykit_item/tools/galoshes
-	name = "Galoshes"
-	desc = "A robust pair of bright yellow boots, with slip resistant grips."
-	item = /obj/item/clothing/shoes/galoshes
-	cost = 20
-
-/datum/supplykit_item/tools/soap
-	name = "Soap Bar"
-	desc = "A bar of soap, useful for cleaning, tripping, and eating."
-	item = /obj/item/soap
-	cost = 5
-
-/datum/supplykit_item/tools/paintremover
-	name = "Paint Remover"
-	desc = "A bucket of solvent used to scrub paint off floorboards, following colorful hijinx "
-	item = /obj/item/paint/paint_remover
-	cost = 1
 
 /datum/supplykit_item/tools/smithgloves
 	name = "Blacksmith Gloves"
