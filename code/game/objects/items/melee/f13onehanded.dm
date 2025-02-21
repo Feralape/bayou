@@ -586,7 +586,7 @@
 // Baton but coloured black
 /obj/item/melee/classic_baton/police
 	name = "police baton"
-	desc = "A black plastic nightstick, used by police officers to detain rowdy law-breakers."
+	desc = "A black metallic nightstick, used by police officers to detain rowdy law-breakers."
 	icon = 'icons/fallout/objects/melee/melee.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'

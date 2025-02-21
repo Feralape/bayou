@@ -17,10 +17,17 @@
 
 
 
-/datum/supplykit_item/meleebig/basebat
-	name = "Baseball Bat"
-	desc = "A swift and sturdy wooden bat."
-	item = /obj/item/twohanded/baseball
+/*
+
+/datum/supplykit_item/meleebig/warmace
+	name = "Warmace"
+	desc = "A heavy, slow swinging wooden tribal mace."
+	item = /obj/item/twohanded/sledgehammer/warmace
+
+/datum/supplykit_item/meleebig/warmace
+	name = "Warmace"
+	desc = "A heavy, slow swinging wooden tribal mace."
+	item = /obj/item/twohanded/sledgehammer/warmace
 
 /datum/supplykit_item/meleebig/bigclub
 	name = "Big Club"
@@ -61,7 +68,6 @@
 	name = "Claymore"
 	desc = "A regal Scottish two handed sword, and a symbol for bravery."
 	item = /obj/item/melee/coyote/oldclaymore
-
 /datum/supplykit_item/meleebig/halberd
 	name = "Halberd"
 	desc = "An axeblade and spear on a pole, allowing excellent reach."
@@ -96,24 +102,4 @@
 	name = "Pitchfork"
 	desc = "A humble peasant's weapon and tool, equally useful for tossing hay and tossing witches out."
 	item = /obj/item/pitchfork
-
-/datum/supplykit_item/meleebig/scrapspear
-	name = "Scrap Spear"
-	desc = "A sharp pointy bit is all you need to hurt things. Sticking it on a long handle means you can hurt things from further away."
-	item = /obj/item/twohanded/spear/scrapspear
-
-/datum/supplykit_item/meleebig/warmace
-	name = "Warmace"
-	desc = "A heavy, slow swinging wooden tribal mace."
-	item = /obj/item/twohanded/sledgehammer/warmace
-
-/datum/supplykit_item/meleebig/sledge
-	name = "Sledgehammer"
-	desc = "A heavy, slow swinging hammer, adept at breaking things apart."
-	item = /obj/item/twohanded/sledgehammer/simple
-
-/datum/supplykit_item/meleebig/fireaxe
-	name = "Fire Axe"
-	desc = "A heavy axe with a long haft, made for chopping structures apart."
-	item = /obj/item/twohanded/fireaxe
-
+*/

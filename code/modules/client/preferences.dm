@@ -521,8 +521,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat +="<td width='30%' valign='top'>"
 			dat += "<h2>Profile Picture ([pfphost]):</h2><BR>"
 			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=ProfilePicture;task=input'>[profilePicture ? "<img src=[PfpHostLink(profilePicture, pfphost)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
-			dat += "<h2>Simple Creature Profile Picture ([creature_pfphost]):</h2><BR>"
-			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=CreatureProfilePicture;task=input'>[creature_profilepic ? "<img src=[PfpHostLink(creature_profilepic, creature_pfphost)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
+//			dat += "<h2>Simple Creature Profile Picture ([creature_pfphost]):</h2><BR>"
+//			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=CreatureProfilePicture;task=input'>[creature_profilepic ? "<img src=[PfpHostLink(creature_profilepic, creature_pfphost)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
 			dat += "</td>"
 			/*
 			dat += "<b>Special Names:</b><BR>"
@@ -614,7 +614,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			else
 				dat += "[TextPreview(features["ooc_notes"])]...<br>"
 
-			dat += "<a href='?_src_=prefs;preference=background_info_notes;task=input'><b>Set Background Info Notes</b></a><br>"
+/*			dat += "<a href='?_src_=prefs;preference=background_info_notes;task=input'><b>Set Background Info Notes</b></a><br>"
 			var/background_info_notes_len = length(features["background_info_notes"])
 			if(background_info_notes_len <= 40)
 				if(!background_info_notes_len)
@@ -623,10 +623,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "[features["background_info_notes"]]<br>"
 			else
 				dat += "[TextPreview(features["background_info_notes"])]...<br>"
-
+*/
 			//outside link stuff
-			dat += "<h3>Outer hyper-links settings</h3>"
-			dat += "<a href='?_src_=prefs;preference=flist;task=input'><b>Set F-list link</b></a><br>"
+//			dat += "<h3>Outer hyper-links settings</h3>"
+	//		dat += "<a href='?_src_=prefs;preference=flist;task=input'><b>Set F-list link</b></a><br>"
 			var/flist_len = length(features["flist"])
 			if(flist_len <= 40)
 				if(!flist_len)
@@ -637,14 +637,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "[TextPreview(features["flist"])]...<br>"
 
 			//Start Creature Character
-			dat += "<h2>Simple Creature Character</h2>"
-			dat += "<b>Creature Species</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_species;task=input'>[creature_species ? creature_species : "Eevee"]</a><BR>"
-			dat += "<b>Creature Name</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_name;task=input'>[creature_name ? creature_name : "Eevee"]</a><BR>"
+//			dat += "<h2>Simple Creature Character</h2>"
+//			dat += "<b>Creature Species</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_species;task=input'>[creature_species ? creature_species : "Eevee"]</a><BR>"
+//			dat += "<b>Creature Name</b><a style='display:block;width:100px' href='?_src_=prefs;preference=creature_name;task=input'>[creature_name ? creature_name : "Eevee"]</a><BR>"
 			/*
 			if(CONFIG_GET(number/body_size_min) != CONFIG_GET(number/body_size_max))
 				dat += "<b>Size:</b> <a href='?_src_=prefs;preference=creature_body_size;task=input'>[creature_body_size*100]%</a><br>"
 			dat += "<b>Scaling:</b> <a href='?_src_=prefs;preference=creature_toggle_fuzzy;task=input'>[creature_fuzzy ? "Fuzzy" : "Sharp"]</a><br>"
-			*/
+			
 			dat += "<a href='?_src_=prefs;preference=creature_flavor_text;task=input'><b>Set Creature Examine Text</b></a><br>"
 			if(length(creature_flavor_text) <= 40)
 				if(!length(creature_flavor_text))
@@ -668,7 +668,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					creature_species = initial(creature_species)
 				dat += "[icon2base64html(GLOB.creature_selectable_icons[creature_species])]<br>"
 			// End creature Character
-
+			*/
 			dat += "</td>"
 			//	END COLUMN 1
 			//	START COLUMN 2
@@ -1582,36 +1582,36 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		if(CONTENT_PREFERENCES_TAB)
 			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
 			dat += "<h2>Adult content prefs</h2>"
-			dat += "<b>Arousal:</b><a href='?_src_=prefs;preference=arousable'>[arousable == TRUE ? "Enabled" : "Disabled"]</a><BR>"
+//			dat += "<b>Arousal:</b><a href='?_src_=prefs;preference=arousable'>[arousable == TRUE ? "Enabled" : "Disabled"]</a><BR>"
 			dat += "<b>Genital examine text</b>:<a href='?_src_=prefs;preference=genital_examine'>[(cit_toggles & GENITAL_EXAMINE) ? "Enabled" : "Disabled"]</a><BR>"
-			dat += "<b>Hypno:</b> <a href='?_src_=prefs;preference=never_hypno'>[(cit_toggles & NEVER_HYPNO) ? "Disallowed" : "Allowed"]</a><br>"
+//			dat += "<b>Hypno:</b> <a href='?_src_=prefs;preference=never_hypno'>[(cit_toggles & NEVER_HYPNO) ? "Disallowed" : "Allowed"]</a><br>"
 			dat += "<b>Ass Slapping:</b> <a href='?_src_=prefs;preference=ass_slap'>[(cit_toggles & NO_ASS_SLAP) ? "Disallowed" : "Allowed"]</a><br>"
 			dat += "<b>Automatic Wagging:</b> <a href='?_src_=prefs;preference=auto_wag'>[(cit_toggles & NO_AUTO_WAG) ? "Disabled" : "Enabled"]</a><br>"
-			dat += "<b>Forced Feminization:</b> <a href='?_src_=prefs;preference=feminization'>[(cit_toggles & FORCED_FEM) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "<b>Forced Masculinization:</b> <a href='?_src_=prefs;preference=masculinization'>[(cit_toggles & FORCED_MASC) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "<b>Lewd Hypno:</b> <a href='?_src_=prefs;preference=hypno'>[(cit_toggles & HYPNO) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "<b>Bimbofication:</b> <a href='?_src_=prefs;preference=bimbo'>[(cit_toggles & BIMBOFICATION) ? "Allowed" : "Disallowed"]</a><br>"
+//			dat += "<b>Forced Feminization:</b> <a href='?_src_=prefs;preference=feminization'>[(cit_toggles & FORCED_FEM) ? "Allowed" : "Disallowed"]</a><br>"
+//			dat += "<b>Forced Masculinization:</b> <a href='?_src_=prefs;preference=masculinization'>[(cit_toggles & FORCED_MASC) ? "Allowed" : "Disallowed"]</a><br>"
+//			dat += "<b>Lewd Hypno:</b> <a href='?_src_=prefs;preference=hypno'>[(cit_toggles & HYPNO) ? "Allowed" : "Disallowed"]</a><br>"
+//			dat += "<b>Bimbofication:</b> <a href='?_src_=prefs;preference=bimbo'>[(cit_toggles & BIMBOFICATION) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "</td>"
-			dat +="<td width='300px' height='300px' valign='top'>"
-			dat += "<h2>Other content prefs</h2>"
-			dat += "<b>Breast Enlargement:</b> <a href='?_src_=prefs;preference=breast_enlargement'>[(cit_toggles & BREAST_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "<b>Penis Enlargement:</b> <a href='?_src_=prefs;preference=penis_enlargement'>[(cit_toggles & PENIS_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "<b>Butt Enlargement:</b> <a href='?_src_=prefs;preference=butt_enlargement'>[(cit_toggles & BUTT_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "<b>Belly Enlargement:</b> <a href='?_src_=prefs;preference=belly_enlargement'>[(cit_toggles & BELLY_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "<h2>Vore prefs</h2>"
-			dat += "<b>Master Vore Toggle:</b> <a href='?_src_=prefs;task=input;preference=master_vore_toggle'>[(master_vore_toggle) ? "Per Preferences" : "All Disabled"]</a><br>"
-			if(master_vore_toggle)
-				dat += "<b>Being Prey:</b> <a href='?_src_=prefs;task=input;preference=allow_being_prey'>[(allow_being_prey) ? "Allowed" : "Disallowed"]</a><br>"
-				dat += "<b>Being Fed Prey:</b> <a href='?_src_=prefs;task=input;preference=allow_being_fed_prey'>[(allow_being_fed_prey) ? "Allowed" : "Disallowed"]</a><br>"
-				dat += "<b>Digestion Damage:</b> <a href='?_src_=prefs;task=input;preference=allow_digestion_damage'>[(allow_digestion_damage) ? "Allowed" : "Disallowed"]</a><br>"
-				dat += "<b>Digestion Death:</b> <a href='?_src_=prefs;task=input;preference=allow_digestion_death'>[(allow_digestion_death) ? "Allowed" : "Disallowed"]</a><br>"
-				dat += "<b>Vore Messages:</b> <a href='?_src_=prefs;task=input;preference=allow_vore_messages'>[(allow_vore_messages) ? "Visible" : "Hidden"]</a><br>"
-				dat += "<b>Vore Trash Messages:</b> <a href='?_src_=prefs;task=input;preference=allow_trash_messages'>[(allow_trash_messages) ? "Visible" : "Hidden"]</a><br>"
-				dat += "<b>Vore Death Messages:</b> <a href='?_src_=prefs;task=input;preference=allow_death_messages'>[(allow_death_messages) ? "Visible" : "Hidden"]</a><br>"
-				dat += "<b>Vore Eating Sounds:</b> <a href='?_src_=prefs;task=input;preference=allow_eating_sounds'>[(allow_eating_sounds) ? "Audible" : "Muted"]</a><br>"
-				dat += "<b>Digestion Sounds:</b> <a href='?_src_=prefs;task=input;preference=allow_digestion_sounds'>[(allow_digestion_sounds) ? "Audible" : "Muted"]</a><br>"
-			dat += "</tr></table>"
-			dat += "<br>"
+//			dat +="<td width='300px' height='300px' valign='top'>"
+//			dat += "<h2>Other content prefs</h2>"
+//			dat += "<b>Breast Enlargement:</b> <a href='?_src_=prefs;preference=breast_enlargement'>[(cit_toggles & BREAST_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
+//			dat += "<b>Penis Enlargement:</b> <a href='?_src_=prefs;preference=penis_enlargement'>[(cit_toggles & PENIS_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
+//			dat += "<b>Butt Enlargement:</b> <a href='?_src_=prefs;preference=butt_enlargement'>[(cit_toggles & BUTT_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
+//			dat += "<b>Belly Enlargement:</b> <a href='?_src_=prefs;preference=belly_enlargement'>[(cit_toggles & BELLY_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
+//			dat += "<h2>Vore prefs</h2>"
+//		dat += "<b>Master Vore Toggle:</b> <a href='?_src_=prefs;task=input;preference=master_vore_toggle'>[(master_vore_toggle) ? "Per Preferences" : "All Disabled"]</a><br>"
+//			if(master_vore_toggle)
+//				dat += "<b>Being Prey:</b> <a href='?_src_=prefs;task=input;preference=allow_being_prey'>[(allow_being_prey) ? "Allowed" : "Disallowed"]</a><br>"
+//				dat += "<b>Being Fed Prey:</b> <a href='?_src_=prefs;task=input;preference=allow_being_fed_prey'>[(allow_being_fed_prey) ? "Allowed" : "Disallowed"]</a><br>"
+//				dat += "<b>Digestion Damage:</b> <a href='?_src_=prefs;task=input;preference=allow_digestion_damage'>[(allow_digestion_damage) ? "Allowed" : "Disallowed"]</a><br>"
+//				dat += "<b>Digestion Death:</b> <a href='?_src_=prefs;task=input;preference=allow_digestion_death'>[(allow_digestion_death) ? "Allowed" : "Disallowed"]</a><br>"
+//				dat += "<b>Vore Messages:</b> <a href='?_src_=prefs;task=input;preference=allow_vore_messages'>[(allow_vore_messages) ? "Visible" : "Hidden"]</a><br>"
+//				dat += "<b>Vore Trash Messages:</b> <a href='?_src_=prefs;task=input;preference=allow_trash_messages'>[(allow_trash_messages) ? "Visible" : "Hidden"]</a><br>"
+//				dat += "<b>Vore Death Messages:</b> <a href='?_src_=prefs;task=input;preference=allow_death_messages'>[(allow_death_messages) ? "Visible" : "Hidden"]</a><br>"
+//				dat += "<b>Vore Eating Sounds:</b> <a href='?_src_=prefs;task=input;preference=allow_eating_sounds'>[(allow_eating_sounds) ? "Audible" : "Muted"]</a><br>"
+//				dat += "<b>Digestion Sounds:</b> <a href='?_src_=prefs;task=input;preference=allow_digestion_sounds'>[(allow_digestion_sounds) ? "Audible" : "Muted"]</a><br>"
+//			dat += "</tr></table>"
+//			dat += "<br>"
 
 		if(KEYBINDINGS_TAB) // Custom keybindings
 			dat += "<b>Keybindings:</b> <a href='?_src_=prefs;preference=hotkeys'>[(hotkeys) ? "Hotkeys" : "Input"]</a><br>"

@@ -13,8 +13,8 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	"Operative" = 'icons/mob/screen_operative.dmi',
 	"Clockwork" = 'icons/mob/screen_clockwork.dmi',
 	"Minimal" = 'icons/mob/screen_minimal.dmi',
-	"Fallout" = 'icons/fallout/UI/screen_fallout2.dmi', // Fallout 2 Pip-boy style UI. Walk the wasteland with style. -Pebbles
-	"Darkout" = 'icons/fallout/UI/screen_fallout2_dark.dmi' // The original Fallout 2 pipboy UI, dark
+//	"Fallout" = 'icons/fallout/UI/screen_fallout2.dmi', // Fallout 2 Pip-boy style UI. Walk the wasteland with style. -Pebbles
+//	"Darkout" = 'icons/fallout/UI/screen_fallout2_dark.dmi' // The original Fallout 2 pipboy UI, dark
 ))
 
 /proc/ui_style2icon(ui_style)

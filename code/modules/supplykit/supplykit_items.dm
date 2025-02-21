@@ -107,26 +107,22 @@
 
 /datum/supplykit_item/longarms
 	category = "Longarms"
-	cost = 20
+	cost = 40
 
 /datum/supplykit_item/handguns
 	category = "Handguns"
-	cost = 20
+	cost = 30
 
 /datum/supplykit_item/revolvers
 	category = "Revolvers"
-	cost = 20
-
-/datum/supplykit_item/improvised
-	category = "Pipe Guns"
-	cost = 10
+	cost = 30
 
 /datum/supplykit_item/magazines
 	category = "Magazines"
 	cost = 10
 
 /datum/supplykit_item/ammo
-	category = "Ammunition"
+	category = "Ammunition Boxes"
 	surplus = 40
 	cost = 10
 
@@ -136,25 +132,27 @@
 
 /datum/supplykit_item/explosives
 	category = "Explosives"
-
+/*
 /datum/supplykit_item/blackpowder
 	category = "Blackpowder"
 	cost = 20
+
 
 /datum/supplykit_item/magic
 	category = "Magic Weapons"
 	cost = 20
 
+/datum/supplykit_item/meleebig
+	category = "Two handed Melee"
+	cost = 20
+*/
+
 /datum/supplykit_item/energy
 	category = "Energy Weapons"
 	cost = 20
 
-/datum/supplykit_item/meleesmall
-	category = "One handed Melee"
-	cost = 20
-
-/datum/supplykit_item/meleebig
-	category = "Two handed Melee"
+/datum/supplykit_item/melee
+	category = "Melee Weapons"
 	cost = 20
 
 /datum/supplykit_item/shields
@@ -171,16 +169,11 @@
 /datum/supplykit_item/tools
 	category = "General Tools"
 
-/datum/supplykit_item/tech
-	category = "Technology"
-
 /datum/supplykit_item/medical
 	category = "Medical"
 
-/datum/supplykit_item/materials
-	category = "Materials"
-
 //Discounts (dynamically filled above)
+
 /datum/supplykit_item/discounts
 	category = "Discounted Gear"
 

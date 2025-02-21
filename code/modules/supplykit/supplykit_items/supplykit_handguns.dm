@@ -14,9 +14,30 @@
 	limited_stock = -1 //-1 is infinite stock. otherwise, limits how many you can buy. also prevents discounts.
 	restricted_roles = list() //for restricting by job type
 	*/
+/datum/supplykit_item/handguns/zipgun
+	name = "Zipgun"
+	desc = "An improvised pistol initially chambered in 9mm, that takes 5 round magazines fashioned from sheet metal. the magazines can be modified to take other pistol calibers."
+	item = /obj/item/gun/ballistic/automatic/hobo/zipgun
+	cost = 10
 
+/datum/supplykit_item/handguns/shotpistol
+	name = "Hand Shotgun"
+	desc = "A light single barrel shotgun that is little more than a pipe and a grip."
+	item = /obj/item/gun/ballistic/revolver/shotpistol
+	cost = 10
 
+/datum/supplykit_item/handguns/knifegun
+	name = "Knife Gun"
+	desc = "A knife with a .44 magnum gun barrel attached. "
+	item = /obj/item/gun/ballistic/revolver/hobo/knifegun
+	cost = 10
 
+/datum/supplykit_item/handguns/knucklegun
+	name = "Knuckle Gun"
+	desc = "A set of brass knuckles with four short .45acp barrels that all go off at once."
+	item = /obj/item/gun/ballistic/revolver/hobo/knucklegun
+	cost = 10
+	
 /datum/supplykit_item/handguns/tec22
 	name = ".22 Machine Pistol"
 	desc = "A light machine pistol in .22LR that takes 16 round pistol magazines."

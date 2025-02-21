@@ -890,7 +890,8 @@
 	icon_state = "floor"
 	brightness = 5
 	nightshift_allowed = FALSE
-	layer = 2.5
+	plane = OBJITEM_PLANE
+	layer = LOW_OBJ_LAYER
 	light_type = /obj/item/light/bulb
 	fitting = "bulb"
 

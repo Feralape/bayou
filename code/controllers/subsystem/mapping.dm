@@ -292,6 +292,7 @@ SUBSYSTEM_DEF(mapping)
 
 	#ifndef FASTLOAD
 	otherZ += load_map_config("_maps/norfland.json")
+	otherZ += load_map_config("_maps/vertibird.json")
 	#endif
 	if(otherZ.len)
 		for(var/datum/map_config/OtherZ in otherZ)

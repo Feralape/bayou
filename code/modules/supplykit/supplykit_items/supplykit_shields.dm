@@ -26,6 +26,17 @@
 	desc = "An easy to make and simple shield, as the sturdy metal sign is already the right shape."
 	item = /obj/item/shield/riot/buckler/stop
 
+/datum/supplykit_item/shields/riotshield
+	name = "Riot Shield"
+	desc = "A clear rectangular riot shield made of sturdy polycarbons."
+	item = /obj/item/shield/coyote/riotweathered
+
+/*
+/datum/supplykit_item/shields/ovalshield
+	name = "Oval Shield"
+	desc = "An ovoid shield, made of sturdy iron."
+	item = /obj/item/shield/coyote/ironshieldtwo
+
 /datum/supplykit_item/shields/bluebuckler
 	name = "Blue Buckler"
 	desc = "A wooden buckler with decorative blue paint."
@@ -86,13 +97,4 @@
 	desc = "A pristine, shining round shield, made of polished steel."
 	item = /obj/item/shield/coyote/steelshield
 
-/datum/supplykit_item/shields/ovalshield
-	name = "Oval Shield"
-	desc = "An ovoid shield, made of sturdy iron."
-	item = /obj/item/shield/coyote/ironshieldtwo
-
-/datum/supplykit_item/shields/riotshield
-	name = "Riot Shield"
-	desc = "A clear rectangular riot shield made of sturdy polycarbons."
-	item = /obj/item/shield/coyote/riotweathered
-
+*/

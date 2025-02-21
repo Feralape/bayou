@@ -581,7 +581,7 @@
 	vary = TRUE
 	extra_range = SOUND_DISTANCE(15)
 	volume = SOUND_LOOP_VOL_RANGE(70, 70)
-	direct = FALSE // sound rocks need non-direct set
+	direct = TRUE // sound rocks need non-direct set
 	loop_delay = 0
 	mid_sounds = list(
 		SOUND_LOOP_ENTRY('sound/f13ambience/creek_01.ogg', 2 SECONDS, 10),

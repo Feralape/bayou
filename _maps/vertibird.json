@@ -1,0 +1,21 @@
+{
+	"map_name": "vertibird",
+	"map_path": "map_files/arcadia",
+	"map_file":	"vertibird.dmm",
+	"station_ruin_budget":0,
+	"space_ruin_levels":0,
+	"space_empty_levels":0,
+	"shuttles": {
+		"cargo":"cargo_sovan",
+		"emergency": "emergency_pahrump",
+		"ferry": "ferry_fancy"
+	},
+	
+	"traits": [
+		{
+			"Baseturf": "/turf/open/transparent/openspace",
+			"Linkage": "Cross"
+		}
+			],
+	"minetype": "none"
+}
