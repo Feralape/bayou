@@ -296,6 +296,13 @@
 	custom_materials = list(/datum/material/glass=60)
 	chargerate = 1500
 
+//basically slime core but less lame
+/obj/item/stock_parts/cell/high/fission
+	name = "fission power cell"
+	desc = "a self-recharging power cell."
+	self_recharge = TRUE
+	rating = 5
+
 /obj/item/stock_parts/cell/high/plus
 	name = "high-capacity power cell+"
 	desc = "Where did these come from?"

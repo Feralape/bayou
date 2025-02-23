@@ -4,12 +4,12 @@
 	icon = 'icons/obj/pda.dmi' //Placeholder till ones sprited
 	icon_state = "pda" //Placeholder till ones sprited
 	item_flags = NOBLUDGEON
-	slot_flags = INV_SLOTBIT_BELT
+	slot_flags = INV_SLOTBIT_BELT|INV_SLOTBIT_GLOVES
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 5
 	w_class = WEIGHT_CLASS_SMALL
-	var/obj/item/stock_parts/cell/cell = /obj/item/stock_parts/cell/high/slime
+	var/obj/item/stock_parts/cell/cell = /obj/item/stock_parts/cell/high/fission
 	var/use_per_tick = 1000 // normal cell has 10000 charge, 200 charge/second = 50 seconds of stealth //if the previous comment is correct this is 25 seconds of stealth	
 	var/on = FALSE
 	actions_types = list(/datum/action/item_action/stealthboy_cloak)
@@ -120,7 +120,7 @@
 		Deactivate(FALSE)
 		return
 	to_chat(user, span_notice("You activate \The [src]."))
-	animate(user, alpha = 60, time = 3 SECONDS)
+	animate(user, alpha = 60, time = 2 SECONDS)
 	usr.faction += list(
 	"supermutant",
 	"raider",
@@ -162,7 +162,7 @@
 		user = loc
 		if(!ishuman(user))
 			return
-	animate(user, alpha = initial(user.alpha), time = 3 SECONDS)
+	animate(user, alpha = initial(user.alpha), time = 2 SECONDS)
 	to_chat(user, span_notice("You deactivate \The [src]."))
 	usr.faction -= list(
 	"supermutant",
