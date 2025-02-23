@@ -366,7 +366,7 @@ GLOBAL_LIST_EMPTY(gun_accepted_magazines)
 	else
 		..()
 
-/obj/item/gun/ballistic/proc/eject_chambered_round(mob/living/user, sounds_and_words, soft_eject = FALSE chamber = TRUE)
+/obj/item/gun/ballistic/proc/eject_chambered_round(mob/living/user, sounds_and_words, soft_eject = FALSE, chamber = TRUE)
 	if(sounds_and_words)
 		to_chat(user, span_notice("You eject \a [chambered] from \the [src]'s chamber."))
 		playsound(src, "gun_slide_lock", 70, 1)
