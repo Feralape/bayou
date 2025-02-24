@@ -1003,10 +1003,11 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/frontier/outdoor/eastwater_town)
 "aKw" = (
-/obj/machinery/door/airlock/public/glass{
-	name = "west wing"
-	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/public/glass{
+	name = "Outpost Restricted Area";
+	req_access_txt = "256"
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -5275,7 +5276,8 @@
 /area/frontier/indoor/eastwater_town)
 "dvd" = (
 /obj/machinery/door/airlock/public/glass{
-	name = "Garrage"
+	name = "Garrage";
+	req_access_txt = "256"
 	},
 /obj/machinery/door/firedoor,
 /turf/open/floor/f13{
@@ -5698,10 +5700,11 @@
 	},
 /area/frontier/indoor/eastwater_town)
 "dKt" = (
-/obj/machinery/door/airlock/public/glass{
-	name = "residential"
-	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/public/glass{
+	name = "Outpost Residence";
+	req_access_txt = "256"
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -6016,11 +6019,15 @@
 /turf/open/floor/carpet,
 /area/frontier/indoor/guardkeep)
 "dRe" = (
-/obj/machinery/light/floor,
-/turf/open/floor/f13{
-	icon_state = "floorrustysolid"
+/obj/machinery/door/airlock/public/glass{
+	name = "Outpost Restricted Area";
+	req_access_txt = "256"
 	},
-/area/frontier/outdoor/colony)
+/obj/machinery/door/firedoor,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/frontier/indoor/colony)
 "dRI" = (
 /obj/structure/rack,
 /obj/item/clothing/mask/luchador,
@@ -7601,6 +7608,16 @@
 	},
 /turf/closed/wall/f13/wood/house,
 /area/frontier/indoor/eastwater_town)
+"eUi" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/public/glass{
+	name = "Garrage";
+	req_access_txt = "256"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/frontier/indoor/colony)
 "eUw" = (
 /obj/machinery/vending/nukacolavendfull{
 	force_free = 1
@@ -9868,11 +9885,14 @@
 /turf/open/floor/f13/wood,
 /area/frontier/indoor/eastwater_town)
 "guu" = (
-/obj/machinery/light/floor,
-/turf/open/floor/f13{
-	icon_state = "darkrustysolid"
+/obj/machinery/door/airlock/public/glass{
+	name = "Outpost Restricted Area";
+	req_access_txt = "256"
 	},
-/area/frontier/indoor/supply_depot)
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/frontier/indoor/colony)
 "guT" = (
 /obj/structure/table/wood/poker{
 	name = "felt table"
@@ -17433,7 +17453,7 @@
 	},
 /area/frontier/outdoor/eastwater_town/bay)
 "liA" = (
-/obj/machinery/light/floor,
+/obj/machinery/light/lampost,
 /turf/open/indestructible/ground/outside/gravel,
 /area/frontier/outdoor/colony)
 "liD" = (
@@ -19631,8 +19651,13 @@
 /turf/closed/wall/f13/wood/interior,
 /area/frontier/indoor/eastwater_town)
 "mzi" = (
-/obj/machinery/light/floor,
-/turf/open/indestructible/ground/outside/dirt_noplants,
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
 /area/frontier/outdoor/colony)
 "mzn" = (
 /obj/structure/barricade/wooden/strong,
@@ -22198,6 +22223,14 @@
 	icon_state = "yellowrustychess"
 	},
 /area/frontier/outdoor/wilderness)
+"nZk" = (
+/obj/structure/sign/barsign{
+	pixel_y = -64
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/frontier/indoor/colony)
 "nZl" = (
 /obj/structure/table/wood,
 /obj/structure/bedsheetbin/towel,
@@ -22733,14 +22766,13 @@
 	},
 /area/frontier/indoor/eastwater_town)
 "otF" = (
-/obj/structure/sign/barsign{
-	dir = 1;
-	pixel_y = -64
+/obj/structure/railing{
+	dir = 8;
+	plane = -1
 	},
-/turf/open/floor/f13{
-	icon_state = "floorrustysolid"
-	},
-/area/frontier/indoor/colony)
+/obj/machinery/light/lampost,
+/turf/open/indestructible/ground/outside/gravel,
+/area/frontier/outdoor/colony)
 "oua" = (
 /obj/structure/window/fulltile/store{
 	icon_state = "storewindowbottom"
@@ -31193,11 +31225,11 @@
 	},
 /area/frontier/indoor/eastwater_town)
 "tNL" = (
-/obj/machinery/light/floor,
+/obj/machinery/light/lampost,
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
-/area/frontier/indoor/colony)
+/area/frontier/outdoor/colony)
 "tNR" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -32112,6 +32144,14 @@
 /obj/item/flashlight/lamp/green,
 /turf/open/floor/carpet,
 /area/frontier/indoor/eastwater_town)
+"utv" = (
+/obj/machinery/light{
+	light_color = "#e8eaff"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/frontier/outdoor/colony)
 "utF" = (
 /turf/closed/mineral/random/low_chance,
 /area/frontier/indoor/eastwater_town)
@@ -34976,10 +35016,11 @@
 /turf/closed/wall/r_wall/rust,
 /area/frontier/outdoor/river)
 "weN" = (
-/obj/machinery/door/airlock/public/glass{
-	name = "residential"
-	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/public/glass{
+	name = "Outpost Residence";
+	req_access_txt = "256"
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -139380,7 +139421,7 @@ sHP
 pLg
 dmS
 qJY
-qJY
+guu
 qJY
 qJY
 qJY
@@ -139702,7 +139743,7 @@ mpb
 pLg
 qJY
 qJY
-qJY
+guu
 qJY
 qJY
 qJY
@@ -141314,7 +141355,7 @@ xoR
 xoR
 xoR
 xoR
-aKw
+dRe
 aKw
 xoR
 jVs
@@ -149053,7 +149094,7 @@ kCC
 nxB
 nxB
 nxB
-dvd
+eUi
 eBh
 stL
 jTz
@@ -224385,7 +224426,7 @@ omk
 xQH
 nxB
 nxB
-tNL
+nxB
 nxB
 qJY
 qJY
@@ -225994,7 +226035,7 @@ eoE
 cGx
 hlx
 hlx
-guu
+hlx
 ord
 nxB
 nxB
@@ -226319,8 +226360,8 @@ hlx
 hlx
 xzz
 nxB
+nZk
 nxB
-otF
 slu
 kac
 kac
@@ -227292,7 +227333,7 @@ wKt
 wKt
 fIS
 oya
-mzi
+wKt
 udR
 het
 ooW
@@ -228251,7 +228292,7 @@ tYf
 tYf
 tYf
 kKb
-dRe
+kKb
 wbG
 udR
 wKt
@@ -229229,7 +229270,7 @@ udR
 wKt
 ciF
 kXw
-mzi
+wKt
 wKt
 wKt
 wKt
@@ -229534,7 +229575,7 @@ eQh
 eQh
 eQh
 kKb
-dRe
+kKb
 wJi
 uAz
 iNb
@@ -229546,7 +229587,7 @@ wKt
 udR
 wKt
 udR
-mzi
+wKt
 udR
 wKt
 ciF
@@ -230505,7 +230546,7 @@ kKb
 uJz
 xhe
 gtO
-dRe
+kKb
 wbG
 wKt
 wKt
@@ -231152,7 +231193,7 @@ ciF
 ciF
 ciF
 fRK
-fRK
+otF
 fRK
 fRK
 fRK
@@ -231161,7 +231202,7 @@ ciF
 ciF
 ciF
 ciF
-ciF
+liA
 ciF
 ciF
 eer
@@ -231455,7 +231496,7 @@ viM
 viM
 viM
 gtO
-dRe
+kKb
 kKb
 kKb
 oYM
@@ -231466,26 +231507,26 @@ kKb
 kKb
 kKb
 kKb
-dRe
 kKb
 kKb
 kKb
+kKb
 ciF
 ciF
 ciF
 ciF
-liA
 ciF
 ciF
 ciF
 ciF
 ciF
-liA
 ciF
 ciF
 ciF
 ciF
-liA
+ciF
+ciF
+ciF
 jgz
 viM
 viM
@@ -232421,7 +232462,7 @@ vHP
 qks
 qks
 kKb
-kKb
+utv
 nJV
 fSi
 fSi
@@ -232437,7 +232478,7 @@ fSi
 tAz
 wKt
 iqo
-liA
+ciF
 kKb
 kKb
 kKb
@@ -233708,7 +233749,7 @@ viM
 vtG
 vGP
 vGP
-dRe
+kKb
 kKb
 jEg
 cJF
@@ -234353,7 +234394,7 @@ vtG
 vGP
 vGP
 kKb
-kKb
+utv
 tOp
 tAz
 vaa
@@ -234691,7 +234732,7 @@ cJF
 cJF
 bhU
 ciF
-liA
+ciF
 kKb
 nvA
 cbP
@@ -235660,6 +235701,7 @@ ciF
 ciF
 kKb
 kKb
+tNL
 kKb
 kKb
 kKb
@@ -235667,8 +235709,7 @@ kKb
 kKb
 kKb
 kKb
-kKb
-kKb
+tNL
 ciF
 ciF
 rar
@@ -235964,19 +236005,19 @@ viM
 viM
 gtO
 kKb
+mzi
 kKb
 kKb
 kKb
 kKb
 kKb
+mzi
 kKb
 kKb
 kKb
 kKb
 kKb
-kKb
-kKb
-kKb
+mzi
 kKb
 ciF
 ciF
@@ -236285,20 +236326,20 @@ viM
 viM
 viM
 gtO
-dRe
 kKb
 kKb
 kKb
 kKb
 kKb
 kKb
-dRe
 kKb
 kKb
 kKb
 kKb
 kKb
-dRe
+kKb
+kKb
+kKb
 kKb
 ciF
 ciF

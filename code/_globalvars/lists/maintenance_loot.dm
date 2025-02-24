@@ -347,6 +347,80 @@ GLOBAL_LIST_INIT(trash_mob_loot, GLOB.trash_ammo +\
 	GLOB.trash_tool +\
 	GLOB.trash_attachment)
 
+GLOBAL_LIST_INIT(common_mob_loot, GLOB.loot_t1_melee +\
+	GLOB.loot_t2_melee +\
+	GLOB.loot_t1_armor +\
+	GLOB.loot_t2_armor +\
+	GLOB.loot_prewar_clothing +\
+	GLOB.loot_medical_medicine +\
+	GLOB.loot_medical_tool +\
+	GLOB.loot_medical_drug +\
+	GLOB.loot_t1_ammo +\
+	GLOB.loot_t2_ammo +\
+	GLOB.loot_t3_ammo +\
+	GLOB.loot_alcohol +\
+	GLOB.loot_food +\
+	GLOB.loot_craft_basic +\
+	GLOB.loot_seed +\
+	GLOB.loot_garbage +\
+	GLOB.loot_material +\
+	GLOB.loot_t1_money +\
+	GLOB.loot_t2_money)
+
+GLOBAL_LIST_INIT(uncommon_mob_loot, GLOB.loot_t3_money +\
+	GLOB.loot_t3_melee +\
+	GLOB.loot_t3_armor +\
+	GLOB.loot_t4_ammo +\
+	GLOB.loot_t5_ammo +\
+	GLOB.loot_skillbook +\
+	GLOB.loot_craft_advanced +\
+	GLOB.loot_attachment)
+
+
+
+GLOBAL_LIST_INIT(trash_loot, list(
+	GLOB.trash_ammo,
+	GLOB.trash_chem,
+	GLOB.trash_clothing,
+	GLOB.trash_craft,
+	GLOB.trash_gun,
+	GLOB.trash_misc,
+	GLOB.trash_mob,
+	GLOB.trash_part,
+	GLOB.trash_tool,
+	GLOB.trash_attachment,))
+
+GLOBAL_LIST_INIT(common_loot, list(
+	GLOB.loot_t2_melee,
+	GLOB.loot_t1_armor,
+	GLOB.loot_t2_armor,
+	GLOB.loot_prewar_clothing,
+	GLOB.loot_medical_medicine,
+	GLOB.loot_medical_tool,
+	GLOB.loot_medical_drug,
+	GLOB.loot_t1_ammo,
+	GLOB.loot_t2_ammo,
+	GLOB.loot_t3_ammo,
+	GLOB.loot_alcohol,
+	GLOB.loot_food,
+	GLOB.loot_craft_basic,
+	GLOB.loot_seed,
+	GLOB.loot_garbage,
+	GLOB.loot_material,
+	GLOB.loot_t1_money,
+	GLOB.loot_t2_money,))
+
+GLOBAL_LIST_INIT(uncommon_loot, list(
+	GLOB.loot_t3_money,
+	GLOB.loot_t3_melee,
+	GLOB.loot_t3_armor,
+	GLOB.loot_t4_ammo,
+	GLOB.loot_t5_ammo,
+	GLOB.loot_skillbook,
+	GLOB.loot_craft_advanced,
+	GLOB.loot_attachment,))
+
+
 GLOBAL_LIST_INIT(loot_prewar_clothing, list(
 	/obj/item/clothing/under/overalls,
 	/obj/item/clothing/head/flatcap,

@@ -15,35 +15,6 @@
 	restricted_roles = list() //for restricting by job type
 	*/
 
-
-
-/datum/supplykit_item/misc/copper
-	name = "Copper Coin"
-	desc = "A single copper coin. chump change, really."
-	item = /obj/item/stack/f13Cash
-	cost = 1
-	important = TRUE
-
-/datum/supplykit_item/misc/silver
-	name = "Silver Coin"
-	desc = "A single silver coin, worth ten coppers."
-	item = /obj/item/stack/f13Cash/denarius
-	cost = 10
-	important = TRUE
-
-/datum/supplykit_item/misc/gold
-	name = "Gold Coin"
-	desc = "A single shiny gold coin, worth 100 coppers. we're rich!"
-	item = /obj/item/stack/f13Cash/aureus
-	cost = 100
-	important = TRUE
-
-/datum/supplykit_item/misc/chameleon
-	name = "Chameleon Mask"
-	desc = "An adaptive disguise used to hide your identity and change your voice when you need to do a crime."
-	item = /obj/item/clothing/mask/chameleon
-	cost = 1 //cheap and affordable for all to use
-
 /datum/supplykit_item/misc/thief
 	name = "Thieve's Gloves"
 	desc = "A pair of slick gloves that allow you to pickpocket without anyone's notice."
@@ -81,6 +52,27 @@
 	cost = 10
 
 /*
+/datum/supplykit_item/misc/copper
+	name = "Copper Coin"
+	desc = "A single copper coin. chump change, really."
+	item = /obj/item/stack/f13Cash
+	cost = 1
+	important = TRUE
+
+/datum/supplykit_item/misc/silver
+	name = "Silver Coin"
+	desc = "A single silver coin, worth ten coppers."
+	item = /obj/item/stack/f13Cash/denarius
+	cost = 10
+	important = TRUE
+
+/datum/supplykit_item/misc/gold
+	name = "Gold Coin"
+	desc = "A single shiny gold coin, worth 100 coppers. we're rich!"
+	item = /obj/item/stack/f13Cash/aureus
+	cost = 100
+	important = TRUE
+
 /datum/supplykit_item/misc/hornoffense
 	name = "Hunting Horn - Offense"
 	desc = "A horn that bolsters the speed and melee power of those who hear it."
@@ -111,6 +103,12 @@
 	item = /obj/item/bikehorn
 	cost = 5
 
+/datum/supplykit_item/misc/chameleon
+	name = "Chameleon Mask"
+	desc = "An adaptive disguise used to hide your identity and change your voice when you need to do a crime."
+	item = /obj/item/clothing/mask/chameleon
+	cost = 1 //cheap and affordable for all to use
+	
 /datum/supplykit_item/misc/radhood
 	name = "Radiation Hood"
 	desc = "Useful if you plan on spending a prolonged amount of time in a radioactive area."

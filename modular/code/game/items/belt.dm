@@ -7,5 +7,5 @@
 /obj/item/storage/belt/tactical
 	name = "tactical belt"
 	desc = "A robust belt for holding things like guns."
-	icon_state = "security"
+	icon_state = "securitybelt"
 	item_state = "security"

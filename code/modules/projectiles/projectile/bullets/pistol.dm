@@ -251,7 +251,7 @@
  * WNAKED: 3.75
  */
 /obj/item/projectile/bullet/c9mm/simple //also for simple mobs, separate to allow balancing
-	name = "9mm bullet"
+	name = "bullet"
 	damage = BULLET_DAMAGE_PISTOL_9MM_HANDLOAD
 	stamina = BULLET_STAMINA_PISTOL_9MM
 	spread = BULLET_SPREAD_HANDLOAD
