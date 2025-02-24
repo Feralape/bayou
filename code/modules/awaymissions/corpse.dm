@@ -96,8 +96,6 @@
 		if(!mob_gender)
 			mob_gender = pick(MALE, FEMALE)
 		M.gender = mob_gender
-	else
-		randomize_human(M, null, prob(50), TRUE)
 	if(faction)
 		M.faction = list(faction)
 	if(disease)
@@ -144,7 +142,7 @@
 /obj/effect/mob_spawn/human
 	mob_type = /mob/living/carbon/human
 	//Human specific stuff.
-	var/mob_species = null		//Set to make them a mutant race such as lizard or skeleton. Uses the datum typepath instead of the ID.
+	var/mob_species = /datum/species/human	//Set to make them a mutant race such as lizard or skeleton. Uses the datum typepath instead of the ID.
 	var/datum/outfit/outfit = /datum/outfit	//If this is a path, it will be instanced in Initialize()
 	var/disable_pda = TRUE
 	var/disable_sensors = TRUE
@@ -177,8 +175,12 @@
 	var/suit_store = -1
 
 	var/hair_style
+	var/hair_color
 	var/facial_hair_style
+	var/facial_hair_color
 	var/skin_tone
+	var/eyes_color
+	var/direction
 
 /obj/effect/mob_spawn/human/Initialize()
 	if(ispath(outfit))
@@ -188,12 +190,22 @@
 	return ..()
 
 /obj/effect/mob_spawn/human/equip(mob/living/carbon/human/H)
+		
+	H.setDir(direction)
+	if(!direction)
+		H.setDir(pick(GLOB.alldirs))
 	if(mob_species)
 		H.set_species(mob_species)
 	if(husk)
 		H.Drain()
 	else //Because for some reason I can't track down, things are getting turned into husks even if husk = false. It's in some damage proc somewhere.
 		H.cure_husk()
+	H.hair_color = hair_color
+	if(!hair_color)
+		H.hair_color = random_short_color()
+	H.facial_hair_color = facial_hair_color
+	if(!facial_hair_color)
+		H.facial_hair_color = hair_color
 	H.underwear = "Nude"
 	H.undershirt = "Nude"
 	H.socks = "Nude"
@@ -205,6 +217,10 @@
 		H.facial_hair_style = facial_hair_style
 	else
 		H.facial_hair_style = random_facial_hair_style(gender)
+	if(!eyes_color)
+		eyes_color = random_short_color()
+	H.left_eye_color = eyes_color
+	H.right_eye_color = eyes_color
 	if(skin_tone)
 		H.skin_tone = skin_tone
 		if(!GLOB.skin_tones[H.skin_tone])

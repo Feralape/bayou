@@ -49,7 +49,7 @@
 	var/list/friends = list()
 	var/list/foes = list()
 	var/list/emote_taunt
-	var/emote_taunt_sound = FALSE // Does it have a sound associated with the emote? Defaults to false.
+	var/emote_taunt_sound = list('sound/machines/chime.ogg') // Does it have a sound associated with the emote? Defaults to false.
 	var/taunt_chance = 0
 
 	/// What happens when this mob is EMP'd?
@@ -673,7 +673,7 @@
 		return TRUE
 	COOLDOWN_START(src, ding_spam_cooldown, SIMPLE_MOB_DING_COOLDOWN)
 	do_alert_animation(src)
-	playsound(loc, 'sound/machines/chime.ogg', 50, 1, -1)
+	playsound(loc, emote_taunt_sound, 50, 1, -1)
 	for(var/mob/living/simple_animal/hostile/M in oview(distance, get_origin()))
 		if(faction_check_mob(M, TRUE))
 			if(M.AIStatus == AI_OFF || M.stat == DEAD || M.ckey)

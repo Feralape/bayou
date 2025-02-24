@@ -54,7 +54,7 @@
 	if(A == inventory_head)
 		inventory_head = null
 		update_corgi_fluff()
-		regenerate_icons()
+		
 	if(A == inventory_back)
 		inventory_back = null
 		update_corgi_fluff()

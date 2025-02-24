@@ -36,7 +36,7 @@
 	component_type = /datum/component/storage/concrete/debug_sack
 
 /obj/item/storage/backpack
-	name = "hiking backpack"
+	name = "backpack"
 	desc = "You wear this on your back and put items into it."
 	icon_state = "backpack"
 	item_state = "backpack"
