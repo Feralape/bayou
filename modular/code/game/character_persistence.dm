@@ -68,6 +68,9 @@
 				var/obj/item/dispensed = new selection
 				to_chat(user, span_green("Dispensing [dispensed.name]."))
 				PV.storeditems[selection] -= 1
+				if(istype(dispensed, /obj/item/stack))
+					var/obj/item/stack/S = dispensed
+					dispensed.amount = dispensed.max_amount
 				user.put_in_hands(dispensed)
 				if(PV.storeditems[selection] < 1)
 					PV.storeditems -= selection
