@@ -102,6 +102,13 @@
 		if(ST.contents.len > 0)
 			to_chat(user, span_warning("Please empty the container prior to storage."))
 			return
+	if(istype(I, /obj/item/ammo_box)
+		var/obj/item/ammo_box/AB = I
+		if(length(AB.stored_ammo) < AB.max_ammo)
+			to_chat(user, span_warning("Cannot store partial or empty ammo containers. Please fill before submitting."))
+		if(AB.parent_type)
+			AB.type = AB.parent_type
+		return
 	if(I)
 		var/choice = input(user,"Deposit [I.name]? Non-standard contents may be lost.") as anything in list("Yes", "No")
 		if(choice == "Yes")
