@@ -3958,6 +3958,7 @@
 #include "modular_coyote\eris\code\mods\_upgrades.dm"
 #include "modular_coyote\eris\code\mods\iconmodkits.dm"
 #include "modular_coyote\eris\code\mods\mod_types.dm"
+#include "modular_frontier\code\bounty_machine.dm"
 #include "modular_persistance\vault.dm"
 #include "modular_roguetown\code\objects\lightening.dm"
 #include "modular_roguetown\code\objects\misc.dm"
