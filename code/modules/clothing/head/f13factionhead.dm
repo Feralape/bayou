@@ -73,7 +73,7 @@
 /obj/item/clothing/head/helmet/f13/raider/wastehound
 	name = "wastehound raider helmet"
 	desc = "A sack hood made out of a suspicious leather with tufts of hair sticking out. This mask would make Leatherface proud."
-	icon_state = "wastehound_hood_icon"
+	icon_state = "raider_wastehound_hood"
 	item_state = "raider_wastehound_hood"
 	visor_flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 

@@ -7,12 +7,8 @@
 	icon_gib = "gib"
 	del_on_death = TRUE
 	rotate_on_lying = TRUE
-
-	loot = list(
-	/obj/effect/decal/cleanable/blood/splatter, 
-	/obj/item/gun/ballistic/automatic/autopipe, 
-	/obj/item/ammo_box/magazine/autopipe,
-	)
+	gender = MALE
+	loot = list()
 	loot_drop_amount = 2
 	loot_amount_random = TRUE
 
@@ -54,8 +50,12 @@
 	turns_per_move = 5
 	footstep_type = FOOTSTEP_MOB_SHOE
 
-	var/gear = "scav"
+	var/healthmax = 100
+	var/healthmin = 80
+
+	var/gear
 	var/weapon
+	var/headwear
 	var/autogun 	//is it an automatic weapon?
 	var/list/hair = list(
 		"hair_a", "hair_c", "bald", "hair_spikey", "hair_spiky2", "hair_unshaven_mohawk", "hair_skinhead",
@@ -67,6 +67,7 @@
 		"facial_gt", "facial_goatee", "facial_hip",	"facial_jensen","facial_moonshiner","facial_neckbeard",	
 		"facial_tribeard"	
 		)
+	var/list/hat = list()
 	var/chosen_facialhair
 	var/hair_name
 	var/facial_hair_name
@@ -124,37 +125,57 @@
 		'sound/voice/human/male/painscream (3).ogg',
 	)
 
+	var/list/aggro_lines = list()
+
 	var/mutable_appearance/gear_overlay 
 	var/mutable_appearance/weapon_overlay 
 	var/mutable_appearance/hair_overlay
 	var/mutable_appearance/eyes_overlay 
 	var/mutable_appearance/facial_hair_overlay
+	var/mutable_appearance/headwear_overlay
 	var/mob/living/carbon
 	var/obj/effect/mob_spawn/human/corpse/frontier/deadguy
-	var/corpse_outfit = /datum/outfit/scav/scavenger
+	var/corpse_outfit = /datum/outfit/scav/scav1
 
 /mob/living/simple_animal/hostile/frontier/Initialize(mapload)
 	. = ..()
 	generate_unique_appearance()
 	generate_name()
 	corpse_outfit = get_armor()
-	gear_overlay = mutable_appearance(icon, "gear-[gear]", color = null)
+	gear_overlay = mutable_appearance(icon, "[gear]", color = null)
 	weapon_overlay = mutable_appearance(icon, "weapon-[weapon]", color = null)
 	eyes_overlay = mutable_appearance(icon, "human_eyes", color = "#[eyes_color]")
 	hair_overlay = mutable_appearance('icons/mob/hair.dmi', chosen_hair, color = "#[hair_color]")
 	facial_hair_overlay = mutable_appearance('icons/mob/hair.dmi', chosen_facialhair, color = "#[hair_color]")
-	color = "#[skin_color]"
-	add_overlay(gear_overlay)
-	add_overlay(weapon_overlay)
+	headwear_overlay = mutable_appearance(icon, "[headwear]", color = null)
+	headwear_overlay.layer = src.layer + 0.1
+	headwear_overlay.plane = src.plane + 0.1
+//	color = "#[skin_color]"
+	add_overlay(mutable_appearance(icon, "human", color = "#[skin_color]"))
 	add_overlay(eyes_overlay)
 	add_overlay(hair_overlay)
-	add_overlay(facial_hair_overlay)
-
+	add_overlay(gear_overlay)
+	add_overlay(weapon_overlay)
+	if(!chosen_facialhair == "shaved")
+		add_overlay(facial_hair_overlay)
+	if(headwear)
+		add_overlay(headwear)
 	update_icon()
 	INVOKE_ASYNC(src,PROC_REF(generate_corpse))
 
 	death_sound = pick(more_deathsound)
+	deathmessage = pick(
+	"falls limp, their eyes lifeless.", 
+	"collapses, their body twitching briefly before going still.", 
+	"drops to the ground, their body limp and lifeless.", 
+	"falls to the ground with a burst of blood!",
+	"sprays blood from their wounds as they fall to the ground.",
+	"left a mist of blood as they fall to the ground.", 
+	"collapses, splattering the floor with their blood.",
+	"splatters the ground with their blood as they suddenly drop dead.",)
 
+	health = rand(healthmin, healthmax)
+	maxHealth = health
 
 
 /mob/living/simple_animal/hostile/frontier/proc/generate_name()
@@ -179,120 +200,91 @@
 
 /mob/living/simple_animal/hostile/frontier/drop_loot()
 	. = ..()
+	if(headwear)
+		var/obj/item/hat = 	get_headwear()
+		new hat(drop_location())   
 	playsound(get_turf(src), pick('sound/effects/wounds/pierce1.ogg', 'sound/effects/wounds/pierce2.ogg', 'sound/effects/wounds/pierce3.ogg'), 100, 1)
 	deadguy.forceMove(drop_location())
 	deadguy.direction = src.dir
 	deadguy.create()
 
-/mob/living/simple_animal/hostile/frontier/scav
-	desc = "It's a hostile scavenger."
-
-
-	
-
-/mob/living/simple_animal/hostile/frontier/scav/ranged
-
-	weapon = "autopipe"
-	autogun = TRUE
-	projectilesound = 'sound/f13weapons/ninemil.ogg'
-	projectiletype = /obj/item/projectile/bullet/c9mm/simple
-	ranged = TRUE
-	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
-	projectile_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_LIGHT_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
-	)
-
-/mob/living/simple_animal/hostile/frontier/scav/ranged_pistol
-	
-	weapon = "pistol"
-	autogun = FALSE
-	projectile_sound_properties = list(
-		SP_VARY(FALSE),
-		SP_VOLUME(PISTOL_LIGHT_VOLUME),
-		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
-		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
-		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
-		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
-	)
-
-	loot = list(
-	/obj/effect/decal/cleanable/blood/splatter, 
-	/obj/effect/spawner/lootdrop/random_pistol_bundle
-	)
-	loot_drop_amount = 2
-	loot_amount_random = FALSE
-
-/mob/living/simple_animal/hostile/frontier/scav/Initialize(mapload)
-	gear = pick(
-		"scav",
-		"scav_kit",
-		"scav_kit2",
-		"scav_kit3",
-		"scav_ragged",
-		"scav_ragged2",
-	)
-	..()
 
 /mob/living/simple_animal/hostile/frontier/proc/get_armor()
 	switch(gear)
-		if("scav")
-			return /datum/outfit/scav/scavenger
-		if("scav_kit")
-			return /datum/outfit/scav/scavenger_kit
-		if("scav_kit2")
-			return /datum/outfit/scav/scavenger_kit2
-		if("scav_kit3")
-			return /datum/outfit/scav/scavenger_kit3
-		if("scav_ragged")
-			return /datum/outfit/scav/scavenger_ragged
-		if("scav_ragged2")
-			return /datum/outfit/scav/scavenger_ragged2
+		if("scav1")
+			return /datum/outfit/scav/scav1
+		if("scav2")
+			return /datum/outfit/scav/scav2
+		if("scav3")
+			return /datum/outfit/scav/scav3
+		if("scav4")
+			return /datum/outfit/scav/scav4
+		if("scav5")
+			return /datum/outfit/scav/scav5
+		if("scav6")
+			return /datum/outfit/scav/scav6
+// scav masked
+		if("scavmask1")
+			return /datum/outfit/scav/scavmask1
+		if("scavmask2")
+			return /datum/outfit/scav/scavmask2
+		if("scavmask3")
+			return /datum/outfit/scav/scavmask3
+		if("scavmask4")
+			return /datum/outfit/scav/scavmask4
+		if("scavmask5")
+			return /datum/outfit/scav/scavmask5
+		if("scavmask6")
+			return /datum/outfit/scav/scavmask6
+// scav medium
+		if("scavmed1")
+			return /datum/outfit/scav/scavmed1
+		if("scavmed2")
+			return /datum/outfit/scav/scavmed2
+		if("scavmed3")
+			return /datum/outfit/scav/scavmed3
+		if("scavmed4")
+			return	/datum/outfit/scav/scavmed4
+		if("scavmed5")
+			return /datum/outfit/scav/scavmed5
+		if("scavmed6")
+			return /datum/outfit/scav/scavmed6
+// scav medium masked
+		if("scavmedmask1")
+			return /datum/outfit/scav/scavmedmask1
+		if("scavmedmask2")
+			return /datum/outfit/scav/scavmedmask2
+		if("scavmedmask3")
+			return /datum/outfit/scav/scavmedmask3
+		if("scavmedmask4")
+			return	/datum/outfit/scav/scavmedmask4
+		if("scavmedmask5")
+			return /datum/outfit/scav/scavmedmask5
+		if("scavmedmask6")
+			return /datum/outfit/scav/scavmedmask6
+
+
+/mob/living/simple_animal/hostile/frontier/AttackingTarget()
+	. = ..()
+	get_weapon_sound()
 
 /mob/living/simple_animal/hostile/frontier/Shoot(atom/targeted_atom)
 	. = ..()
-	projectilesound = pick(
-		'sound/f13weapons/ninemil.ogg', 
-		'sound/f13weapons/9mm.ogg', 
-		'sound/f13weapons/greasegun.ogg', 
-		'sound/f13weapons/policepistol.ogg',
-		'sound/f13weapons/varmint_rifle.ogg',
-		)
+	get_weapon_sound()
 	if(autogun)
 		rapid = rand(1,5) //How many shots per volley.
 		rapid_fire_delay = rand(2,4)
 
 
 //mob/living/simple_animal/hostile/frontier/ranged/random
-/mob/living/simple_animal/hostile/frontier/Aggro()
+/mob/living/simple_animal/hostile/frontier/scav/Aggro()
 	. = ..()
 	if(.)
 		return
 	summon_backup(15)
 	if(!ckey)
-		say(pick(
-			"Hey! Over here!", 
-			"Get 'em!", 
-			"We got a live one!" , 
-			"Hey! Kill this one!", 
-			"Hey!", 
-			"Let's dance, bitch!", 
-			"Time to die, asshole!", 
-			"Holy fuck!", 
-			"Kill 'em!",
-			"Shit!",
-			"I need fucking backup!",
-			"Run, bitch, run!",
-			"Eat lead, motherfucker!",
-			 ))
+		if(aggro_lines)
+			say(pick(aggro_lines))
 
 
 /mob/living/simple_animal/hostile/frontier/proc/pain_scream()
@@ -443,6 +435,60 @@
 			return "Beard (Neckbeard)"
 		if("facial_tribeard")		
 			return "Beard (Tribeard)"
-		if("shaved")
-			return "Beard (3 o\'Clock)"
-	
+
+/mob/living/simple_animal/hostile/frontier/proc/get_headwear()
+	switch(headwear)
+		if("rusted_cowboy")
+			return /obj/item/clothing/head/helmet/f13/rustedcowboyhat
+		if("scarecrow_hat")
+			return /obj/item/clothing/head/scarecrow_hat
+		if("cowboyhat")
+			return /obj/item/clothing/head/cowboyhat
+		if("baseballsoft")
+			return /obj/item/clothing/head/soft/f13/baseball
+		if("bandit")
+			return /obj/item/clothing/head/f13/bandit
+		if("pot")
+			return /obj/item/clothing/head/f13/pot
+		if("cargosoft")
+			return /obj/item/clothing/head/soft
+		if("greysoft")
+			return /obj/item/clothing/head/soft/grey
+
+/mob/living/simple_animal/hostile/frontier/proc/get_weapon_sound()
+	if(weapon)
+		if(ranged)
+			switch(weapon)
+				if("pistol")
+					projectilesound = pick(GLOB.small_arms_sound)
+				if("autopipe")
+					projectilesound = pick(GLOB.small_arms_sound)
+				if("shotgun")
+					projectilesound = pick(GLOB.shotgun_sound)
+		else
+			switch(weapon)
+				if("knife")
+					melee_windup_sound = pick(GLOB.small_sharp_whoosh_sound)
+					attack_sound = pick(GLOB.sharp_weapon_sound)
+				if("fireaxe")
+					melee_windup_sound = pick(GLOB.large_sharp_whoosh_sound)
+					attack_sound = pick(GLOB.chop_weapon_sound)
+				if("bat")
+					melee_windup_sound = pick(GLOB.small_blunt_whoosh_sound)
+					attack_sound = pick(GLOB.blunt_weapon_sound)
+				if("bat2")
+					melee_windup_sound = pick(GLOB.small_blunt_whoosh_sound)
+					attack_sound = pick(GLOB.blunt_weapon_sound)
+				if("golf")
+					melee_windup_sound = pick(GLOB.small_blunt_whoosh_sound)
+					attack_sound = pick(GLOB.blunt_weapon_sound)
+				if("sledge")
+					melee_windup_sound = pick(GLOB.large_blunt_whoosh_sound)
+					attack_sound = pick(GLOB.blunt_weapon_sound)
+				if("machete")
+					melee_windup_sound = pick(GLOB.large_sharp_whoosh_sound)
+					attack_sound = pick(GLOB.chop_weapon_sound)
+				if("scrapsabre")
+					melee_windup_sound = pick(GLOB.large_sharp_whoosh_sound)
+					attack_sound = pick(GLOB.chop_weapon_sound)
+

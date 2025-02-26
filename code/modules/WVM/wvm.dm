@@ -17,8 +17,8 @@
 GLOBAL_VAR_INIT(vendor_cash, 0)
 
 /obj/machinery/trading_machine
-	name = "Wasteland Vending Machine"
-	desc = "Wasteland Vending Machine! Unlock with a key, load your goods, and profit!"
+	name = "Colony Vending Machine"
+	desc = "Colony Vending Machine! Unlock with a key, load your goods, and profit!"
 
 	icon = 'icons/WVM/machines.dmi'
 	icon_state = "custom_idle"
@@ -432,7 +432,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		if(STATE_SERVICE)
 			dat += "<h3>Machine setup menu</h3>"
 			dat += "<div class='statusDisplay'>"
-			dat += "<font color='green'>copper stored - [stored_caps]</font>"
+			dat += "<font color='green'>credits stored - [stored_caps]</font>"
 			dat += "<a href='?src=\ref[src];removecaps=1'>Unload</a>"
 			dat += "<h4> Items </h4> "
 
@@ -442,7 +442,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 				for(var/obj/item/Itm in content)
 					var/item_name = url_encode(Itm.name)
 					var/price = content[Itm]
-					dat += "<b>[Itm.name]</b> - [content[Itm]] caps"
+					dat += "<b>[Itm.name]</b> - [content[Itm]] credits"
 					dat += "<a href='?src=\ref[src];setprice=[item_name];current_price=[price]'>Set price</a> "
 					dat += "<a href='?src=\ref[src];remove=[item_name];current_price=[price]'>Remove</a> <br>"
 
@@ -450,7 +450,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		if(STATE_VEND)
 			dat += "<h3>Select an item</h3>"
 			dat += "<div class='statusDisplay'>"
-			dat += "<font color = 'red'>Waiting for [expected_price] caps!</font>"
+			dat += "<font color = 'red'>Waiting for [expected_price] credits!</font>"
 			dat += "<a href='?src=\ref[src];back=1'> Back</a> "
 
 		// --- Lock Open
@@ -513,8 +513,8 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 /**********************Trading Protectron Vendors**************************/
 
 /obj/machinery/mineral/wasteland_vendor
-	name = "Wasteland Vending Machine"
-	desc = "Wasteland Vending Machine manned by old reprogrammed RobCo trading protectrons."
+	name = "Colony Vending Machine"
+	desc = "Colony Vending Machine manned by old reprogrammed RobCo trading protectrons."
 	icon = 'icons/WVM/machines.dmi'
 	icon_state = "weapon_idle"
 
@@ -530,7 +530,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	var/list/highpop_list = list()  //if you add something to this, please, for the love of god, sort it by price/type. use tabs and not spaces.
 
 /obj/machinery/mineral/wasteland_vendor/medical
-	name = "Wasteland Vending Machine - Medical"
+	name = "Colony Vending Machine - Medical"
 	icon_state = "numed_idle"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								5),
@@ -701,7 +701,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/weapons
-	name = "Wasteland Vending Machine - Weapons"
+	name = "Colony Vending Machine - Weapons"
 	icon_state = "nuweapon_idle"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Civilian Weapon Kit (Starter Weapons + Ammo)",	/obj/item/kit_spawner/townie,										400),
@@ -711,8 +711,8 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("10mm SMG (10mm)",								/obj/item/gun/ballistic/automatic/smg/smg10mm,						800),
 		new /datum/data/wasteland_equipment("Lee Enfield (.308)",							/obj/item/gun/ballistic/rifle/enfield,								800),
 		new /datum/data/wasteland_equipment("Hunting Rifle (.30-06)",						/obj/item/gun/ballistic/rifle/hunting,								800),
-		new /datum/data/wasteland_equipment("Surplus Nash Police Rifle (5.56)",				/obj/item/gun/ballistic/automatic/marksman/policerifle,				800),
-		new /datum/data/wasteland_equipment("Surplus Nash Auto Rifle (5mm)",				/obj/item/gun/ballistic/automatic/assault_carbine/policerifle,		300),
+		new /datum/data/wasteland_equipment("Surplus Rifle (5.56)",				/obj/item/gun/ballistic/automatic/marksman/policerifle,				800),
+		new /datum/data/wasteland_equipment("Surplus Auto Rifle (5mm)",				/obj/item/gun/ballistic/automatic/assault_carbine/policerifle,		300),
 		new /datum/data/wasteland_equipment("Compliance Regulator (SEC)",					/obj/item/gun/energy/laser/complianceregulator,						300),
 		new /datum/data/wasteland_equipment("AEP-7 (SEC)",									/obj/item/gun/energy/laser/pistol,									300),
 		new /datum/data/wasteland_equipment("Pulse Pistol (ECP)",							/obj/item/gun/energy/ionrifle/compact,								300),
@@ -732,8 +732,8 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("10mm SMG (10mm)",								/obj/item/gun/ballistic/automatic/smg/smg10mm,						800),
 		new /datum/data/wasteland_equipment("Lee Enfield (.308)",							/obj/item/gun/ballistic/rifle/enfield,								800),
 		new /datum/data/wasteland_equipment("Hunting Rifle (.30-06)",						/obj/item/gun/ballistic/rifle/hunting,								800),
-		new /datum/data/wasteland_equipment("Surplus Nash Police Rifle (5.56)",				/obj/item/gun/ballistic/automatic/marksman/policerifle,				800),
-		new /datum/data/wasteland_equipment("Surplus Nash Auto Rifle (5mm)",				/obj/item/gun/ballistic/automatic/assault_carbine/policerifle,		300),
+		new /datum/data/wasteland_equipment("Surplus Police Rifle (5.56)",				/obj/item/gun/ballistic/automatic/marksman/policerifle,				800),
+		new /datum/data/wasteland_equipment("Surplus Auto Rifle (5mm)",				/obj/item/gun/ballistic/automatic/assault_carbine/policerifle,		300),
 		new /datum/data/wasteland_equipment("Compliance Regulator (SEC)",					/obj/item/gun/energy/laser/complianceregulator,						300),
 		new /datum/data/wasteland_equipment("AEP-7 (SEC)",									/obj/item/gun/energy/laser/pistol,									300),
 		new /datum/data/wasteland_equipment("Pulse Pistol (ECP)",							/obj/item/gun/energy/ionrifle/compact,								300),
@@ -748,7 +748,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 
 
 /obj/machinery/mineral/wasteland_vendor/ammo
-	name = "Wasteland Vending Machine - Ammunition"
+	name = "Colony Vending Machine - Ammunition"
 	icon_state = "nuammo_idle"
 	prize_list = list(
 		new /datum/data/wasteland_equipment(".22lr Box (60 bullets)",						/obj/item/ammo_box/m22,									15),
@@ -808,7 +808,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/badammo
-	name = "Wasteland Vending Machine - Handloaded Ammunition"
+	name = "Colony Vending Machine - Handloaded Ammunition"
 	icon_state = "nuammo_idle"
 	color = "#653800"
 	prize_list = list(
@@ -861,7 +861,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/clothing
-	name = "Wasteland Vending Machine - Clothing"
+	name = "Colony Vending Machine - Clothing"
 	icon_state = "armor_idle"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Worn outft",						/obj/item/clothing/under/f13/worn,								5),
@@ -881,7 +881,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/general
-	name = "Wasteland Vending Machine - General"
+	name = "Colony Vending Machine - General"
 	icon_state = "generic_idle"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Drinking glass",				/obj/item/reagent_containers/food/drinks/drinkingglass,				5),
@@ -941,8 +941,8 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 */
 
 /obj/machinery/mineral/wasteland_vendor/pipboy
-	name = "New Boston Vending Machine - Identification"
-	icon_state = "pipboy"
+	name = "Colony Vending Machine - Identification"
+	icon_state = "devices"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Datapal PDA",			/obj/item/pda,																25),
 		new /datum/data/wasteland_equipment("Reprogrammable ID",	/obj/item/card/id/selfassign,												20),
@@ -961,9 +961,9 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/special
-	name = "New Boston Vending Machine - Money Exchanger"
+	name = "Colony Vending Machine - Money Exchanger"
 	desc = "An automated machine that exhanges copper coins for more valuable ones. However, it takes a 10% cut."
-	icon_state = "liberationstation_idle"
+	icon_state = "money_idle"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Oobie Biddilets", 			/obj/item/toy/plush/lizardplushie/kobold/scrip, 						50000),
 		// new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						11),
@@ -1012,7 +1012,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 /obj/machinery/mineral/wasteland_vendor/specialplus
 	name = "Automatic Teller Machine"
 	desc = "An automated machine that exhanges copper coins for more valuable currency. This teller is specialized for bankers to provide better exchange rates."
-	icon_state = "liberationstation_idle"
+	icon_state = "money2_idle"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Oobie Biddilets", 			/obj/item/toy/plush/lizardplushie/kobold/scrip, 						50000),
 		// new /datum/data/wasteland_equipment("Union Scrip x20", 			/obj/item/stack/f13Cash/ncr/twenty, 						10),
@@ -1072,7 +1072,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/advcomponents
-	name = "Wasteland Vending Machine - Components"
+	name = "Colony Vending Machine - Components"
 	icon_state = "generic_idle"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Advanced Modular Receiver",		/obj/item/advanced_crafting_components/receiver,					50),
@@ -1092,7 +1092,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/attachments
-	name = "Wasteland Vending Machine - Discount Armor and Attachments"
+	name = "Colony Vending Machine - Discount Armor and Attachments"
 	icon_state = "seller_attachments"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Radiation Suit",				/obj/item/clothing/suit/radiation,								20),
@@ -1128,7 +1128,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/badattachments
-	name = "Wasteland Vending Machine - Armor and Attachments"
+	name = "Colony Vending Machine - Armor and Attachments"
 	icon_state = "seller_attachments"
 	color = "#684800"
 	prize_list = list(
@@ -1165,7 +1165,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/crafting
-	name = "Wasteland Vending Machine - Crafting"
+	name = "Colony Vending Machine - Crafting"
 	icon_state = "seller_crafting"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Metal Parts (x5)",					/obj/item/stack/crafting/metalparts/five,							10),
@@ -1205,7 +1205,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/mining
-	name = "Wasteland Vending Machine - Mining and Salvage"
+	name = "Colony Vending Machine - Mining and Salvage"
 	icon_state = "generic_idle"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Lantern",							/obj/item/flashlight/lantern,								25),
@@ -1255,7 +1255,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	. = ..()
 	var/dat
 	dat +="<div class='statusDisplay'>"
-	dat += "<b>Bottle caps stored:</b> [stored_caps]. <A href='?src=[REF(src)];choice=eject'>Eject caps</A><br>"
+	dat += "<b>Credits stored:</b> [stored_caps]. <A href='?src=[REF(src)];choice=eject'>Eject Credits</A><br>"
 	dat += "</div>"
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
@@ -1276,7 +1276,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	dat += "</table>"
 	dat += "</div>"
 
-	var/datum/browser/popup = new(user, "tradingvendor", "Wasteland Vending Machine", 400, 500)
+	var/datum/browser/popup = new(user, "tradingvendor", "Colony Vending Machine", 400, 500)
 	popup.set_content(dat)
 	popup.open()
 	return
@@ -1292,7 +1292,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 			to_chat(usr, span_warning("Error: Invalid choice!"))
 			return
 		if(prize.cost > stored_caps)
-			to_chat(usr, span_warning("Error: Insufficent bottle caps value for [prize.equipment_name]!"))
+			to_chat(usr, span_warning("Error: Insufficent credits for [prize.equipment_name]!"))
 		else
 			stored_caps -= prize.cost
 			GLOB.vendor_cash += prize.cost
@@ -1305,7 +1305,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 			to_chat(usr, span_warning("Error: Invalid choice!"))
 			return
 		if(prize.cost > stored_caps)
-			to_chat(usr, span_warning("Error: Insufficent bottle caps value for [prize.equipment_name]!"))
+			to_chat(usr, span_warning("Error: Insufficent credits value for [prize.equipment_name]!"))
 		else
 			stored_caps -= prize.cost
 			GLOB.vendor_cash += prize.cost
@@ -1329,7 +1329,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
+		to_chat(usr, "You put [inserted_value] credits to a vending machine.")
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/ncr))
 		var/obj/item/stack/f13Cash/ncr/currency = I
@@ -1337,7 +1337,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
+		to_chat(usr, "You put [inserted_value] credits value to a vending machine.")
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/denarius))
 		var/obj/item/stack/f13Cash/denarius/currency = I
@@ -1345,7 +1345,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
+		to_chat(usr, "You put [inserted_value] credits to a vending machine.")
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/aureus))
 		var/obj/item/stack/f13Cash/aureus/currency = I
@@ -1353,7 +1353,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
+		to_chat(usr, "You put [inserted_value] credits to a vending machine.")
 		src.ui_interact(usr)
 	else
 		to_chat(usr, "Invalid currency!")
