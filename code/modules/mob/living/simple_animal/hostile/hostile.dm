@@ -28,7 +28,7 @@
 	/// Time between throwing things
 	var/throw_delay = 10 SECONDS
 	COOLDOWN_DECLARE(throw_cooldown)
-	/// Play a sound after they shoot?
+	/// Play a sound after they shoot?'sound/weapons/punchmiss.ogg'
 	var/sound_after_shooting
 	/// How long after shooting should it play?
 	var/sound_after_shooting_delay = 1 SECONDS
