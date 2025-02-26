@@ -181,6 +181,7 @@ GLOBAL_LIST_EMPTY(wasteland_vendor_shop_list)
 		/obj/item/stock_parts/micro_laser/ultra = 6,
 		/obj/item/stock_parts/matter_bin/super = 6,
 		/obj/item/stock_parts/cell/hyper = 6,
+		/obj/item/stock_parts/cell/high/fission = 10,
 		/obj/item/stock_parts/capacitor/quadratic = 10,
 		/obj/item/stock_parts/scanning_module/triphasic = 10,
 		/obj/item/stock_parts/manipulator/femto = 10,

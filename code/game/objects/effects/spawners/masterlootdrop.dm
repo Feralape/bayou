@@ -1323,6 +1323,7 @@
 		/obj/item/stock_parts/micro_laser/quadultra = 1,
 		/obj/item/stock_parts/matter_bin/bluespace = 1,
 		/obj/item/stock_parts/cell/hyper = 1,
+		/obj/item/stock_parts/cell/high/fission = 1,
 		/obj/item/stock_parts/chem_cartridge/pristine = 1,
 		/obj/item/blueprint/research = 1,
 	)
