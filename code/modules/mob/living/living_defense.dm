@@ -598,27 +598,3 @@
 
 /mob/living/proc/getFireLoss_nonProsthetic()
 	return getFireLoss()
-
-/mob/living/ex_act(severity, target, origin)
-	if(origin && istype(origin, /datum/spacevine_mutation) && isvineimmune(src))
-		return
-	..()
-	var/bomb_armor = getarmor(null, "bomb")
-	switch (severity)
-		if (EXPLODE_DEVASTATE)
-			if(prob(bomb_armor))
-				adjustBruteLoss(500)
-			else
-				gib()
-				return
-		if (EXPLODE_HEAVY)
-			var/bloss = 100
-			if(prob(bomb_armor))
-				bloss = bloss / 1.5
-			adjustBruteLoss(bloss)
-
-		if(EXPLODE_LIGHT)
-			var/bloss = 50
-			if(prob(bomb_armor))
-				bloss = bloss / 1.5
-			adjustBruteLoss(bloss)
