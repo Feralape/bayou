@@ -12,10 +12,23 @@
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	var/icon_prefix = null
 	block_parry_data = /datum/block_parry_data/bokken
+	hitsound = 'sound/rogueweapons/blunt/genblunt (1).ogg'
 	item_flags = ITEM_CAN_PARRY
 	block_chance = 5
 	weapon_special_component = /datum/component/weapon_special/single_turf
 
+/obj/item/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(sharpness)
+		hitsound = get_attack_sound()
+
+/obj/item/proc/get_attack_sound()
+	if(sharpness == SHARP_EDGED)
+		return pick(GLOB.chop_weapon_sound)
+	if(sharpness == SHARP_POINTY)
+		return pick(GLOB.pointy_weapon_sound)
+	if(sharpness == SHARP_NONE)
+		return pick(GLOB.blunt_weapon_sound)
 
 /obj/item/twohanded/Initialize()
 	. = ..()
@@ -52,7 +65,7 @@
 	sharpness = SHARP_EDGED
 	resistance_flags = FIRE_PROOF
 	attack_verb = list("axed", "chopped", "cleaved", "torn", "hacked")
-	hitsound = 'sound/weapons/bladeslice.ogg'
+	hitsound = 'sound/rogueweapons/bladed/genchop (1).ogg'
 	wielded_icon = "legionaxe2"
 	force_unwielded = 30
 	force_wielded = 65
@@ -92,7 +105,7 @@
 	sharpness = SHARP_EDGED
 	resistance_flags = FIRE_PROOF
 	attack_verb = list("axed", "chopped", "cleaved", "torn", "hacked")
-	hitsound = 'sound/weapons/bladeslice.ogg'
+	hitsound = 'sound/rogueweapons/bladed/genchop (1).ogg'
 	wielded_icon = "fireaxe2"
 	force_unwielded = 28
 	force_wielded = 55
@@ -190,7 +203,7 @@
 	throwforce = 30
 	throw_speed = 4
 	embedding = list("embed_chance" = 0)
-	hitsound = 'sound/weapons/bladeslice.ogg'
+	hitsound = 'sound/rogueweapons/bladed/genthrust (1).ogg'
 	attack_verb = list("attacked", "impaled", "jabbed", "torn", "gored")
 	sharpness = SHARP_POINTY
 	max_integrity = 200
@@ -310,7 +323,7 @@
 	embedding = list("embedded_impact_pain_multiplier" = 3)
 	custom_materials = null
 	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
-	hitsound = 'sound/weapons/bladeslice.ogg'
+	hitsound = 'sound/rogueweapons/bladed/genthrust (1).ogg'
 	wielded_icon = "spear-bone2"
 	force_unwielded = 21
 	force_wielded = 36
@@ -340,7 +353,7 @@
 	icon_state = "spearaxe"
 	icon_prefix = "spearaxe"
 	wielded_icon = "spearaxe2"
-	hitsound = 'sound/weapons/bladeslice.ogg'
+	hitsound = 'sound/rogueweapons/bladed/genchop (1).ogg'
 	attack_verb = list("slashed", "stabbed", "sliced", "gored", "speared", "cut")
 	w_class = WEIGHT_CLASS_BULKY
 	sharpness = SHARP_EDGED
@@ -371,6 +384,7 @@
 	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
 	w_class = WEIGHT_CLASS_NORMAL
 	sharpness = SHARP_NONE
+	hitsound = 'sound/rogueweapons/blunt/genblunt (1).ogg'
 	wielded_icon = "baseball2"
 	force_unwielded = 25
 	force_wielded = 38
@@ -396,6 +410,7 @@
 	if(!istype(M))
 		return
 	M.apply_damage(15, STAMINA, "chest", M.run_armor_check("chest", "melee"))
+	hitsound = pick(GLOB.blunt_weapon_sound)
 
 // Louisville Slugger		Keywords: Damage 28/42, Damage bonus Stamina
 /obj/item/twohanded/baseball/louisville
@@ -449,6 +464,7 @@
 	throwforce = 20 // Huge hammers aren't that great for throwing
 	sharpness = SHARP_NONE
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
+	hitsound = 'sound/rogueweapons/blunt/genblunt (1).ogg'
 	force_unwielded = 25
 	attack_speed = CLICK_CD_MELEE * 1.8 //14.4
 
@@ -748,6 +764,11 @@
 	force_wielded = 55
 	backstab_multiplier = 1.5 //rib n ter 
 
+/obj/item/twohanded/chainsaw/attack(mob/living/M, mob/living/user)
+	. = ..()
+	hitsound = 'sound/weapons/chainsawhit.ogg'
+
+
 /obj/item/twohanded/chainsaw/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 30, 100, 0, 'sound/weapons/chainsawhit.ogg', TRUE)
@@ -800,6 +821,10 @@
 	var/force_on = 29 //10 more dps than chainsaw, but less perhit
 	var/force_off = 10
 	var/on_sound = 'sound/weapons/chainsawhit.ogg'
+
+/obj/item/twohanded/steelsaw/attack(mob/living/M, mob/living/user)
+	. = ..()
+	hitsound = 'sound/weapons/chainsawhit.ogg'
 
 /obj/item/twohanded/steelsaw/attack_self(mob/user)
 	on = !on
@@ -855,6 +880,10 @@
 	off_item_state = "autoaxe"
 	toolspeed = 2
 	structure_bonus_damage = 40
+
+/obj/item/twohanded/steelsaw/autoaxe/attack(mob/living/M, mob/living/user)
+	. = ..()
+	hitsound = 'sound/weapons/chainsawhit.ogg'
 
 /obj/item/twohanded/steelsaw/autoaxe/attack_self(mob/user)
 	on = !on

@@ -13,8 +13,8 @@
 	exp_requirements = 0
 
 	outfit = /datum/outfit/job/engineer_outpost
-	access = list(ACCESS_OUTPOST, ACCESS_ENGINE)
-	minimal_access = list(ACCESS_OUTPOST, ACCESS_ENGINE)
+	access = list(ACCESS_OUTPOST, ACCESS_ENGINE, ACCESS_MAINT_TUNNELS)
+	minimal_access = list(ACCESS_OUTPOST, ACCESS_ENGINE, ACCESS_MAINT_TUNNELS)
 
 
 /datum/outfit/job/engineer_outpost
@@ -55,8 +55,8 @@
 	exp_requirements = 0
 
 	outfit = /datum/outfit/job/ce_outpost
-	access = list(ACCESS_OUTPOST, ACCESS_ENGINE)
-	minimal_access = list(ACCESS_OUTPOST, ACCESS_ENGINE)
+	access = list(ACCESS_OUTPOST, ACCESS_ENGINE, ACCESS_MAINT_TUNNELS)
+	minimal_access = list(ACCESS_OUTPOST, ACCESS_ENGINE, ACCESS_MAINT_TUNNELS)
 
 
 /datum/outfit/job/ce_outpost

@@ -204,6 +204,10 @@
 	var/description_on = "<span class ='warning'>You thumb the on button, the whining, blurry edge of the Ripper now lethal to touch.</span>"
 	var/description_off = "<span class ='notice'>You turn off the Ripper, the buzz of the cutting teeth ceasing.</span>"
 
+/obj/item/melee/powered/ripper/attack(mob/living/target, mob/living/user)
+	. = ..()
+	hitsound = 'sound/weapons/chainsawhit.ogg'
+
 /obj/item/melee/powered/ripper/attack_self(mob/user)
 	on = !on
 	to_chat(user, description_on)

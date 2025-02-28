@@ -377,7 +377,7 @@ GLOBAL_LIST_INIT(uncommon_mob_loot, GLOB.loot_t3_money +\
 	GLOB.loot_attachment)
 
 
-
+/*
 GLOBAL_LIST_INIT(trash_loot, list(
 	GLOB.trash_ammo,
 	GLOB.trash_chem,
@@ -420,7 +420,7 @@ GLOBAL_LIST_INIT(uncommon_loot, list(
 	GLOB.loot_craft_advanced,
 	GLOB.loot_attachment,))
 
-
+*/
 GLOBAL_LIST_INIT(loot_prewar_clothing, list(
 	/obj/item/clothing/under/overalls,
 	/obj/item/clothing/head/flatcap,

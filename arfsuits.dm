@@ -3994,7 +3994,7 @@
 	desc = "Rebel, rebel. Your face is a mess."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
-	icon_state = "raider_rebel_icon"
+	icon_state = "raider_rebel_armor"
 	item_state = "raider_rebel_armor"
 
 /obj/item/clothing/suit/armor/medium/raider/scrapcombat
