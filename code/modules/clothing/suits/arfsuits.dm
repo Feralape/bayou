@@ -3994,6 +3994,15 @@
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_ENV_T1)
 
+/obj/item/clothing/suit/armor/medium/raider/rebel
+	name = "rebel raider armor"
+	desc = "Rebel, rebel. Your face is a mess."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon_state = "raider_rebel_armor"
+	item_state = "raider_rebel_armor"
+
+
 /obj/item/clothing/suit/armor/medium/raider/slam
 	name = "slammer raider armor"
 	desc = "Crude armor that appears to employ a tire of some kind as the shoulder pad. What appears to be a quilt is tied around the waist.<br>Come on and slam and turn your foes to jam!"
@@ -4004,14 +4013,6 @@
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	body_parts_hidden = ARMS | LEGS | GROIN
-
-/obj/item/clothing/suit/armor/medium/raider/rebel
-	name = "rebel raider armor"
-	desc = "Rebel, rebel. Your face is a mess."
-	icon = 'icons/fallout/clothing/armored_medium.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
-	icon_state = "raider_rebel_icon"
-	item_state = "raider_rebel_armor"
 
 /obj/item/clothing/suit/armor/medium/raider/scrapcombat
 	name = "scrap combat armor"

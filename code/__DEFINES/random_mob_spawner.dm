@@ -68,10 +68,14 @@
 #define MOB_SPAWNER_ICONSTATE_DEFAULT "hole"
 #define MOB_SPAWNER_ICONSTATE_ROBOT "scanner_modified"
 #define MOB_SPAWNER_ICONSTATE_VENT "ventblue"
+#define MOB_SPAWNER_ICONSTATE_RAIDER "raider"
 
 /// Mob spawner spawn sound
 #define MOB_SPAWNER_SOUND_DEFAULT null
 #define MOB_SPAWNER_SOUND_VENT 'sound/effects/bin_close.ogg'
+#define MOB_SPAWNER_SOUND_LADDER 'sound/effects/ladder.ogg'
+#define MOB_SPAWNER_SOUND_CRAWL 'sound/effects/climb.ogg'
+
 
 /// Mob spawner randomizer list keys
 #define MOB_SPAWNER_KIND_ALL "all mobs"

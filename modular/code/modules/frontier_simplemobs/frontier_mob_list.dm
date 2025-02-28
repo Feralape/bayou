@@ -12,7 +12,6 @@ GLOBAL_LIST_INIT(shotgun_sound, list(
 
 
 GLOBAL_LIST_INIT(mobs_scavenger, list(
-
 /mob/living/simple_animal/hostile/frontier/scav/melee,
 /mob/living/simple_animal/hostile/frontier/scav/melee2h,
 /mob/living/simple_animal/hostile/frontier/scav/ranged,
@@ -103,3 +102,40 @@ GLOBAL_LIST_INIT(small_blunt_whoosh_sound, list(
 'sound/rogueweapons/whooshes/blunt/wooshmed (2).ogg',
 'sound/rogueweapons/whooshes/blunt/wooshmed (3).ogg',
 ))
+
+
+
+
+/datum/random_mob_spawner/raider_melee
+	nest_tag = MOB_SPAWNER_RAIDER_MELEE
+	nest_name = "narrow tunnel"
+	nest_desc = "A crude tunnel used by raiders to travel across the wasteland."
+	nest_icon_state = MOB_SPAWNER_ICONSTATE_VENT // RAIDER VENTED
+	sound_to_play = MOB_SPAWNER_SOUND_VENT
+
+	num_mobs_to_spawn_easy = 1
+	mob_respawn_time_easy = MOB_SPAWNER_TIME_LONG
+	mob_list_easy = list(
+		/mob/living/simple_animal/hostile/raider = 5,
+		/mob/living/simple_animal/hostile/raider/firefighter = 2,
+		/mob/living/simple_animal/hostile/raider/baseball = 2,
+		/mob/living/simple_animal/hostile/raider/tribal = 2
+		)
+	num_mobs_to_spawn_medium = 2
+	mob_respawn_time_medium = MOB_SPAWNER_TIME_LONG
+	mob_list_medium = list(
+		/mob/living/simple_animal/hostile/raider = 10,
+		/mob/living/simple_animal/hostile/raider/firefighter = 5,
+		/mob/living/simple_animal/hostile/raider/baseball = 5,
+		/mob/living/simple_animal/hostile/raider/tribal = 5
+		)
+	num_mobs_to_spawn_hard = 2
+	mob_respawn_time_hard = MOB_SPAWNER_TIME_LONG
+	mob_list_hard = list(
+		/mob/living/simple_animal/hostile/raider = 10,
+		/mob/living/simple_animal/hostile/raider/firefighter = 5,
+		/mob/living/simple_animal/hostile/raider/baseball = 5,
+		/mob/living/simple_animal/hostile/raider/tribal = 5,
+		/mob/living/simple_animal/hostile/raider/legendary = 1,
+		/mob/living/simple_animal/hostile/raider/sulphite = 2
+		)

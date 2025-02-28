@@ -15,8 +15,8 @@
 	outfit = /datum/outfit/job/frontier/rimwatch_officer
 	exp_requirements = 0
 
-	access = list(ACCESS_OUTPOST, ACCESS_SECURITY)
-	minimal_access = list(ACCESS_OUTPOST, ACCESS_SECURITY)
+	access = list(ACCESS_OUTPOST, ACCESS_SECURITY, ACCESS_MAINT_TUNNELS)
+	minimal_access = list(ACCESS_OUTPOST, ACCESS_SECURITY, ACCESS_MAINT_TUNNELS)
 
 /datum/outfit/job/frontier/rimwatch_officer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
@@ -70,8 +70,8 @@
 	outfit = /datum/outfit/job/frontier/rimwatch_ranger
 	exp_requirements = 0
 
-	access = list(ACCESS_OUTPOST, ACCESS_SECURITY)
-	minimal_access = list(ACCESS_OUTPOST, ACCESS_SECURITY)
+	access = list(ACCESS_OUTPOST, ACCESS_SECURITY, ACCESS_MAINT_TUNNELS)
+	minimal_access = list(ACCESS_OUTPOST, ACCESS_SECURITY, ACCESS_MAINT_TUNNELS)
 
 /datum/outfit/job/frontier/rimwatch_ranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()
