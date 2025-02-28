@@ -914,6 +914,25 @@
 	. = ..()
 
 
+//Civ13 Lights
+/obj/machinery/light/lampost_civ
+	name = "light post"
+	icon = 'icons/obj/civlamppost.dmi'
+	icon_state = "streetlight0"
+	base_state = "streetlight1"
+	desc = "a post supporting a usually outdoor lamp or lantern."
+	brightness = 8
+	active_power_usage = 0
+	density = 0
+	layer = WALL_OBJ_LAYER
+	nightshift_allowed = FALSE
+	start_with_cell = FALSE
+	no_emergency = TRUE
+
+/obj/machinery/light/lampost_civ/process()
+	. = ..()
+
+
 //F13 COLORED LIGHTS
 /obj/machinery/light/fo13colored/Pink
 	name = "Arcade Light"
