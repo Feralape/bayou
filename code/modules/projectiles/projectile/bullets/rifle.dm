@@ -146,8 +146,8 @@
 	name = "5.56 bullet"
 	damage = BULLET_DAMAGE_RIFLE_223_HANDLOAD
 	stamina = BULLET_STAMINA_RIFLE_223
-	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_RIFLE_223_HANDLOAD
+	spread = BULLET_SPREAD_SURPLUS * 1.5
+	recoil = BULLET_RECOIL_RIFLE_223_HANDLOAD * 1.5
 
 	wound_bonus = BULLET_WOUND_RIFLE_223_HANDLOAD
 	bare_wound_bonus = BULLET_WOUND_RIFLE_223_NAKED_MULT
@@ -448,6 +448,8 @@
  */
 /obj/item/projectile/bullet/m5mm/simple //for simple mobs, separate to allow balancing
 	name = "5mm bullet"
+	spread = BULLET_SPREAD_SURPLUS * 1.5
+	recoil = BULLET_RECOIL_RIFLE_5MM_HANDLOAD * 1.5
 
 /* 5mm shock
  * DAMAGE: 12

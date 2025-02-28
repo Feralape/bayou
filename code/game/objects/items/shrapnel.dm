@@ -45,6 +45,8 @@
 
 /obj/item/projectile/bullet/shrapnel/simple
 	pixels_per_second = BULLET_SPEED_BASE * 0.75
+	spread = BULLET_SPREAD_SURPLUS * 1.5
+	recoil = BULLET_RECOIL_PISTOL_22 * 1.5
 
 /obj/item/projectile/bullet/shrapnel/plasma // plasma grenades
 	name = "plasma split"

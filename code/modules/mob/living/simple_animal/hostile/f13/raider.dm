@@ -575,7 +575,7 @@
 	speed = 4.5
 	ranged_cooldown_time = 2 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	projectiletype = /obj/item/projectile/bullet/c45/improvised
+	projectiletype = /obj/item/projectile/bullet/c45/improvised/simple
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	var/list/spawned_mobs = list()
 	var/max_mobs = 3
@@ -760,7 +760,7 @@
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 	ranged_cooldown_time = 1 SECONDS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_FAST
-	projectiletype = /obj/item/projectile/bullet/c22
+	projectiletype = /obj/item/projectile/bullet/c22/simple
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	sound_after_shooting = 'sound/weapons/shotguninsert.ogg'
 	extra_projectiles = 2
