@@ -23,9 +23,9 @@
 	sharpness = SHARP_POINTY
 	//gotta figure out if this was a good idea later -vide
 	embedding = list(
-		embed_chance=5,
-		fall_chance=4,
-		jostle_chance=1,
+		embed_chance=90,
+		fall_chance=0.5,
+		jostle_chance=20,
 		ignore_throwspeed_threshold=TRUE,
 		pain_stam_pct=0.5,
 		pain_mult=4,
