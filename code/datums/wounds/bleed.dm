@@ -201,7 +201,7 @@
 
 /datum/wound/bleed/receive_damage(wounding_type, wounding_dmg, wound_bonus)
 	if(victim.stat != DEAD && wounding_type == WOUND_SLASH) // can't stab dead bodies to make it bleed faster this way
-		blood_flow += 0.05 * wounding_dmg
+		blood_flow += 0.5 * wounding_dmg
 	if(victim.get_blood(TRUE) && prob(internal_bleeding_chance + wounding_dmg))
 		if(limb.current_gauze && limb.current_gauze.splint_factor)
 			wounding_dmg *= (1 - limb.current_gauze.splint_factor)
@@ -253,7 +253,7 @@
 	limb.check_gauze_time()
 	limb.check_suture_time()
 	
-	reduce_bloodflow()
+//	reduce_bloodflow()
 
 /* 	if(get_blood_flow(FALSE) < minimum_flow)
 		to_chat(victim, span_green("The cut on your [limb.name] has stopped bleeding!"))

@@ -1,8 +1,11 @@
-/datum/wound/loss
+/datum/wound/bleed/loss
 	name = "Dismembered"
 	desc = "oof ouch!!"
 
 	sound_effect = 'sound/effects/dismember.ogg'
+	initial_flow = 30
+	minimum_flow = 10
+	clot_rate = 0.2
 	severity = WOUND_SEVERITY_LOSS
 	threshold_minimum = 180
 	status_effect_type = null
@@ -10,7 +13,7 @@
 	wound_flags = null
 
 /// Our special proc for our special dismembering, the wounding type only matters for what text we have
-/datum/wound/loss/proc/apply_dismember(obj/item/bodypart/dismembered_part, wounding_type=WOUND_SLASH)
+/datum/wound/bleed/loss/proc/apply_dismember(obj/item/bodypart/dismembered_part, wounding_type=WOUND_SLASH)
 	if(!istype(dismembered_part) || !dismembered_part.owner || !(dismembered_part.body_zone in viable_zones) || isalien(dismembered_part.owner) || !dismembered_part.can_dismember())
 		qdel(src)
 		return

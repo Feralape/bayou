@@ -12,9 +12,9 @@
 #define MOVE_INTENT_RUN  "run"
 
 /// Normal baseline blood volume
-#define BLOOD_VOLUME_NORMAL 1000
+#define BLOOD_VOLUME_NORMAL 560
 /// The amount blood typically regenerates to on its own
-#define BLOOD_VOLUME_SAFE (BLOOD_VOLUME_NORMAL * 0.95)
+#define BLOOD_VOLUME_SAFE (BLOOD_VOLUME_NORMAL * 0.90)
 /// First stage of bloodloss, mostly warnings
 #define BLOOD_VOLUME_SYMPTOMS_WARN (BLOOD_VOLUME_NORMAL * 0.70)
 /// Second stage of bloodloss, minor harmless symptoms

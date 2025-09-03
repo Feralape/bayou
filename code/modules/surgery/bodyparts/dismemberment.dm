@@ -197,10 +197,11 @@
 	if(!prob(base_chance))
 		return
 
-	var/datum/wound/loss/dismembering = new
+	var/datum/wound/bleed/loss/dismembering = new
 	dismembering.apply_dismember(src, wounding_type)
 
 	return TRUE
+
 
 //when a limb is dropped, the internal organs are removed from the mob and put into the limb
 /obj/item/organ/proc/transfer_to_limb(obj/item/bodypart/LB, mob/living/carbon/C)
@@ -434,7 +435,7 @@
 			L.brutestate = 0
 			L.burnstate = 0
 		var/datum/scar/scaries = new
-		var/datum/wound/loss/phantom_loss = new // stolen valor, really
+		var/datum/wound/bleed/loss/phantom_loss = new // stolen valor, really
 		scaries.generate(L, phantom_loss)
 		//if(HAS_TRAIT(src, ROBOTIC_LIMBS)) //Snowflake trait moment, but needed.
 		//	L.render_like_organic = TRUE

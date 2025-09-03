@@ -3,7 +3,7 @@
 	desc = "Didn't make sense not to live for fun, your brain gets smart but your head gets dumb."
 	icon = 'icons/mob/human_parts.dmi'
 	icon_state = "default_human_head"
-	max_damage = 300
+	max_damage = 200
 	body_zone = BODY_ZONE_HEAD
 	body_part = HEAD
 	w_class = WEIGHT_CLASS_BULKY //Quite a hefty load
@@ -35,14 +35,16 @@
 	//If the head is a special sprite
 	var/custom_head
 
-	wound_resistance = 10
+//	wound_resistance = 10
 	scars_covered_by_clothes = FALSE
+	dismemberable = 1 //Can be dismembered
 
 /obj/item/bodypart/head/can_dismember(obj/item/I)
 	// Can't decap people alive or with some kind of headgear. Balance reasons.
 	if(owner && (owner.stat != DEAD || owner.head))
 		return FALSE
 	return ..()
+
 
 /obj/item/bodypart/head/drop_organs(mob/user)
 	var/turf/T = get_turf(src)

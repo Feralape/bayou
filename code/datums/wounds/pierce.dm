@@ -89,4 +89,4 @@
 	demotes_to = /datum/wound/bleed/pierce/severe
 	status_effect_type = /datum/status_effect/wound/pierce/critical
 	scar_keyword = "piercecritical"
-	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE | MANGLES_FLESH | ACCEPTS_SUTURE)
+	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE | ACCEPTS_SUTURE)
