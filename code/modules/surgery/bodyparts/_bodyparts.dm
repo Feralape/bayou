@@ -262,20 +262,17 @@
 	*/
 
 	// what kind of wounds we're gonna roll for, take the greater between brute and burn, then if it's brute, we subdivide based on sharpness
-	var/wounding_type = WOUND_BLUNT// (brute > burn ? WOUND_BLUNT : WOUND_BURN) is the old code here
+	var/wounding_type = (brute > burn ? WOUND_BLUNT : WOUND_BURN)// (brute > burn ? WOUND_BLUNT : WOUND_BURN) is the old code here
 	var/wounding_dmg = max(brute, burn)
 	var/mangled_state = get_mangled_state()
 	var/bio_state = owner.get_biological_state()
 	var/easy_dismember = HAS_TRAIT(owner, TRAIT_EASYDISMEMBER) // if we have easydismember, we don't reduce damage when redirecting damage to different types (slashing weapons on mangled/skinless limbs attack at 100% instead of 50%)
 
 	if(wounding_type == WOUND_BLUNT)
-		switch(sharpness)
-			if(SHARP_NONE)
-				wounding_type = WOUND_BLUNT
-			if(SHARP_EDGED)
-				wounding_type = WOUND_SLASH
-			if(SHARP_POINTY)
-				wounding_type = WOUND_PIERCE
+		if(sharpness == SHARP_EDGED)
+			wounding_type = WOUND_SLASH
+		else if(sharpness == SHARP_POINTY)
+			wounding_type = WOUND_PIERCE
 
 	//Handling for bone only/flesh only(none right now)/flesh and bone targets
 	switch(bio_state)
@@ -300,7 +297,8 @@
 					wounding_dmg *= 0.5 // edged weapons pass along 50% of their wounding damage to the bone since the power is spread out over a larger area
 				if(wounding_type == WOUND_PIERCE && !easy_dismember)
 					wounding_dmg *= 0.75 // piercing weapons pass along 75% of their wounding damage to the bone since it's more concentrated
-			else if(try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus))
+				wounding_type = WOUND_BLUNT
+			else if(mangled_state == BODYPART_MANGLED_BOTH && try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus))
 				return
 
 	// now we have our wounding_type and are ready to carry on with wounds and dealing the actual damage
@@ -398,7 +396,7 @@
  * * wound_bonus- The wound_bonus of an attack
  * * bare_wound_bonus- The bare_wound_bonus of an attack
  */
-/obj/item/bodypart/proc/check_wounding(woundtype, damage, wound_bonus, bare_wound_bonus)
+/obj/item/bodypart/proc/check_wounding(woundtype, damage, wound_bonus, bare_wound_bonus, ignore_bleed_resistances = FALSE)
 	// actually roll wounds if applicable
 	if(woundtype == WOUND_SLASH || woundtype == WOUND_PIERCE)
 		if(!is_organic_limb())
@@ -412,6 +410,7 @@
 		damage *= 1.5
 	if((woundtype in PAPER_SKIN_WOUNDS) && HAS_TRAIT(owner, TRAIT_PAPER_SKIN))
 		damage *= 1.5
+
 // Coyote Boyou replacement for glass bones & paper skin quirks.
 	if(HAS_TRAIT(owner, TRAIT_EASILY_WOUNDED))
 		damage *= 1.25
@@ -421,7 +420,8 @@
 		min(damage * WOUND_DAMAGE_RANDOM_MAX_MULT, WOUND_MAX_CONSIDERED_DAMAGE)
 		)
 	var/injury_roll = base_roll
-	injury_roll += check_woundings_mods(woundtype, damage, wound_bonus, bare_wound_bonus)
+	injury_roll += check_woundings_mods(woundtype, damage, wound_bonus, bare_wound_bonus, ignore_bleed_resistances)
+	var/list/wounds_checking = GLOB.global_wound_types[woundtype]
 
 	if(injury_roll < WOUND_MINIMUM_DAMAGE)
 		return FALSE // not enough to wound
@@ -431,6 +431,8 @@
 	for(var/i in wounds)
 		var/datum/wound/iter_wound = i
 		iter_wound.receive_damage(woundtype, injury_roll, wound_bonus)
+
+	injury_roll += check_woundings_mods(woundtype, damage, wound_bonus, bare_wound_bonus)
 
 	// quick re-check to see if bare_wound_bonus applies, for the benefit of log_wound(), see about getting the check from check_woundings_mods() somehow
 	if(ishuman(owner))
@@ -443,14 +445,14 @@
 				bare_wound_bonus = 0
 				break
 
-	var/list/wounds_checking = GLOB.global_wound_types[woundtype]
+
 	/// Temporary wound handling for bleeds
 	if(woundtype == WOUND_SLASH || woundtype == WOUND_PIERCE)
 		if(apply_bleed_wound(woundtype, wounds_checking))
 			return
 
 	//cycle through the wounds of the relevant category from the most severe down
-	for(var/datum/wound/PW in wounds_checking)
+	for(var/PW in wounds_checking)
 		var/datum/wound/possible_wound = PW
 		var/datum/wound/replaced_wound
 		for(var/i in wounds)
@@ -521,10 +523,10 @@
 			var/obj/item/clothing/C = c
 			// unlike normal armor checks, we tabluate these piece-by-piece manually so we can also pass on appropriate damage the clothing's limbs if necessary
 			armor_ablation += C.armor.getRating("wound")
-/*			if(wounding_type == WOUND_SLASH)
+			if(wounding_type == WOUND_SLASH)
 				C.take_damage_zone(body_zone, damage, BRUTE, armour_penetration)
 			else if(wounding_type == WOUND_BURN && damage >= 10) // lazy way to block freezing from shredding clothes without adding another var onto apply_damage()
-				C.take_damage_zone(body_zone, damage, BURN, armour_penetration) */
+				C.take_damage_zone(body_zone, damage, BURN, armour_penetration)
 
 		if(!armor_ablation)
 			injury_mod += bare_wound_bonus
