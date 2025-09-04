@@ -3849,7 +3849,6 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
-/obj/structure/flora/tallgrass1,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/underground/cave/vault/fourfivefour)
 "na" = (
@@ -8800,7 +8799,6 @@
 	},
 /obj/machinery/light/small,
 /obj/effect/landmark/deathmatch,
-/mob/living/simple_animal/hostile/pillbug,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
 "Fb" = (
@@ -10513,7 +10511,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "Oh" = (
-/obj/item/flashlight/lantern/dim,
 /obj/structure/rack,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -12351,7 +12348,6 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/obj/structure/flora/tallgrass1,
 /obj/structure/spacevine{
 	name = "Mutant Vines"
 	},

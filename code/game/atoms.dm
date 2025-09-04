@@ -1276,6 +1276,30 @@
 			filter_data -= name
 	update_filters()
 
+
+/atom/proc/transition_filter(name, list/new_params, time, easing, loop)
+	var/filter = get_filter(name)
+	if(!filter)
+		return
+	// This can get injected by the filter procs, we want to support them so bye byeeeee
+	new_params -= "type"
+	animate(filter, new_params, time = time, easing = easing, loop = loop)
+	modify_filter(name, new_params)
+
+/atom/proc/modify_filter(name, list/new_params, overwrite = FALSE)
+	var/filter = get_filter(name)
+	if(!filter)
+		return
+	if(overwrite)
+		filter_data[name] = new_params
+	else
+		for(var/thing in new_params)
+			filter_data[name][thing] = new_params[thing]
+	update_filters()
+
+
+
+
 /atom/proc/intercept_zImpact(atom/movable/AM, levels = 1)
 	. |= SEND_SIGNAL(src, COMSIG_ATOM_INTERCEPT_Z_FALL, AM, levels)
 

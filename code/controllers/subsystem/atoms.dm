@@ -16,6 +16,10 @@ SUBSYSTEM_DEF(atoms)
 
 	var/list/BadInitializeCalls = list()
 
+	/// Ginormous hell tally of all the types of atoms in existence.
+	/// FORMAT: list(/type = amount)
+	var/list/everything = list()
+
 /datum/controller/subsystem/atoms/Initialize(timeofday)
 	GLOB.fire_overlay.appearance_flags = RESET_COLOR
 	to_chat(world, span_boldannounce("Initializing Genetics..."))

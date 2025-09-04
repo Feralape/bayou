@@ -787,3 +787,5 @@
 
 #define COMSIG_TURF_SUBMERGE_CHECK "turf_submerge_check" //from /turf/proc/get_submerge_height() checking if something on the turf should submerge an AM
 #define COMSIG_TURF_CHECK_COVERED "turf_check_covered" //from /turf/open/liquid/Entered checking if something is covering the turf
+
+#define COMSIG_ATOM_TOOL_ACT "atom_tool_act"
